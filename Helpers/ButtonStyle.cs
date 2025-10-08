@@ -51,9 +51,9 @@ namespace StockMate.Helpers
                     // Button Border
 
                     button.Style.Border = null;
-                    button.Style.FocusedBorder = null;
-                    button.Style.HoverBorder = null;
-                    button.Style.PressedBorder = null;
+                    button.Style.FocusedBorder = new Pen(Color.Gainsboro);
+                    button.Style.HoverBorder = new Pen(Color.Gainsboro);
+                    button.Style.PressedBorder = new Pen(Color.Gainsboro);
 
                     // Button BackColor
 
