@@ -33,6 +33,7 @@
     <PackageReference Include="Syncfusion.SfInput.WinForms" Version="31.1.23" />
     <PackageReference Include="Syncfusion.SfListView.WinForms" Version="31.1.23" />
     <PackageReference Include="Syncfusion.Shared.Base" Version="31.1.23" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
   </ItemGroup>
 
   <ItemGroup>

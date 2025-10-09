@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Configuration;
+using Syncfusion.Windows.Forms;
 using System.Reflection;
 
 namespace StockMate
@@ -8,6 +9,8 @@ namespace StockMate
         [STAThread]
         static void Main()
         {
+            MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Office2016;
+
             IConfiguration config = new ConfigurationBuilder()
             .AddJsonFile("secrets.json", optional: true)
             .AddUserSecrets(Assembly.GetExecutingAssembly())

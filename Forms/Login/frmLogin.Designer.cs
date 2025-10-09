@@ -131,7 +131,7 @@
             // 
             // txtUsername
             // 
-            txtUsername.BeforeTouchSize = new Size(328, 16);
+            txtUsername.BeforeTouchSize = new Size(238, 16);
             txtUsername.BorderStyle = BorderStyle.None;
             txtUsername.Dock = DockStyle.Fill;
             txtUsername.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -167,7 +167,7 @@
             // imgShowPass
             // 
             imgShowPass.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            imgShowPass.Image = Properties.Resources.eye_off_password;
+            imgShowPass.Image = Properties.Resources.eye_password;
             imgShowPass.Location = new Point(263, 6);
             imgShowPass.Name = "imgShowPass";
             imgShowPass.Size = new Size(16, 16);
@@ -180,7 +180,7 @@
             // txtPassword
             // 
             txtPassword.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtPassword.BeforeTouchSize = new Size(328, 16);
+            txtPassword.BeforeTouchSize = new Size(238, 16);
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(6, 6);
@@ -209,6 +209,7 @@
             btnSignIn.Size = new Size(288, 32);
             btnSignIn.TabIndex = 0;
             btnSignIn.Text = "Sign In";
+            btnSignIn.Click += btnSignIn_Click;
             // 
             // gradientPanel6
             // 

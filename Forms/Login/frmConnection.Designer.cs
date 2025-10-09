@@ -38,6 +38,7 @@
             txtUsername = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel6 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            imgShowPass = new PictureBox();
             txtPassword = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             autoLabel5 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel7 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
@@ -56,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)txtUsername).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel6).BeginInit();
             gradientPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)imgShowPass).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtPassword).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel7).BeginInit();
             gradientPanel7.SuspendLayout();
@@ -177,6 +179,7 @@
             // 
             gradientPanel6.BorderColor = Color.Silver;
             gradientPanel6.BorderStyle = BorderStyle.FixedSingle;
+            gradientPanel6.Controls.Add(imgShowPass);
             gradientPanel6.Controls.Add(txtPassword);
             gradientPanel6.Location = new Point(13, 157);
             gradientPanel6.Margin = new Padding(3, 5, 3, 3);
@@ -185,16 +188,30 @@
             gradientPanel6.Size = new Size(252, 30);
             gradientPanel6.TabIndex = 7;
             // 
+            // imgShowPass
+            // 
+            imgShowPass.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            imgShowPass.Image = Properties.Resources.eye_password;
+            imgShowPass.Location = new Point(228, 6);
+            imgShowPass.Name = "imgShowPass";
+            imgShowPass.Size = new Size(16, 16);
+            imgShowPass.SizeMode = PictureBoxSizeMode.Zoom;
+            imgShowPass.TabIndex = 2;
+            imgShowPass.TabStop = false;
+            imgShowPass.Visible = false;
+            imgShowPass.Click += imgShowPass_Click;
+            // 
             // txtPassword
             // 
+            txtPassword.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtPassword.BeforeTouchSize = new Size(238, 16);
             txtPassword.BorderStyle = BorderStyle.None;
-            txtPassword.Dock = DockStyle.Fill;
             txtPassword.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(6, 6);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(238, 16);
+            txtPassword.Size = new Size(216, 16);
             txtPassword.TabIndex = 0;
+            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
             // autoLabel5
             // 
@@ -280,6 +297,7 @@
             ShowMaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Change Connection";
+            Load += frmConnection_Load;
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).EndInit();
             gradientPanel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
@@ -295,6 +313,7 @@
             ((System.ComponentModel.ISupportInitialize)gradientPanel6).EndInit();
             gradientPanel6.ResumeLayout(false);
             gradientPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)imgShowPass).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtPassword).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel7).EndInit();
             gradientPanel7.ResumeLayout(false);
@@ -324,5 +343,6 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel5;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel7;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtDatabase;
+        private PictureBox imgShowPass;
     }
 }
