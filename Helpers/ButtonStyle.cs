@@ -116,5 +116,29 @@ namespace StockMate.Helpers
             button.Style.HoverImageForeColor = Color.White;
             button.Style.PressedImageForeColor = Color.White;
         }
+
+        public static void WhiteButton(SfButton button)
+        {
+            // Button Border
+
+            button.Style.Border = new Pen(Color.Gainsboro);
+            button.Style.PressedBorder = new Pen(Color.Gainsboro);
+            button.Style.HoverBorder = new Pen(Color.Gainsboro);
+            button.Style.FocusedBorder = new Pen(Color.Gainsboro);
+
+            // Button BackColor
+
+            button.Style.BackColor = Color.White;
+            button.Style.PressedBackColor = Color.White;
+            button.Style.HoverBackColor = Color.FromArgb(237, 237, 237);
+            button.Style.FocusedBackColor = Color.White;
+
+            // Button ForeColor
+
+            button.Style.ForeColor = Color.FromArgb(43, 48, 59);
+            button.Style.FocusedForeColor = Color.FromArgb(43, 48, 59);
+            button.Style.HoverForeColor = Color.FromArgb(43, 48, 59);
+            button.Style.PressedForeColor = Color.FromArgb(43, 48, 59);
+        }
     }
 }

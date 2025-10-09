@@ -1,5 +1,5 @@
-﻿using StockMate.Forms.Products;
-using StockMate.Helpers;
+﻿using StockMate.Helpers;
+using Syncfusion.Windows.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,19 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StockMate.UC.Screens
+namespace StockMate.Forms.Products
 {
-    public partial class UCProducts : UserControl
+    public partial class frmAddProduct : MetroForm
     {
-        public UCProducts()
+        public frmAddProduct()
         {
             InitializeComponent();
             ButtonStyle.BlueButton(btnAddProduct);
-        }
-
-        private void btnAddProduct_Click(object sender, EventArgs e)
-        {
-            new frmAddProduct().ShowDialog();
+            ButtonStyle.WhiteButton(btnCancel);
         }
     }
 }

@@ -33,6 +33,7 @@
             gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel5 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            dataGridView1 = new DataGridView();
             gradientPanel2 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             btnAddProduct = new Syncfusion.WinForms.Controls.SfButton();
             gradientPanel4 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
@@ -40,20 +41,19 @@
             pictureBox1 = new PictureBox();
             autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(components);
-            dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).BeginInit();
             gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).BeginInit();
             gradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel5).BeginInit();
             gradientPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel2).BeginInit();
             gradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel4).BeginInit();
             gradientPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)textBoxExt1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // gradientPanel1
@@ -91,6 +91,17 @@
             gradientPanel5.Size = new Size(1165, 619);
             gradientPanel5.TabIndex = 1;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(15, 15);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(1133, 587);
+            dataGridView1.TabIndex = 0;
+            // 
             // gradientPanel2
             // 
             gradientPanel2.BorderStyle = BorderStyle.None;
@@ -115,6 +126,7 @@
             btnAddProduct.TabIndex = 2;
             btnAddProduct.Text = "Add Product";
             btnAddProduct.TextAlign = ContentAlignment.MiddleRight;
+            btnAddProduct.Click += btnAddProduct_Click;
             // 
             // gradientPanel4
             // 
@@ -133,7 +145,7 @@
             bannerTextInfo1.Text = "Search products...";
             bannerTextInfo1.Visible = true;
             bannerTextProvider1.SetBannerText(textBoxExt1, bannerTextInfo1);
-            textBoxExt1.BeforeTouchSize = new Size(238, 16);
+            textBoxExt1.BeforeTouchSize = new Size(355, 16);
             textBoxExt1.BorderStyle = BorderStyle.None;
             textBoxExt1.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxExt1.Location = new Point(29, 9);
@@ -162,17 +174,6 @@
             autoLabel1.TabIndex = 0;
             autoLabel1.Text = "Products Inventory";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(15, 15);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1133, 587);
-            dataGridView1.TabIndex = 0;
-            // 
             // UCProducts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -187,6 +188,7 @@
             gradientPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gradientPanel5).EndInit();
             gradientPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel2).EndInit();
             gradientPanel2.ResumeLayout(false);
             gradientPanel2.PerformLayout();
@@ -195,7 +197,6 @@
             gradientPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)textBoxExt1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
