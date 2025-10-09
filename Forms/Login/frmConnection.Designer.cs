@@ -33,9 +33,6 @@
             autoLabel3 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel4 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             txtServer = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            autoLabel4 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            gradientPanel5 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            txtPort = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             txtUsername = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
@@ -54,9 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)gradientPanel4).BeginInit();
             gradientPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtServer).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gradientPanel5).BeginInit();
-            gradientPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)txtPort).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).BeginInit();
             gradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtUsername).BeginInit();
@@ -78,16 +72,14 @@
             gradientPanel1.Dock = DockStyle.Fill;
             gradientPanel1.Location = new Point(0, 0);
             gradientPanel1.Name = "gradientPanel1";
-            gradientPanel1.Padding = new Padding(15, 15, 15, 10);
-            gradientPanel1.Size = new Size(311, 398);
+            gradientPanel1.Padding = new Padding(15, 15, 15, 3);
+            gradientPanel1.Size = new Size(311, 330);
             gradientPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(autoLabel3);
             flowLayoutPanel1.Controls.Add(gradientPanel4);
-            flowLayoutPanel1.Controls.Add(autoLabel4);
-            flowLayoutPanel1.Controls.Add(gradientPanel5);
             flowLayoutPanel1.Controls.Add(autoLabel1);
             flowLayoutPanel1.Controls.Add(gradientPanel3);
             flowLayoutPanel1.Controls.Add(autoLabel2);
@@ -99,7 +91,7 @@
             flowLayoutPanel1.Location = new Point(15, 15);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(10);
-            flowLayoutPanel1.Size = new Size(281, 325);
+            flowLayoutPanel1.Size = new Size(281, 264);
             flowLayoutPanel1.TabIndex = 6;
             // 
             // autoLabel3
@@ -136,46 +128,11 @@
             txtServer.Size = new Size(238, 16);
             txtServer.TabIndex = 0;
             // 
-            // autoLabel4
-            // 
-            autoLabel4.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            autoLabel4.ForeColor = Color.FromArgb(43, 48, 59);
-            autoLabel4.Location = new Point(13, 75);
-            autoLabel4.Margin = new Padding(3, 5, 3, 0);
-            autoLabel4.Name = "autoLabel4";
-            autoLabel4.Size = new Size(32, 17);
-            autoLabel4.TabIndex = 2;
-            autoLabel4.Text = "Port";
-            autoLabel4.Click += autoLabel4_Click;
-            // 
-            // gradientPanel5
-            // 
-            gradientPanel5.BorderColor = Color.Silver;
-            gradientPanel5.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel5.Controls.Add(txtPort);
-            gradientPanel5.Location = new Point(13, 97);
-            gradientPanel5.Margin = new Padding(3, 5, 3, 3);
-            gradientPanel5.Name = "gradientPanel5";
-            gradientPanel5.Padding = new Padding(6, 6, 6, 3);
-            gradientPanel5.Size = new Size(252, 30);
-            gradientPanel5.TabIndex = 3;
-            // 
-            // txtPort
-            // 
-            txtPort.BeforeTouchSize = new Size(238, 16);
-            txtPort.BorderStyle = BorderStyle.None;
-            txtPort.Dock = DockStyle.Fill;
-            txtPort.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPort.Location = new Point(6, 6);
-            txtPort.Name = "txtPort";
-            txtPort.Size = new Size(238, 16);
-            txtPort.TabIndex = 0;
-            // 
             // autoLabel1
             // 
             autoLabel1.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             autoLabel1.ForeColor = Color.FromArgb(43, 48, 59);
-            autoLabel1.Location = new Point(13, 135);
+            autoLabel1.Location = new Point(13, 75);
             autoLabel1.Margin = new Padding(3, 5, 3, 0);
             autoLabel1.Name = "autoLabel1";
             autoLabel1.Size = new Size(68, 17);
@@ -187,7 +144,7 @@
             gradientPanel3.BorderColor = Color.Silver;
             gradientPanel3.BorderStyle = BorderStyle.FixedSingle;
             gradientPanel3.Controls.Add(txtUsername);
-            gradientPanel3.Location = new Point(13, 157);
+            gradientPanel3.Location = new Point(13, 97);
             gradientPanel3.Margin = new Padding(3, 5, 3, 3);
             gradientPanel3.Name = "gradientPanel3";
             gradientPanel3.Padding = new Padding(6, 6, 6, 3);
@@ -209,7 +166,7 @@
             // 
             autoLabel2.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             autoLabel2.ForeColor = Color.FromArgb(43, 48, 59);
-            autoLabel2.Location = new Point(13, 195);
+            autoLabel2.Location = new Point(13, 135);
             autoLabel2.Margin = new Padding(3, 5, 3, 0);
             autoLabel2.Name = "autoLabel2";
             autoLabel2.Size = new Size(66, 17);
@@ -221,7 +178,7 @@
             gradientPanel6.BorderColor = Color.Silver;
             gradientPanel6.BorderStyle = BorderStyle.FixedSingle;
             gradientPanel6.Controls.Add(txtPassword);
-            gradientPanel6.Location = new Point(13, 217);
+            gradientPanel6.Location = new Point(13, 157);
             gradientPanel6.Margin = new Padding(3, 5, 3, 3);
             gradientPanel6.Name = "gradientPanel6";
             gradientPanel6.Padding = new Padding(6, 6, 6, 3);
@@ -243,7 +200,7 @@
             // 
             autoLabel5.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             autoLabel5.ForeColor = Color.FromArgb(43, 48, 59);
-            autoLabel5.Location = new Point(13, 255);
+            autoLabel5.Location = new Point(13, 195);
             autoLabel5.Margin = new Padding(3, 5, 3, 0);
             autoLabel5.Name = "autoLabel5";
             autoLabel5.Size = new Size(63, 17);
@@ -255,7 +212,7 @@
             gradientPanel7.BorderColor = Color.Silver;
             gradientPanel7.BorderStyle = BorderStyle.FixedSingle;
             gradientPanel7.Controls.Add(txtDatabase);
-            gradientPanel7.Location = new Point(13, 277);
+            gradientPanel7.Location = new Point(13, 217);
             gradientPanel7.Margin = new Padding(3, 5, 3, 3);
             gradientPanel7.Name = "gradientPanel7";
             gradientPanel7.Padding = new Padding(6, 6, 6, 3);
@@ -279,7 +236,7 @@
             gradientPanel2.Controls.Add(btnExit);
             gradientPanel2.Controls.Add(btnSaveConnection);
             gradientPanel2.Dock = DockStyle.Bottom;
-            gradientPanel2.Location = new Point(15, 340);
+            gradientPanel2.Location = new Point(15, 279);
             gradientPanel2.Name = "gradientPanel2";
             gradientPanel2.Size = new Size(281, 48);
             gradientPanel2.TabIndex = 7;
@@ -307,6 +264,7 @@
             btnSaveConnection.TabIndex = 9;
             btnSaveConnection.Text = "Save";
             btnSaveConnection.UseVisualStyleBackColor = false;
+            btnSaveConnection.Click += btnSaveConnection_Click;
             // 
             // frmConnection
             // 
@@ -314,7 +272,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             CaptionAlign = HorizontalAlignment.Left;
             CaptionFont = new Font("Inter Medium", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ClientSize = new Size(311, 398);
+            ClientSize = new Size(311, 330);
             Controls.Add(gradientPanel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmConnection";
@@ -330,10 +288,6 @@
             gradientPanel4.ResumeLayout(false);
             gradientPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)txtServer).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gradientPanel5).EndInit();
-            gradientPanel5.ResumeLayout(false);
-            gradientPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)txtPort).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).EndInit();
             gradientPanel3.ResumeLayout(false);
             gradientPanel3.PerformLayout();
@@ -358,9 +312,6 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel3;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel4;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtServer;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel4;
-        private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel5;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtPort;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel2;
         private Syncfusion.WinForms.Controls.SfButton btnExit;
         private Syncfusion.WinForms.Controls.SfButton btnSaveConnection;

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace StockMate.Services
 {
-    public static class ChangeConnectionService
+    public class ChangeConnectionService
     {
-        public static bool SaveConnection(string server, string port, string username, string password, string database)
+        public bool SaveConnection(string server, string database, string username, string password)
         {
-            string connectionString = $"Server={server},{port};Database={database};User Id={username};Password={password};";
+            string connectionString = $"Server={server};Database={database};User Id={username};Password={password};Trust Server Certificate=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
