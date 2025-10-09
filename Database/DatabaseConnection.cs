@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace StockMate.Database
 {
-    public class DatabaseConnection
+    public static class DatabaseConnection
     {
-    }
+        public static string ConnectionString { get; set; }
+    }   
 }

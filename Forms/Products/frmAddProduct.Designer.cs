@@ -38,8 +38,10 @@
             txtSKU = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             autoLabel5 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel6 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            cmbCategory = new Syncfusion.WinForms.ListView.SfComboBox();
             autoLabel6 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel7 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            cmbSupplier = new Syncfusion.WinForms.ListView.SfComboBox();
             autoLabel7 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel8 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             txtQuantity = new Syncfusion.Windows.Forms.Tools.IntegerTextBox();
@@ -52,8 +54,6 @@
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            cmbCategory = new Syncfusion.WinForms.ListView.SfComboBox();
-            cmbSupplier = new Syncfusion.WinForms.ListView.SfComboBox();
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).BeginInit();
             gradientPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -65,8 +65,10 @@
             ((System.ComponentModel.ISupportInitialize)txtSKU).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel6).BeginInit();
             gradientPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cmbCategory).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel7).BeginInit();
             gradientPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cmbSupplier).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel8).BeginInit();
             gradientPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtQuantity).BeginInit();
@@ -77,8 +79,6 @@
             gradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).BeginInit();
             gradientPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)cmbCategory).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cmbSupplier).BeginInit();
             SuspendLayout();
             // 
             // gradientPanel1
@@ -119,6 +119,7 @@
             // autoLabel3
             // 
             autoLabel3.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            autoLabel3.ForeColor = Color.FromArgb(43, 48, 59);
             autoLabel3.Location = new Point(13, 15);
             autoLabel3.Margin = new Padding(3, 5, 3, 0);
             autoLabel3.Name = "autoLabel3";
@@ -140,7 +141,7 @@
             // 
             // txtProductName
             // 
-            txtProductName.BeforeTouchSize = new Size(328, 16);
+            txtProductName.BeforeTouchSize = new Size(238, 16);
             txtProductName.BorderStyle = BorderStyle.None;
             txtProductName.Dock = DockStyle.Fill;
             txtProductName.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -152,6 +153,7 @@
             // autoLabel4
             // 
             autoLabel4.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            autoLabel4.ForeColor = Color.FromArgb(43, 48, 59);
             autoLabel4.Location = new Point(13, 75);
             autoLabel4.Margin = new Padding(3, 5, 3, 0);
             autoLabel4.Name = "autoLabel4";
@@ -173,7 +175,7 @@
             // 
             // txtSKU
             // 
-            txtSKU.BeforeTouchSize = new Size(328, 16);
+            txtSKU.BeforeTouchSize = new Size(238, 16);
             txtSKU.BorderStyle = BorderStyle.None;
             txtSKU.Dock = DockStyle.Fill;
             txtSKU.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -185,6 +187,7 @@
             // autoLabel5
             // 
             autoLabel5.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            autoLabel5.ForeColor = Color.FromArgb(43, 48, 59);
             autoLabel5.Location = new Point(13, 135);
             autoLabel5.Margin = new Padding(3, 5, 3, 0);
             autoLabel5.Name = "autoLabel5";
@@ -204,9 +207,22 @@
             gradientPanel6.Size = new Size(342, 30);
             gradientPanel6.TabIndex = 5;
             // 
+            // cmbCategory
+            // 
+            cmbCategory.BorderStyle = BorderStyle.None;
+            cmbCategory.Dock = DockStyle.Fill;
+            cmbCategory.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            cmbCategory.Location = new Point(3, 3);
+            cmbCategory.Name = "cmbCategory";
+            cmbCategory.Size = new Size(334, 22);
+            cmbCategory.Style.TokenStyle.CloseButtonBackColor = Color.FromArgb(255, 255, 255);
+            cmbCategory.TabIndex = 0;
+            cmbCategory.TabStop = false;
+            // 
             // autoLabel6
             // 
             autoLabel6.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            autoLabel6.ForeColor = Color.FromArgb(43, 48, 59);
             autoLabel6.Location = new Point(13, 195);
             autoLabel6.Margin = new Padding(3, 5, 3, 0);
             autoLabel6.Name = "autoLabel6";
@@ -226,9 +242,22 @@
             gradientPanel7.Size = new Size(342, 30);
             gradientPanel7.TabIndex = 7;
             // 
+            // cmbSupplier
+            // 
+            cmbSupplier.BorderStyle = BorderStyle.None;
+            cmbSupplier.Dock = DockStyle.Fill;
+            cmbSupplier.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            cmbSupplier.Location = new Point(3, 3);
+            cmbSupplier.Name = "cmbSupplier";
+            cmbSupplier.Size = new Size(334, 22);
+            cmbSupplier.Style.TokenStyle.CloseButtonBackColor = Color.FromArgb(255, 255, 255);
+            cmbSupplier.TabIndex = 1;
+            cmbSupplier.TabStop = false;
+            // 
             // autoLabel7
             // 
             autoLabel7.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            autoLabel7.ForeColor = Color.FromArgb(43, 48, 59);
             autoLabel7.Location = new Point(13, 255);
             autoLabel7.Margin = new Padding(3, 5, 3, 0);
             autoLabel7.Name = "autoLabel7";
@@ -251,7 +280,7 @@
             // txtQuantity
             // 
             txtQuantity.AccessibilityEnabled = true;
-            txtQuantity.BeforeTouchSize = new Size(328, 16);
+            txtQuantity.BeforeTouchSize = new Size(238, 16);
             txtQuantity.BorderStyle = BorderStyle.None;
             txtQuantity.Dock = DockStyle.Fill;
             txtQuantity.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -265,6 +294,7 @@
             // autoLabel8
             // 
             autoLabel8.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            autoLabel8.ForeColor = Color.FromArgb(43, 48, 59);
             autoLabel8.Location = new Point(13, 315);
             autoLabel8.Margin = new Padding(3, 5, 3, 0);
             autoLabel8.Name = "autoLabel8";
@@ -287,7 +317,7 @@
             // txtReorderLevel
             // 
             txtReorderLevel.AccessibilityEnabled = true;
-            txtReorderLevel.BeforeTouchSize = new Size(328, 16);
+            txtReorderLevel.BeforeTouchSize = new Size(238, 16);
             txtReorderLevel.BorderStyle = BorderStyle.None;
             txtReorderLevel.Dock = DockStyle.Fill;
             txtReorderLevel.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -349,6 +379,7 @@
             autoLabel2.AutoSize = false;
             autoLabel2.Dock = DockStyle.Fill;
             autoLabel2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            autoLabel2.ForeColor = Color.FromArgb(43, 48, 59);
             autoLabel2.Location = new Point(0, 0);
             autoLabel2.Name = "autoLabel2";
             autoLabel2.Size = new Size(369, 30);
@@ -361,36 +392,13 @@
             autoLabel1.AutoSize = false;
             autoLabel1.Dock = DockStyle.Bottom;
             autoLabel1.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            autoLabel1.ForeColor = Color.DimGray;
             autoLabel1.Location = new Point(0, 30);
             autoLabel1.Name = "autoLabel1";
             autoLabel1.Padding = new Padding(1, 0, 0, 0);
             autoLabel1.Size = new Size(369, 27);
             autoLabel1.TabIndex = 99;
             autoLabel1.Text = "Enter the details of the new product to add to your inventory.";
-            // 
-            // cmbCategory
-            // 
-            cmbCategory.BorderStyle = BorderStyle.None;
-            cmbCategory.Dock = DockStyle.Fill;
-            cmbCategory.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            cmbCategory.Location = new Point(3, 3);
-            cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(334, 22);
-            cmbCategory.Style.TokenStyle.CloseButtonBackColor = Color.FromArgb(255, 255, 255);
-            cmbCategory.TabIndex = 0;
-            cmbCategory.TabStop = false;
-            // 
-            // cmbSupplier
-            // 
-            cmbSupplier.BorderStyle = BorderStyle.None;
-            cmbSupplier.Dock = DockStyle.Fill;
-            cmbSupplier.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            cmbSupplier.Location = new Point(3, 3);
-            cmbSupplier.Name = "cmbSupplier";
-            cmbSupplier.Size = new Size(334, 22);
-            cmbSupplier.Style.TokenStyle.CloseButtonBackColor = Color.FromArgb(255, 255, 255);
-            cmbSupplier.TabIndex = 1;
-            cmbSupplier.TabStop = false;
             // 
             // frmAddProduct
             // 
@@ -415,8 +423,10 @@
             ((System.ComponentModel.ISupportInitialize)txtSKU).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel6).EndInit();
             gradientPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)cmbCategory).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel7).EndInit();
             gradientPanel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)cmbSupplier).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel8).EndInit();
             gradientPanel8.ResumeLayout(false);
             gradientPanel8.PerformLayout();
@@ -429,8 +439,6 @@
             gradientPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).EndInit();
             gradientPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)cmbCategory).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cmbSupplier).EndInit();
             ResumeLayout(false);
         }
 

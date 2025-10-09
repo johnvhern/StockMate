@@ -17,7 +17,7 @@ namespace StockMate
 
             ApplicationConfiguration.Initialize();
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(secretValue);
-            Application.Run(new Forms.frmMain());
+            Application.Run(new Forms.Login.frmLogin());
         }
     }
 }
