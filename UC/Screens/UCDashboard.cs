@@ -1,4 +1,5 @@
-﻿using StockMate.Helpers;
+﻿using StockMate.Forms.Products;
+using StockMate.Helpers;
 using Syncfusion.Windows.Forms.Tools;
 using System;
 using System.Collections.Generic;
@@ -69,6 +70,11 @@ namespace StockMate.UC.Screens
                 return pnl;
             else
                 return null;
+        }
+
+        private void panelAddProducts_Click(object sender, EventArgs e)
+        {
+            new frmAddProduct().ShowDialog();
         }
     }
 }

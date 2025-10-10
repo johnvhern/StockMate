@@ -20,6 +20,21 @@
             base.Dispose(disposing);
         }
 
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_SYSCOMMAND = 0x0112;
+            const int WM_NCLBUTTONDBLCLK = 0x00A3;
+            const int SC_MOVE = 0xF010; // Move command
+            const int WM_EXITSIZEMOVE = 0x0232; // Event when dragging stops
+
+            if (m.Msg == WM_NCLBUTTONDBLCLK)
+            {
+                return; // Ignore the double-click event on the title bar
+            }
+
+            base.WndProc(ref m);
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -28,6 +43,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo1 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo2 = new Syncfusion.Windows.Forms.BannerTextInfo();
             gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             autoLabel3 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -54,6 +72,7 @@
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(components);
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).BeginInit();
             gradientPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -90,8 +109,8 @@
             gradientPanel1.Dock = DockStyle.Fill;
             gradientPanel1.Location = new Point(0, 0);
             gradientPanel1.Name = "gradientPanel1";
-            gradientPanel1.Padding = new Padding(15, 0, 15, 15);
-            gradientPanel1.Size = new Size(399, 517);
+            gradientPanel1.Padding = new Padding(15, 0, 15, 5);
+            gradientPanel1.Size = new Size(399, 492);
             gradientPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -113,7 +132,7 @@
             flowLayoutPanel1.Location = new Point(15, 57);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(10);
-            flowLayoutPanel1.Size = new Size(369, 391);
+            flowLayoutPanel1.Size = new Size(369, 382);
             flowLayoutPanel1.TabIndex = 4;
             // 
             // autoLabel3
@@ -141,6 +160,9 @@
             // 
             // txtProductName
             // 
+            bannerTextInfo1.Text = "Enter product name...";
+            bannerTextInfo1.Visible = true;
+            bannerTextProvider1.SetBannerText(txtProductName, bannerTextInfo1);
             txtProductName.BeforeTouchSize = new Size(238, 16);
             txtProductName.BorderStyle = BorderStyle.None;
             txtProductName.Dock = DockStyle.Fill;
@@ -175,6 +197,9 @@
             // 
             // txtSKU
             // 
+            bannerTextInfo2.Text = "Optional";
+            bannerTextInfo2.Visible = true;
+            bannerTextProvider1.SetBannerText(txtSKU, bannerTextInfo2);
             txtSKU.BeforeTouchSize = new Size(238, 16);
             txtSKU.BorderStyle = BorderStyle.None;
             txtSKU.Dock = DockStyle.Fill;
@@ -203,21 +228,33 @@
             gradientPanel6.Location = new Point(13, 157);
             gradientPanel6.Margin = new Padding(3, 5, 3, 3);
             gradientPanel6.Name = "gradientPanel6";
-            gradientPanel6.Padding = new Padding(3);
             gradientPanel6.Size = new Size(342, 30);
             gradientPanel6.TabIndex = 5;
             // 
             // cmbCategory
             // 
+            cmbCategory.AllowDropDownResize = false;
+            cmbCategory.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbCategory.AutoCompleteSuggestDelay = 200;
+            cmbCategory.BackColor = Color.White;
             cmbCategory.BorderStyle = BorderStyle.None;
             cmbCategory.Dock = DockStyle.Fill;
             cmbCategory.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            cmbCategory.Location = new Point(3, 3);
+            cmbCategory.Font = new Font("Inter", 9.75F);
+            cmbCategory.Location = new Point(0, 0);
+            cmbCategory.Margin = new Padding(0);
             cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(334, 22);
+            cmbCategory.Size = new Size(340, 28);
+            cmbCategory.Style.EditorStyle.BackColor = Color.White;
+            cmbCategory.Style.EditorStyle.Font = new Font("Inter", 9.75F);
+            cmbCategory.Style.ReadOnlyEditorStyle.BackColor = Color.White;
+            cmbCategory.Style.ReadOnlyEditorStyle.Font = new Font("Inter", 9.75F);
             cmbCategory.Style.TokenStyle.CloseButtonBackColor = Color.FromArgb(255, 255, 255);
+            cmbCategory.Style.TokenStyle.Font = new Font("Inter", 9.75F);
             cmbCategory.TabIndex = 0;
             cmbCategory.TabStop = false;
+            cmbCategory.Text = "Select Category";
+            cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
             // 
             // autoLabel6
             // 
@@ -238,21 +275,33 @@
             gradientPanel7.Location = new Point(13, 217);
             gradientPanel7.Margin = new Padding(3, 5, 3, 3);
             gradientPanel7.Name = "gradientPanel7";
-            gradientPanel7.Padding = new Padding(3);
             gradientPanel7.Size = new Size(342, 30);
             gradientPanel7.TabIndex = 7;
             // 
             // cmbSupplier
             // 
+            cmbSupplier.AllowDropDownResize = false;
+            cmbSupplier.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbSupplier.AutoCompleteSuggestDelay = 200;
+            cmbSupplier.BackColor = Color.White;
             cmbSupplier.BorderStyle = BorderStyle.None;
             cmbSupplier.Dock = DockStyle.Fill;
             cmbSupplier.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            cmbSupplier.Location = new Point(3, 3);
+            cmbSupplier.Font = new Font("Inter", 9.75F);
+            cmbSupplier.Location = new Point(0, 0);
+            cmbSupplier.Margin = new Padding(0);
             cmbSupplier.Name = "cmbSupplier";
-            cmbSupplier.Size = new Size(334, 22);
+            cmbSupplier.Size = new Size(340, 28);
+            cmbSupplier.Style.EditorStyle.BackColor = Color.White;
+            cmbSupplier.Style.EditorStyle.Font = new Font("Inter", 9.75F);
+            cmbSupplier.Style.ReadOnlyEditorStyle.BackColor = Color.White;
+            cmbSupplier.Style.ReadOnlyEditorStyle.Font = new Font("Inter", 9.75F);
             cmbSupplier.Style.TokenStyle.CloseButtonBackColor = Color.FromArgb(255, 255, 255);
+            cmbSupplier.Style.TokenStyle.Font = new Font("Inter", 9.75F);
             cmbSupplier.TabIndex = 1;
             cmbSupplier.TabStop = false;
+            cmbSupplier.Text = "Select Supplier";
+            cmbSupplier.SelectedIndexChanged += cmbSupplier_SelectedIndexChanged;
             // 
             // autoLabel7
             // 
@@ -334,16 +383,16 @@
             gradientPanel2.Controls.Add(btnCancel);
             gradientPanel2.Controls.Add(btnAddProduct);
             gradientPanel2.Dock = DockStyle.Bottom;
-            gradientPanel2.Location = new Point(15, 448);
+            gradientPanel2.Location = new Point(15, 439);
             gradientPanel2.Name = "gradientPanel2";
-            gradientPanel2.Size = new Size(369, 54);
+            gradientPanel2.Size = new Size(369, 48);
             gradientPanel2.TabIndex = 5;
             // 
             // btnCancel
             // 
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancel.Location = new Point(157, 6);
+            btnCancel.Location = new Point(143, 6);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(96, 38);
             btnCancel.TabIndex = 10;
@@ -354,7 +403,7 @@
             btnAddProduct.BackColor = Color.FromArgb(79, 143, 246);
             btnAddProduct.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddProduct.ForeColor = Color.White;
-            btnAddProduct.Location = new Point(259, 6);
+            btnAddProduct.Location = new Point(245, 6);
             btnAddProduct.Name = "btnAddProduct";
             btnAddProduct.Size = new Size(110, 38);
             btnAddProduct.Style.BackColor = Color.FromArgb(79, 143, 246);
@@ -362,6 +411,7 @@
             btnAddProduct.TabIndex = 9;
             btnAddProduct.Text = "Add Product";
             btnAddProduct.UseVisualStyleBackColor = false;
+            btnAddProduct.Click += btnAddProduct_Click;
             // 
             // gradientPanel3
             // 
@@ -404,11 +454,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(399, 517);
+            ClientSize = new Size(399, 492);
             Controls.Add(gradientPanel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmAddProduct";
             ShowIcon = false;
+            ShowMaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
+            Load += frmAddProduct_Load;
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).EndInit();
             gradientPanel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
@@ -470,5 +523,6 @@
         private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtReorderLevel;
         private Syncfusion.WinForms.ListView.SfComboBox cmbCategory;
         private Syncfusion.WinForms.ListView.SfComboBox cmbSupplier;
+        private Syncfusion.Windows.Forms.BannerTextProvider bannerTextProvider1;
     }
 }

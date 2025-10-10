@@ -19,8 +19,10 @@ namespace StockMate.Forms
         private SfButton activeButton;
         private UCDashboard dashboard;
         private UCProducts products;
+        private UCCategory category;
         private UCSuppliers suppliers;
         private UCBorrower borrower;
+        private UCStockAdjustment stockAdjustment;
         public frmMain()
         {
             InitializeComponent();
@@ -29,8 +31,10 @@ namespace StockMate.Forms
 
             dashboard = new UCDashboard();
             products = new UCProducts();
+            category = new UCCategory();
             suppliers = new UCSuppliers();
             borrower = new UCBorrower();
+            stockAdjustment = new UCStockAdjustment();
 
             typeof(Panel).InvokeMember("DoubleBuffered",
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.SetProperty,
@@ -78,6 +82,12 @@ namespace StockMate.Forms
             ColorActiveButton(btnProducts);
         }
 
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            OpenScreen(category);
+            ColorActiveButton(btnCategory);
+        }
+
         private void btnSuppliers_Click(object sender, EventArgs e)
         {
             OpenScreen(suppliers);
@@ -88,6 +98,12 @@ namespace StockMate.Forms
         {
             OpenScreen(borrower);
             ColorActiveButton(btnBorrowers);
+        }
+
+        private void btnStockAdjustment_Click(object sender, EventArgs e)
+        {
+            OpenScreen(stockAdjustment);
+            ColorActiveButton(btnStockAdjustment);
         }
     }
 }

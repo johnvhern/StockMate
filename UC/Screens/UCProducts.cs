@@ -1,5 +1,6 @@
 ﻿using StockMate.Forms.Products;
 using StockMate.Helpers;
+using StockMate.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,29 @@ namespace StockMate.UC.Screens
 {
     public partial class UCProducts : UserControl
     {
+        private readonly AddProductService addProductService;
         public UCProducts()
         {
             InitializeComponent();
             ButtonStyle.BlueButton(btnAddProduct);
+            dgvProducts.AutoGenerateColumns = false;
+
+            addProductService = new AddProductService();
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            new frmAddProduct().ShowDialog();
+            frmAddProduct frmAddProduct = new frmAddProduct();
+
+            if (frmAddProduct.ShowDialog() == DialogResult.OK)
+            {
+                addProductService.LoadProducts(dgvProducts);
+            }
+        }
+
+        private void UCProducts_Load(object sender, EventArgs e)
+        {
+            addProductService.LoadProducts(dgvProducts);
         }
     }
 }

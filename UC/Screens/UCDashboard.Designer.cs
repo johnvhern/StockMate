@@ -296,6 +296,7 @@
             panelAddProducts.Name = "panelAddProducts";
             panelAddProducts.Size = new Size(280, 129);
             panelAddProducts.TabIndex = 0;
+            panelAddProducts.Click += panelAddProducts_Click;
             // 
             // pictureBox1
             // 

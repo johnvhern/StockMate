@@ -63,6 +63,16 @@ namespace StockMate.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blocks {
+            get {
+                object obj = ResourceManager.GetObject("blocks", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chart_column {
             get {
                 object obj = ResourceManager.GetObject("chart-column", resourceCulture);
@@ -96,6 +106,16 @@ namespace StockMate.Properties {
         internal static System.Drawing.Bitmap eye_password {
             get {
                 object obj = ResourceManager.GetObject("eye_password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap list {
+            get {
+                object obj = ResourceManager.GetObject("list", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

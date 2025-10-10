@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo1 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            dgvProducts = new DataGridView();
             gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel5 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            dataGridView1 = new DataGridView();
             gradientPanel2 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             btnAddProduct = new Syncfusion.WinForms.Controls.SfButton();
             gradientPanel4 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
@@ -41,13 +43,21 @@
             pictureBox1 = new PictureBox();
             autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(components);
+            ProductId = new DataGridViewTextBoxColumn();
+            SKU = new DataGridViewTextBoxColumn();
+            ProductName = new DataGridViewTextBoxColumn();
+            CategoryName = new DataGridViewTextBoxColumn();
+            SupplierName = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            ReorderLevel = new DataGridViewTextBoxColumn();
+            CreatedAt = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).BeginInit();
             gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).BeginInit();
             gradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel5).BeginInit();
             gradientPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel2).BeginInit();
             gradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel4).BeginInit();
@@ -55,6 +65,47 @@
             ((System.ComponentModel.ISupportInitialize)textBoxExt1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            // 
+            // dgvProducts
+            // 
+            dgvProducts.AllowUserToAddRows = false;
+            dgvProducts.AllowUserToDeleteRows = false;
+            dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvProducts.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dgvProducts.BackgroundColor = Color.White;
+            dgvProducts.BorderStyle = BorderStyle.None;
+            dgvProducts.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvProducts.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(79, 143, 246);
+            dataGridViewCellStyle1.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(79, 143, 246);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProducts.Columns.AddRange(new DataGridViewColumn[] { ProductId, SKU, ProductName, CategoryName, SupplierName, Quantity, ReorderLevel, CreatedAt });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new Padding(15);
+            dataGridViewCellStyle2.SelectionBackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvProducts.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvProducts.Dock = DockStyle.Fill;
+            dgvProducts.EnableHeadersVisualStyles = false;
+            dgvProducts.GridColor = Color.LightGray;
+            dgvProducts.Location = new Point(15, 15);
+            dgvProducts.Name = "dgvProducts";
+            dgvProducts.ReadOnly = true;
+            dgvProducts.RowHeadersVisible = false;
+            dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProducts.Size = new Size(1133, 587);
+            dgvProducts.TabIndex = 0;
             // 
             // gradientPanel1
             // 
@@ -83,24 +134,13 @@
             // 
             gradientPanel5.BorderColor = Color.Gainsboro;
             gradientPanel5.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel5.Controls.Add(dataGridView1);
+            gradientPanel5.Controls.Add(dgvProducts);
             gradientPanel5.Dock = DockStyle.Fill;
             gradientPanel5.Location = new Point(20, 81);
             gradientPanel5.Name = "gradientPanel5";
             gradientPanel5.Padding = new Padding(15);
             gradientPanel5.Size = new Size(1165, 619);
             gradientPanel5.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(15, 15);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1133, 587);
-            dataGridView1.TabIndex = 0;
             // 
             // gradientPanel2
             // 
@@ -145,7 +185,7 @@
             bannerTextInfo1.Text = "Search products...";
             bannerTextInfo1.Visible = true;
             bannerTextProvider1.SetBannerText(textBoxExt1, bannerTextInfo1);
-            textBoxExt1.BeforeTouchSize = new Size(355, 16);
+            textBoxExt1.BeforeTouchSize = new Size(238, 16);
             textBoxExt1.BorderStyle = BorderStyle.None;
             textBoxExt1.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxExt1.Location = new Point(29, 9);
@@ -174,6 +214,64 @@
             autoLabel1.TabIndex = 0;
             autoLabel1.Text = "Products Inventory";
             // 
+            // ProductId
+            // 
+            ProductId.DataPropertyName = "ProductId";
+            ProductId.HeaderText = "Product Id";
+            ProductId.Name = "ProductId";
+            ProductId.ReadOnly = true;
+            ProductId.Visible = false;
+            // 
+            // SKU
+            // 
+            SKU.DataPropertyName = "SKU";
+            SKU.HeaderText = "SKU";
+            SKU.Name = "SKU";
+            SKU.ReadOnly = true;
+            // 
+            // ProductName
+            // 
+            ProductName.DataPropertyName = "ProductName";
+            ProductName.HeaderText = "Name";
+            ProductName.Name = "ProductName";
+            ProductName.ReadOnly = true;
+            // 
+            // CategoryName
+            // 
+            CategoryName.DataPropertyName = "CategoryName";
+            CategoryName.HeaderText = "Category";
+            CategoryName.Name = "CategoryName";
+            CategoryName.ReadOnly = true;
+            // 
+            // SupplierName
+            // 
+            SupplierName.DataPropertyName = "SupplierName";
+            SupplierName.HeaderText = "Supplier";
+            SupplierName.Name = "SupplierName";
+            SupplierName.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            Quantity.DataPropertyName = "Quantity";
+            Quantity.HeaderText = "Quantity";
+            Quantity.Name = "Quantity";
+            Quantity.ReadOnly = true;
+            // 
+            // ReorderLevel
+            // 
+            ReorderLevel.DataPropertyName = "ReorderLevel";
+            ReorderLevel.HeaderText = "Reorder Level";
+            ReorderLevel.Name = "ReorderLevel";
+            ReorderLevel.ReadOnly = true;
+            // 
+            // CreatedAt
+            // 
+            CreatedAt.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            CreatedAt.DataPropertyName = "CreatedAt";
+            CreatedAt.HeaderText = "Created At";
+            CreatedAt.Name = "CreatedAt";
+            CreatedAt.ReadOnly = true;
+            // 
             // UCProducts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -182,13 +280,14 @@
             Controls.Add(gradientPanel1);
             Name = "UCProducts";
             Size = new Size(1207, 722);
+            Load += UCProducts_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).EndInit();
             gradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).EndInit();
             gradientPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gradientPanel5).EndInit();
             gradientPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel2).EndInit();
             gradientPanel2.ResumeLayout(false);
             gradientPanel2.PerformLayout();
@@ -211,6 +310,14 @@
         private PictureBox pictureBox1;
         private Syncfusion.Windows.Forms.BannerTextProvider bannerTextProvider1;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel5;
-        private DataGridView dataGridView1;
+        private DataGridView dgvProducts;
+        private DataGridViewTextBoxColumn ProductId;
+        private DataGridViewTextBoxColumn SKU;
+        private DataGridViewTextBoxColumn ProductName;
+        private DataGridViewTextBoxColumn CategoryName;
+        private DataGridViewTextBoxColumn SupplierName;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn ReorderLevel;
+        private DataGridViewTextBoxColumn CreatedAt;
     }
 }
