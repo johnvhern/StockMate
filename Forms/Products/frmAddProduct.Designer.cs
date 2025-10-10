@@ -163,7 +163,7 @@
             bannerTextInfo1.Text = "Enter product name...";
             bannerTextInfo1.Visible = true;
             bannerTextProvider1.SetBannerText(txtProductName, bannerTextInfo1);
-            txtProductName.BeforeTouchSize = new Size(238, 16);
+            txtProductName.BeforeTouchSize = new Size(250, 16);
             txtProductName.BorderStyle = BorderStyle.None;
             txtProductName.Dock = DockStyle.Fill;
             txtProductName.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -200,7 +200,7 @@
             bannerTextInfo2.Text = "Optional";
             bannerTextInfo2.Visible = true;
             bannerTextProvider1.SetBannerText(txtSKU, bannerTextInfo2);
-            txtSKU.BeforeTouchSize = new Size(238, 16);
+            txtSKU.BeforeTouchSize = new Size(250, 16);
             txtSKU.BorderStyle = BorderStyle.None;
             txtSKU.Dock = DockStyle.Fill;
             txtSKU.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -329,7 +329,7 @@
             // txtQuantity
             // 
             txtQuantity.AccessibilityEnabled = true;
-            txtQuantity.BeforeTouchSize = new Size(238, 16);
+            txtQuantity.BeforeTouchSize = new Size(250, 16);
             txtQuantity.BorderStyle = BorderStyle.None;
             txtQuantity.Dock = DockStyle.Fill;
             txtQuantity.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -366,7 +366,7 @@
             // txtReorderLevel
             // 
             txtReorderLevel.AccessibilityEnabled = true;
-            txtReorderLevel.BeforeTouchSize = new Size(238, 16);
+            txtReorderLevel.BeforeTouchSize = new Size(250, 16);
             txtReorderLevel.BorderStyle = BorderStyle.None;
             txtReorderLevel.Dock = DockStyle.Fill;
             txtReorderLevel.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);

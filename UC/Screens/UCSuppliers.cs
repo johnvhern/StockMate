@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StockMate.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace StockMate.UC.Screens
         public UCSuppliers()
         {
             InitializeComponent();
+            ButtonStyle.BlueButton(btnAddSupplier);
         }
     }
 }

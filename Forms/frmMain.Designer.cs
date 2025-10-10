@@ -35,12 +35,12 @@
             gradientPanel4 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel5 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            btnCategory = new Syncfusion.WinForms.Controls.SfButton();
+            btnSettings = new Syncfusion.WinForms.Controls.SfButton();
             btnProducts = new Syncfusion.WinForms.Controls.SfButton();
             btnDashboard = new Syncfusion.WinForms.Controls.SfButton();
-            btnStockAdjustment = new Syncfusion.WinForms.Controls.SfButton();
-            btnBorrowers = new Syncfusion.WinForms.Controls.SfButton();
             btnSuppliers = new Syncfusion.WinForms.Controls.SfButton();
+            btnBorrowers = new Syncfusion.WinForms.Controls.SfButton();
+            btnStockAdjustment = new Syncfusion.WinForms.Controls.SfButton();
             gradientPanel2 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -127,18 +127,18 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 6;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.Controls.Add(btnCategory, 2, 0);
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.1290359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.1290321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.1290321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.1290321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.35484F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.1290321F));
+            tableLayoutPanel1.Controls.Add(btnSettings, 5, 0);
             tableLayoutPanel1.Controls.Add(btnProducts, 1, 0);
             tableLayoutPanel1.Controls.Add(btnDashboard, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnStockAdjustment, 5, 0);
-            tableLayoutPanel1.Controls.Add(btnBorrowers, 4, 0);
-            tableLayoutPanel1.Controls.Add(btnSuppliers, 3, 0);
+            tableLayoutPanel1.Controls.Add(btnSuppliers, 2, 0);
+            tableLayoutPanel1.Controls.Add(btnBorrowers, 3, 0);
+            tableLayoutPanel1.Controls.Add(btnStockAdjustment, 4, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -148,21 +148,20 @@
             tableLayoutPanel1.Size = new Size(887, 43);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // btnCategory
+            // btnSettings
             // 
-            btnCategory.Dock = DockStyle.Fill;
-            btnCategory.Font = new Font("Inter", 9.75F);
-            btnCategory.ForeColor = Color.FromArgb(107, 114, 128);
-            btnCategory.ImageSize = new Size(16, 16);
-            btnCategory.Location = new Point(298, 6);
-            btnCategory.Name = "btnCategory";
-            btnCategory.Size = new Size(140, 31);
-            btnCategory.Style.ForeColor = Color.FromArgb(107, 114, 128);
-            btnCategory.Style.Image = Properties.Resources.list;
-            btnCategory.TabIndex = 6;
-            btnCategory.Text = "Category";
-            btnCategory.TextAlign = ContentAlignment.MiddleRight;
-            btnCategory.Click += btnCategory_Click;
+            btnSettings.Dock = DockStyle.Fill;
+            btnSettings.Font = new Font("Inter", 9.75F);
+            btnSettings.ForeColor = Color.FromArgb(107, 114, 128);
+            btnSettings.ImageSize = new Size(16, 16);
+            btnSettings.Location = new Point(744, 6);
+            btnSettings.Name = "btnSettings";
+            btnSettings.Size = new Size(137, 31);
+            btnSettings.Style.ForeColor = Color.FromArgb(107, 114, 128);
+            btnSettings.Style.Image = Properties.Resources.settings__3_;
+            btnSettings.TabIndex = 7;
+            btnSettings.Text = "Settings";
+            btnSettings.TextAlign = ContentAlignment.MiddleRight;
             // 
             // btnProducts
             // 
@@ -170,9 +169,9 @@
             btnProducts.Font = new Font("Inter", 9.75F);
             btnProducts.ForeColor = Color.FromArgb(107, 114, 128);
             btnProducts.ImageSize = new Size(16, 16);
-            btnProducts.Location = new Point(152, 6);
+            btnProducts.Location = new Point(148, 6);
             btnProducts.Name = "btnProducts";
-            btnProducts.Size = new Size(140, 31);
+            btnProducts.Size = new Size(136, 31);
             btnProducts.Style.ForeColor = Color.FromArgb(107, 114, 128);
             btnProducts.Style.Image = Properties.Resources.package;
             btnProducts.TabIndex = 1;
@@ -188,7 +187,7 @@
             btnDashboard.ImageSize = new Size(16, 16);
             btnDashboard.Location = new Point(6, 6);
             btnDashboard.Name = "btnDashboard";
-            btnDashboard.Size = new Size(140, 31);
+            btnDashboard.Size = new Size(136, 31);
             btnDashboard.Style.ForeColor = Color.FromArgb(107, 114, 128);
             btnDashboard.Style.Image = Properties.Resources.chart_column;
             btnDashboard.TabIndex = 0;
@@ -196,21 +195,21 @@
             btnDashboard.TextAlign = ContentAlignment.MiddleRight;
             btnDashboard.Click += btnDashboard_Click;
             // 
-            // btnStockAdjustment
+            // btnSuppliers
             // 
-            btnStockAdjustment.Dock = DockStyle.Fill;
-            btnStockAdjustment.Font = new Font("Inter", 9.75F);
-            btnStockAdjustment.ForeColor = Color.FromArgb(107, 114, 128);
-            btnStockAdjustment.ImageSize = new Size(16, 16);
-            btnStockAdjustment.Location = new Point(736, 6);
-            btnStockAdjustment.Name = "btnStockAdjustment";
-            btnStockAdjustment.Size = new Size(145, 31);
-            btnStockAdjustment.Style.ForeColor = Color.FromArgb(107, 114, 128);
-            btnStockAdjustment.Style.Image = Properties.Resources.blocks;
-            btnStockAdjustment.TabIndex = 4;
-            btnStockAdjustment.Text = "Stock Adjustment";
-            btnStockAdjustment.TextAlign = ContentAlignment.MiddleRight;
-            btnStockAdjustment.Click += btnStockAdjustment_Click;
+            btnSuppliers.Dock = DockStyle.Fill;
+            btnSuppliers.Font = new Font("Inter", 9.75F);
+            btnSuppliers.ForeColor = Color.FromArgb(107, 114, 128);
+            btnSuppliers.ImageSize = new Size(16, 16);
+            btnSuppliers.Location = new Point(290, 6);
+            btnSuppliers.Name = "btnSuppliers";
+            btnSuppliers.Size = new Size(136, 31);
+            btnSuppliers.Style.ForeColor = Color.FromArgb(107, 114, 128);
+            btnSuppliers.Style.Image = Properties.Resources.users__4_;
+            btnSuppliers.TabIndex = 2;
+            btnSuppliers.Text = "Suppliers";
+            btnSuppliers.TextAlign = ContentAlignment.MiddleRight;
+            btnSuppliers.Click += btnSuppliers_Click;
             // 
             // btnBorrowers
             // 
@@ -218,9 +217,9 @@
             btnBorrowers.Font = new Font("Inter", 9.75F);
             btnBorrowers.ForeColor = Color.FromArgb(107, 114, 128);
             btnBorrowers.ImageSize = new Size(16, 16);
-            btnBorrowers.Location = new Point(590, 6);
+            btnBorrowers.Location = new Point(432, 6);
             btnBorrowers.Name = "btnBorrowers";
-            btnBorrowers.Size = new Size(140, 31);
+            btnBorrowers.Size = new Size(136, 31);
             btnBorrowers.Style.ForeColor = Color.FromArgb(107, 114, 128);
             btnBorrowers.Style.Image = Properties.Resources.user_check;
             btnBorrowers.TabIndex = 3;
@@ -228,21 +227,21 @@
             btnBorrowers.TextAlign = ContentAlignment.MiddleRight;
             btnBorrowers.Click += btnBorrowers_Click;
             // 
-            // btnSuppliers
+            // btnStockAdjustment
             // 
-            btnSuppliers.Dock = DockStyle.Fill;
-            btnSuppliers.Font = new Font("Inter", 9.75F);
-            btnSuppliers.ForeColor = Color.FromArgb(107, 114, 128);
-            btnSuppliers.ImageSize = new Size(16, 16);
-            btnSuppliers.Location = new Point(444, 6);
-            btnSuppliers.Name = "btnSuppliers";
-            btnSuppliers.Size = new Size(140, 31);
-            btnSuppliers.Style.ForeColor = Color.FromArgb(107, 114, 128);
-            btnSuppliers.Style.Image = Properties.Resources.users__4_;
-            btnSuppliers.TabIndex = 2;
-            btnSuppliers.Text = "Suppliers";
-            btnSuppliers.TextAlign = ContentAlignment.MiddleRight;
-            btnSuppliers.Click += btnSuppliers_Click;
+            btnStockAdjustment.Dock = DockStyle.Fill;
+            btnStockAdjustment.Font = new Font("Inter", 9.75F);
+            btnStockAdjustment.ForeColor = Color.FromArgb(107, 114, 128);
+            btnStockAdjustment.ImageSize = new Size(16, 16);
+            btnStockAdjustment.Location = new Point(574, 6);
+            btnStockAdjustment.Name = "btnStockAdjustment";
+            btnStockAdjustment.Size = new Size(164, 31);
+            btnStockAdjustment.Style.ForeColor = Color.FromArgb(107, 114, 128);
+            btnStockAdjustment.Style.Image = Properties.Resources.blocks;
+            btnStockAdjustment.TabIndex = 4;
+            btnStockAdjustment.Text = "Stock Adjustment";
+            btnStockAdjustment.TextAlign = ContentAlignment.MiddleRight;
+            btnStockAdjustment.Click += btnStockAdjustment_Click;
             // 
             // gradientPanel2
             // 
@@ -329,7 +328,7 @@
         private Syncfusion.WinForms.Controls.SfButton btnDashboard;
         private Syncfusion.Windows.Forms.Tools.GradientPanel screenPanel;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel6;
-        private Syncfusion.WinForms.Controls.SfButton btnCategory;
         private Syncfusion.WinForms.Controls.SfButton btnStockAdjustment;
+        private Syncfusion.WinForms.Controls.SfButton btnSettings;
     }
 }

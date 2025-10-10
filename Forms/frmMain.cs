@@ -19,10 +19,10 @@ namespace StockMate.Forms
         private SfButton activeButton;
         private UCDashboard dashboard;
         private UCProducts products;
-        private UCCategory category;
         private UCSuppliers suppliers;
         private UCBorrower borrower;
         private UCStockAdjustment stockAdjustment;
+        private UCSettings settings;
         public frmMain()
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace StockMate.Forms
 
             dashboard = new UCDashboard();
             products = new UCProducts();
-            category = new UCCategory();
+            settings = new UCSettings();
             suppliers = new UCSuppliers();
             borrower = new UCBorrower();
             stockAdjustment = new UCStockAdjustment();
@@ -82,12 +82,6 @@ namespace StockMate.Forms
             ColorActiveButton(btnProducts);
         }
 
-        private void btnCategory_Click(object sender, EventArgs e)
-        {
-            OpenScreen(category);
-            ColorActiveButton(btnCategory);
-        }
-
         private void btnSuppliers_Click(object sender, EventArgs e)
         {
             OpenScreen(suppliers);
@@ -104,6 +98,12 @@ namespace StockMate.Forms
         {
             OpenScreen(stockAdjustment);
             ColorActiveButton(btnStockAdjustment);
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            OpenScreen(settings);
+            ColorActiveButton(btnSettings);
         }
     }
 }

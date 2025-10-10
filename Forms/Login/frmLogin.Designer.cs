@@ -131,7 +131,7 @@
             // 
             // txtUsername
             // 
-            txtUsername.BeforeTouchSize = new Size(238, 16);
+            txtUsername.BeforeTouchSize = new Size(250, 16);
             txtUsername.BorderStyle = BorderStyle.None;
             txtUsername.Dock = DockStyle.Fill;
             txtUsername.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -180,7 +180,7 @@
             // txtPassword
             // 
             txtPassword.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtPassword.BeforeTouchSize = new Size(238, 16);
+            txtPassword.BeforeTouchSize = new Size(250, 16);
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(6, 6);

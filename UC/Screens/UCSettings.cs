@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StockMate.UC.Screens
 {
-    public partial class UCCategory : UserControl
+    public partial class UCSettings : UserControl
     {
-        public UCCategory()
+        public UCSettings()
         {
             InitializeComponent();
         }
