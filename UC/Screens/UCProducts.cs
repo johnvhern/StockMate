@@ -25,19 +25,19 @@ namespace StockMate.UC.Screens
             addProductService = new AddProductService();
         }
 
-        private void btnAddProduct_Click(object sender, EventArgs e)
+        private async void btnAddProduct_Click(object sender, EventArgs e)
         {
             frmAddProduct frmAddProduct = new frmAddProduct();
 
             if (frmAddProduct.ShowDialog() == DialogResult.OK)
             {
-                addProductService.LoadProducts(dgvProducts);
+               await addProductService.LoadProducts(dgvProducts);
             }
         }
 
-        private void UCProducts_Load(object sender, EventArgs e)
+        private async void UCProducts_Load(object sender, EventArgs e)
         {
-            addProductService.LoadProducts(dgvProducts);
+            await addProductService.LoadProducts(dgvProducts);
         }
     }
 }

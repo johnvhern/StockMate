@@ -87,7 +87,7 @@
             bannerTextInfo1.Text = "Optional";
             bannerTextInfo1.Visible = true;
             bannerTextProvider1.SetBannerText(txtSKU, bannerTextInfo1);
-            txtSKU.BeforeTouchSize = new Size(328, 16);
+            txtSKU.BeforeTouchSize = new Size(238, 16);
             txtSKU.BorderStyle = BorderStyle.None;
             txtSKU.Dock = DockStyle.Fill;
             txtSKU.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -101,7 +101,7 @@
             bannerTextInfo2.Text = "Enter product name...";
             bannerTextInfo2.Visible = true;
             bannerTextProvider1.SetBannerText(txtProductName, bannerTextInfo2);
-            txtProductName.BeforeTouchSize = new Size(328, 16);
+            txtProductName.BeforeTouchSize = new Size(238, 16);
             txtProductName.BorderStyle = BorderStyle.None;
             txtProductName.Dock = DockStyle.Fill;
             txtProductName.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -115,7 +115,7 @@
             bannerTextInfo3.Text = "Optional";
             bannerTextInfo3.Visible = true;
             bannerTextProvider1.SetBannerText(textBoxExt1, bannerTextInfo3);
-            textBoxExt1.BeforeTouchSize = new Size(328, 16);
+            textBoxExt1.BeforeTouchSize = new Size(238, 16);
             textBoxExt1.BorderStyle = BorderStyle.None;
             textBoxExt1.Dock = DockStyle.Fill;
             textBoxExt1.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -129,7 +129,7 @@
             bannerTextInfo4.Text = "Optional";
             bannerTextInfo4.Visible = true;
             bannerTextProvider1.SetBannerText(textBoxExt2, bannerTextInfo4);
-            textBoxExt2.BeforeTouchSize = new Size(328, 16);
+            textBoxExt2.BeforeTouchSize = new Size(238, 16);
             textBoxExt2.BorderStyle = BorderStyle.None;
             textBoxExt2.Dock = DockStyle.Fill;
             textBoxExt2.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -143,7 +143,7 @@
             bannerTextInfo5.Text = "Optional";
             bannerTextInfo5.Visible = true;
             bannerTextProvider1.SetBannerText(textBoxExt3, bannerTextInfo5);
-            textBoxExt3.BeforeTouchSize = new Size(328, 16);
+            textBoxExt3.BeforeTouchSize = new Size(238, 16);
             textBoxExt3.BorderStyle = BorderStyle.None;
             textBoxExt3.Dock = DockStyle.Fill;
             textBoxExt3.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);

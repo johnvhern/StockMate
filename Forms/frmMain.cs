@@ -50,6 +50,7 @@ namespace StockMate.Forms
                 activeButton.Style.BackColor = Color.FromArgb(243, 244, 246);
                 activeButton.Style.BackColor = Color.FromArgb(243, 244, 246);
                 activeButton.Style.ForeColor = Color.FromArgb(107, 114, 128);
+                activeButton.Style.ImageForeColor = Color.FromArgb(107, 114, 128);
             }
 
             activeButton = button;
