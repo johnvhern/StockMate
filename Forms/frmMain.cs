@@ -39,6 +39,8 @@ namespace StockMate.Forms
             typeof(Panel).InvokeMember("DoubleBuffered",
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.SetProperty,
             null, screenPanel, new object[] { true });
+
+            this.Text = $"StockMate {Application.ProductVersion}";
         }
 
         private void ColorActiveButton(SfButton button)

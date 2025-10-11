@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             screenPanel = new Syncfusion.Windows.Forms.Tools.GradientPanel();
@@ -289,11 +290,14 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            CaptionAlign = HorizontalAlignment.Left;
+            CaptionFont = new Font("Inter", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ClientSize = new Size(1354, 864);
             Controls.Add(gradientPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MetroColor = Color.White;
             MinimumSize = new Size(1366, 768);
             Name = "frmMain";
-            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Load += frmMain_Load;
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).EndInit();

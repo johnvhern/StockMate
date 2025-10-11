@@ -79,7 +79,7 @@
             bannerTextInfo1.Text = "Search products...";
             bannerTextInfo1.Visible = true;
             bannerTextProvider1.SetBannerText(textBoxExt1, bannerTextInfo1);
-            textBoxExt1.BeforeTouchSize = new Size(238, 16);
+            textBoxExt1.BeforeTouchSize = new Size(328, 16);
             textBoxExt1.BorderStyle = BorderStyle.None;
             textBoxExt1.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxExt1.Location = new Point(29, 9);
@@ -92,7 +92,7 @@
             bannerTextInfo2.Text = "Search suppliers...";
             bannerTextInfo2.Visible = true;
             bannerTextProvider1.SetBannerText(textBoxExt2, bannerTextInfo2);
-            textBoxExt2.BeforeTouchSize = new Size(238, 16);
+            textBoxExt2.BeforeTouchSize = new Size(328, 16);
             textBoxExt2.BorderStyle = BorderStyle.None;
             textBoxExt2.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxExt2.Location = new Point(29, 9);
@@ -265,6 +265,7 @@
             btnAddSupplier.TabIndex = 4;
             btnAddSupplier.Text = "Add Supplier";
             btnAddSupplier.TextAlign = ContentAlignment.MiddleRight;
+            btnAddSupplier.Click += btnAddSupplier_Click;
             // 
             // gradientPanel6
             // 
@@ -295,9 +296,9 @@
             autoLabel1.ForeColor = Color.FromArgb(43, 48, 59);
             autoLabel1.Location = new Point(0, 8);
             autoLabel1.Name = "autoLabel1";
-            autoLabel1.Size = new Size(213, 30);
+            autoLabel1.Size = new Size(112, 30);
             autoLabel1.TabIndex = 0;
-            autoLabel1.Text = "Products Inventory";
+            autoLabel1.Text = "Suppliers";
             // 
             // gradientPanel1
             // 
