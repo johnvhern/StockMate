@@ -23,6 +23,7 @@ namespace StockMate.UC.Screens
             dgvProducts.AutoGenerateColumns = false;
 
             addProductService = new AddProductService();
+
         }
 
         private async void btnAddProduct_Click(object sender, EventArgs e)
