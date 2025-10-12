@@ -54,7 +54,6 @@ namespace StockMate.Services
                 {
                     MessageBoxAdv.Show($"Please fill in the required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
             catch (Exception ex)
             {

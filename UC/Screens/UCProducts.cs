@@ -20,6 +20,7 @@ namespace StockMate.UC.Screens
         {
             InitializeComponent();
             ButtonStyle.BlueButton(btnAddProduct);
+            ButtonStyle.WhiteButton(btnRefresh);
             dgvProducts.AutoGenerateColumns = false;
 
             addProductService = new AddProductService();
@@ -44,6 +45,11 @@ namespace StockMate.UC.Screens
         private void dgvProducts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             dgvProducts.Columns["CreatedAt"].DefaultCellStyle.Format = "d";  // Short date pattern, e.g. 10/12/2025
+        }
+
+        private async void btnRefresh_Click(object sender, EventArgs e)
+        {
+            await addProductService.LoadProducts(dgvProducts);
         }
     }
 }

@@ -74,7 +74,10 @@ namespace StockMate.UC.Screens
 
         private void panelAddProducts_Click(object sender, EventArgs e)
         {
-            new frmAddProduct().ShowDialog();
+            if (new frmAddProduct().ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
     }
 }

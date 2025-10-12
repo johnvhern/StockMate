@@ -127,11 +127,14 @@
   <data name="package (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\package (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="triangle-alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\triangle-alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user-check (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-check (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="package" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\package.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chart-column" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chart-column.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,14 +142,14 @@
   <data name="search (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="settings (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="package (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\package (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="blocks" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blocks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eye_off_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye_off_password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="plus (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,16 +160,16 @@
   <data name="eye_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye_password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="list" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="triangle-alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\triangle-alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user-check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user-check (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user-check (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eye_off_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye_off_password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settings (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="refresh-ccw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh-ccw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

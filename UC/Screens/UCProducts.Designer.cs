@@ -45,6 +45,7 @@
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel5 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel2 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            btnRefresh = new Syncfusion.WinForms.Controls.SfButton();
             btnAddProduct = new Syncfusion.WinForms.Controls.SfButton();
             gradientPanel4 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             textBoxExt1 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
@@ -205,6 +206,7 @@
             // gradientPanel2
             // 
             gradientPanel2.BorderStyle = BorderStyle.None;
+            gradientPanel2.Controls.Add(btnRefresh);
             gradientPanel2.Controls.Add(btnAddProduct);
             gradientPanel2.Controls.Add(gradientPanel4);
             gradientPanel2.Controls.Add(autoLabel1);
@@ -214,14 +216,28 @@
             gradientPanel2.Size = new Size(1165, 61);
             gradientPanel2.TabIndex = 0;
             // 
+            // btnRefresh
+            // 
+            btnRefresh.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            btnRefresh.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRefresh.ImageSize = new Size(16, 16);
+            btnRefresh.Location = new Point(1015, 8);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(134, 36);
+            btnRefresh.Style.Image = Properties.Resources.refresh_ccw;
+            btnRefresh.TabIndex = 3;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.TextAlign = ContentAlignment.MiddleRight;
+            btnRefresh.Click += btnRefresh_Click;
+            // 
             // btnAddProduct
             // 
             btnAddProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnAddProduct.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddProduct.ImageSize = new Size(16, 16);
-            btnAddProduct.Location = new Point(1003, 8);
+            btnAddProduct.Location = new Point(868, 8);
             btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(162, 36);
+            btnAddProduct.Size = new Size(134, 36);
             btnAddProduct.Style.Image = Properties.Resources.plus__3_;
             btnAddProduct.TabIndex = 2;
             btnAddProduct.Text = "Add Product";
@@ -235,7 +251,7 @@
             gradientPanel4.BorderStyle = BorderStyle.FixedSingle;
             gradientPanel4.Controls.Add(textBoxExt1);
             gradientPanel4.Controls.Add(pictureBox1);
-            gradientPanel4.Location = new Point(725, 8);
+            gradientPanel4.Location = new Point(590, 8);
             gradientPanel4.Name = "gradientPanel4";
             gradientPanel4.Size = new Size(272, 36);
             gradientPanel4.TabIndex = 1;
@@ -280,6 +296,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(gradientPanel1);
+            DoubleBuffered = true;
             Name = "UCProducts";
             Size = new Size(1207, 722);
             Load += UCProducts_Load;
@@ -321,5 +338,6 @@
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn ReorderLevel;
         private DataGridViewTextBoxColumn CreatedAt;
+        private Syncfusion.WinForms.Controls.SfButton btnRefresh;
     }
 }
