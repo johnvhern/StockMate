@@ -31,13 +31,18 @@ namespace StockMate.UC.Screens
 
             if (frmAddProduct.ShowDialog() == DialogResult.OK)
             {
-               await addProductService.LoadProducts(dgvProducts);
+                await addProductService.LoadProducts(dgvProducts);
             }
         }
 
         private async void UCProducts_Load(object sender, EventArgs e)
         {
             await addProductService.LoadProducts(dgvProducts);
+        }
+
+        private void dgvProducts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            dgvProducts.Columns["CreatedAt"].DefaultCellStyle.Format = "d";  // Short date pattern, e.g. 10/12/2025
         }
     }
 }

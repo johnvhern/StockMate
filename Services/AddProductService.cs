@@ -14,6 +14,7 @@ namespace StockMate.Services
 {
     public class AddProductService
     {
+        private DataTable dt = new DataTable();
         public async Task LoadProducts(DataGridView dataGrid)
         {
             using (Microsoft.Data.SqlClient.SqlConnection conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
@@ -22,11 +23,11 @@ namespace StockMate.Services
                     "p.ProductID, " +
                     "p.SKU, " +
                     "p.ProductName, " +
+                    "c.CategoryName, " +
+                    "s.SupplierName, " +
                     "p.Quantity, " +
                     "p.ReorderLevel, " +
-                    "p.CreatedAt, " +
-                    "s.SupplierName, " +
-                    "c.CategoryName FROM " +
+                    "p.CreatedAt FROM " +
                     "Products p " +
                     "INNER JOIN " +
                     "Supplier s ON p.SupplierID = s.SupplierID " +
@@ -38,13 +39,49 @@ namespace StockMate.Services
                     await conn.OpenAsync();
                     using (var reader = await cmd.ExecuteReaderAsync())
                     {
-                        var dt = new DataTable();
                         dt.Load(reader);
-                        dataGrid.DataSource = dt;
+                        //dataGrid.DataSource = dt;
                     }
                 }
             }
+
+            dataGrid.VirtualMode = true;
+            dataGrid.RowCount = dt.Rows.Count;
+            dataGrid.ColumnCount = dt.Columns.Count;
+
+            for (int i = 0; i < dt.Columns.Count; i++)
+            {
+                dataGrid.Columns[i].Name = dt.Columns[i].ColumnName;
+            }
+
+            // Subscribe to virtual mode events
+            dataGrid.CellValueNeeded -= DataGrid_CellValueNeeded; // Detach if attached before
+            dataGrid.CellValueNeeded += DataGrid_CellValueNeeded;
+
+            dataGrid.CellValuePushed -= DataGrid_CellValuePushed; // Detach if attached before
+            dataGrid.CellValuePushed += DataGrid_CellValuePushed;
         }
+
+        private void DataGrid_CellValueNeeded(object? sender, DataGridViewCellValueEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dt.Rows.Count &&
+                e.ColumnIndex >= 0 && e.ColumnIndex < dt.Columns.Count)
+            {
+                e.Value = dt.Rows[e.RowIndex][e.ColumnIndex];
+            }
+        }
+
+        private void DataGrid_CellValuePushed(object? sender, DataGridViewCellValueEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dt.Rows.Count &&
+                e.ColumnIndex >= 0 && e.ColumnIndex < dt.Columns.Count)
+            {
+                dt.Rows[e.RowIndex][e.ColumnIndex] = e.Value;
+                // Optionally update database here or queue update
+            }
+        }
+
+
         public void AddProduct(string name, string sku, int category, int supplier, int quantity, int reorderlevel, Form form)
         {
             try

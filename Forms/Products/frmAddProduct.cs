@@ -52,7 +52,7 @@ namespace StockMate.Forms.Products
         {
             int quantity = Convert.ToInt32(txtQuantity.Text);
             int reorderlevel = Convert.ToInt32(txtReorderLevel.Text);
-            addProductService.AddProduct(txtProductName.Text, txtSKU.Text, selectedCategory, selectedSupplier, quantity, reorderlevel, this);
+             addProductService.AddProduct(txtProductName.Text, txtSKU.Text, selectedCategory, selectedSupplier, quantity, reorderlevel, this);
         }
     }
 }

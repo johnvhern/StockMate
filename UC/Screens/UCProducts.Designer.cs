@@ -33,6 +33,14 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo1 = new Syncfusion.Windows.Forms.BannerTextInfo();
             dgvProducts = new DataGridView();
+            ProductId = new DataGridViewTextBoxColumn();
+            SKU = new DataGridViewTextBoxColumn();
+            ProductName = new DataGridViewTextBoxColumn();
+            CategoryName = new DataGridViewTextBoxColumn();
+            SupplierName = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            ReorderLevel = new DataGridViewTextBoxColumn();
+            CreatedAt = new DataGridViewTextBoxColumn();
             gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel5 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
@@ -43,14 +51,6 @@
             pictureBox1 = new PictureBox();
             autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(components);
-            ProductId = new DataGridViewTextBoxColumn();
-            SKU = new DataGridViewTextBoxColumn();
-            ProductName = new DataGridViewTextBoxColumn();
-            CategoryName = new DataGridViewTextBoxColumn();
-            SupplierName = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
-            ReorderLevel = new DataGridViewTextBoxColumn();
-            CreatedAt = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).BeginInit();
             gradientPanel1.SuspendLayout();
@@ -100,12 +100,72 @@
             dgvProducts.EnableHeadersVisualStyles = false;
             dgvProducts.GridColor = Color.LightGray;
             dgvProducts.Location = new Point(15, 15);
+            dgvProducts.MultiSelect = false;
             dgvProducts.Name = "dgvProducts";
             dgvProducts.ReadOnly = true;
             dgvProducts.RowHeadersVisible = false;
             dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProducts.Size = new Size(1133, 587);
             dgvProducts.TabIndex = 0;
+            dgvProducts.CellFormatting += dgvProducts_CellFormatting;
+            // 
+            // ProductId
+            // 
+            ProductId.DataPropertyName = "ProductId";
+            ProductId.HeaderText = "Product Id";
+            ProductId.Name = "ProductId";
+            ProductId.ReadOnly = true;
+            ProductId.Visible = false;
+            // 
+            // SKU
+            // 
+            SKU.DataPropertyName = "SKU";
+            SKU.HeaderText = "SKU";
+            SKU.Name = "SKU";
+            SKU.ReadOnly = true;
+            // 
+            // ProductName
+            // 
+            ProductName.DataPropertyName = "ProductName";
+            ProductName.HeaderText = "Name";
+            ProductName.Name = "ProductName";
+            ProductName.ReadOnly = true;
+            // 
+            // CategoryName
+            // 
+            CategoryName.DataPropertyName = "CategoryName";
+            CategoryName.HeaderText = "Category";
+            CategoryName.Name = "CategoryName";
+            CategoryName.ReadOnly = true;
+            // 
+            // SupplierName
+            // 
+            SupplierName.DataPropertyName = "SupplierName";
+            SupplierName.HeaderText = "Supplier";
+            SupplierName.Name = "SupplierName";
+            SupplierName.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            Quantity.DataPropertyName = "Quantity";
+            Quantity.HeaderText = "Quantity";
+            Quantity.Name = "Quantity";
+            Quantity.ReadOnly = true;
+            // 
+            // ReorderLevel
+            // 
+            ReorderLevel.DataPropertyName = "ReorderLevel";
+            ReorderLevel.HeaderText = "Reorder Level";
+            ReorderLevel.Name = "ReorderLevel";
+            ReorderLevel.ReadOnly = true;
+            // 
+            // CreatedAt
+            // 
+            CreatedAt.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            CreatedAt.DataPropertyName = "CreatedAt";
+            CreatedAt.HeaderText = "Created At";
+            CreatedAt.Name = "CreatedAt";
+            CreatedAt.ReadOnly = true;
             // 
             // gradientPanel1
             // 
@@ -213,64 +273,6 @@
             autoLabel1.Size = new Size(213, 30);
             autoLabel1.TabIndex = 0;
             autoLabel1.Text = "Products Inventory";
-            // 
-            // ProductId
-            // 
-            ProductId.DataPropertyName = "ProductId";
-            ProductId.HeaderText = "Product Id";
-            ProductId.Name = "ProductId";
-            ProductId.ReadOnly = true;
-            ProductId.Visible = false;
-            // 
-            // SKU
-            // 
-            SKU.DataPropertyName = "SKU";
-            SKU.HeaderText = "SKU";
-            SKU.Name = "SKU";
-            SKU.ReadOnly = true;
-            // 
-            // ProductName
-            // 
-            ProductName.DataPropertyName = "ProductName";
-            ProductName.HeaderText = "Name";
-            ProductName.Name = "ProductName";
-            ProductName.ReadOnly = true;
-            // 
-            // CategoryName
-            // 
-            CategoryName.DataPropertyName = "CategoryName";
-            CategoryName.HeaderText = "Category";
-            CategoryName.Name = "CategoryName";
-            CategoryName.ReadOnly = true;
-            // 
-            // SupplierName
-            // 
-            SupplierName.DataPropertyName = "SupplierName";
-            SupplierName.HeaderText = "Supplier";
-            SupplierName.Name = "SupplierName";
-            SupplierName.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            Quantity.DataPropertyName = "Quantity";
-            Quantity.HeaderText = "Quantity";
-            Quantity.Name = "Quantity";
-            Quantity.ReadOnly = true;
-            // 
-            // ReorderLevel
-            // 
-            ReorderLevel.DataPropertyName = "ReorderLevel";
-            ReorderLevel.HeaderText = "Reorder Level";
-            ReorderLevel.Name = "ReorderLevel";
-            ReorderLevel.ReadOnly = true;
-            // 
-            // CreatedAt
-            // 
-            CreatedAt.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            CreatedAt.DataPropertyName = "CreatedAt";
-            CreatedAt.HeaderText = "Created At";
-            CreatedAt.Name = "CreatedAt";
-            CreatedAt.ReadOnly = true;
             // 
             // UCProducts
             // 
