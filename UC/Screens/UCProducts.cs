@@ -16,7 +16,7 @@ namespace StockMate.UC.Screens
 {
     public partial class UCProducts : UserControl
     {
-        private readonly AddProductService addProductService;
+        private readonly ProductService addProductService;
         private int _pageIndex = 1;
         private int _pageSize = 50;
         private int _totalPageIndex = 0;
@@ -31,7 +31,7 @@ namespace StockMate.UC.Screens
             ButtonStyle.WhiteButton(btnRefresh);
             dgvProducts.AutoGenerateColumns = false;
 
-            addProductService = new AddProductService();
+            addProductService = new ProductService();
 
         }
 

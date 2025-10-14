@@ -15,7 +15,7 @@ namespace StockMate.Forms.Products
 {
     public partial class frmAddProduct : MetroForm
     {
-        private readonly AddProductService addProductService;
+        private readonly ProductService addProductService;
         private int selectedCategory;
         private int selectedSupplier;
         public frmAddProduct()
@@ -23,7 +23,7 @@ namespace StockMate.Forms.Products
             InitializeComponent();
             ButtonStyle.BlueButton(btnAddProduct);
             ButtonStyle.WhiteButton(btnCancel);
-            addProductService = new AddProductService();
+            addProductService = new ProductService();
         }
 
         private void frmAddProduct_Load(object sender, EventArgs e)

@@ -12,8 +12,59 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace StockMate.Services
 {
-    public class AddProductService
+    public class ProductService
     {
+        #region -- Load Category and Supplier to ComboBox --
+
+        public void LoadSupplier(SfComboBox comboBox)
+        {
+            using (Microsoft.Data.SqlClient.SqlConnection conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                string loadCategory = "SELECT SupplierId, SupplierName FROM Supplier";
+                Microsoft.Data.SqlClient.SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand(loadCategory, conn);
+                conn.Open();
+
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                comboBox.ValueMember = "SupplierId";
+                comboBox.DisplayMember = "SupplierName";
+                comboBox.DataSource = dt;
+            }
+        }
+
+        public void LoadCategory(SfComboBox comboBox)
+        {
+            using (Microsoft.Data.SqlClient.SqlConnection conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                string loadCategory = "SELECT CategoryId, CategoryName FROM Category";
+                Microsoft.Data.SqlClient.SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand(loadCategory, conn);
+                conn.Open();
+
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                comboBox.ValueMember = "CategoryId";
+                comboBox.DisplayMember = "CategoryName";
+                comboBox.DataSource = dt;
+            }
+        }
+
+        #endregion
+
+        #region -- Get Total Rows --
+
+        public async Task<int> GetTotalRowCountAsync()
+        {
+            using var conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString);
+            string sql = "SELECT COUNT(*) FROM Products";  // Adjust joins/filters as needed
+            using var cmd = new Microsoft.Data.SqlClient.SqlCommand(sql, conn);
+            await conn.OpenAsync();
+            return (int)await cmd.ExecuteScalarAsync();
+        }
+
+        #endregion
+
+        #region -- Create Product --
+
         public void AddProduct(string name, string sku, int category, int supplier, int quantity, int reorderlevel, Form form)
         {
             try
@@ -61,21 +112,9 @@ namespace StockMate.Services
             }
         }
 
-        public void LoadCategory(SfComboBox comboBox)
-        {
-            using (Microsoft.Data.SqlClient.SqlConnection conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
-            {
-                string loadCategory = "SELECT CategoryId, CategoryName FROM Category";
-                Microsoft.Data.SqlClient.SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand(loadCategory, conn);
-                conn.Open();
+        #endregion
 
-                DataTable dt = new DataTable();
-                dt.Load(cmd.ExecuteReader());
-                comboBox.ValueMember = "CategoryId";
-                comboBox.DisplayMember = "CategoryName";
-                comboBox.DataSource = dt;
-            }
-        }
+        #region -- Read Products --
 
         public async Task LoadProductsPaged(DataGridView dataGrid, int pageIndex, int pageSize)
         {
@@ -103,31 +142,16 @@ namespace StockMate.Services
             }
         }
 
-        public async Task<int> GetTotalRowCountAsync()
+        #endregion
+
+
+        #region -- Update Product --
+
+        public void UpdateProduct(string name, string sku, int category, int supplier, int quantity, int reorderlevel, Form form)
         {
-            using var conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString);
-            string sql = "SELECT COUNT(*) FROM Products";  // Adjust joins/filters as needed
-            using var cmd = new Microsoft.Data.SqlClient.SqlCommand(sql, conn);
-            await conn.OpenAsync();
-            return (int)await cmd.ExecuteScalarAsync();
+
         }
 
-
-
-        public void LoadSupplier(SfComboBox comboBox)
-        {
-            using (Microsoft.Data.SqlClient.SqlConnection conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
-            {
-                string loadCategory = "SELECT SupplierId, SupplierName FROM Supplier";
-                Microsoft.Data.SqlClient.SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand(loadCategory, conn);
-                conn.Open();
-
-                DataTable dt = new DataTable();
-                dt.Load(cmd.ExecuteReader());
-                comboBox.ValueMember = "SupplierId";
-                comboBox.DisplayMember = "SupplierName";
-                comboBox.DataSource = dt;
-            }
-        }
+        #endregion
     }
 }

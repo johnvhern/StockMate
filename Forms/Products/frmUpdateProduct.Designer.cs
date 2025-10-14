@@ -1,6 +1,6 @@
 ﻿namespace StockMate.Forms.Products
 {
-    partial class frmAddProduct
+    partial class frmUpdateProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -20,21 +20,6 @@
             base.Dispose(disposing);
         }
 
-        protected override void WndProc(ref Message m)
-        {
-            const int WM_SYSCOMMAND = 0x0112;
-            const int WM_NCLBUTTONDBLCLK = 0x00A3;
-            const int SC_MOVE = 0xF010; // Move command
-            const int WM_EXITSIZEMOVE = 0x0232; // Event when dragging stops
-
-            if (m.Msg == WM_NCLBUTTONDBLCLK)
-            {
-                return; // Ignore the double-click event on the title bar
-            }
-
-            base.WndProc(ref m);
-        }
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -43,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo1 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo2 = new Syncfusion.Windows.Forms.BannerTextInfo();
             gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             autoLabel3 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -68,11 +50,10 @@
             txtReorderLevel = new Syncfusion.Windows.Forms.Tools.IntegerTextBox();
             gradientPanel2 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             btnCancel = new Syncfusion.WinForms.Controls.SfButton();
-            btnAddProduct = new Syncfusion.WinForms.Controls.SfButton();
+            btnUpdateProduct = new Syncfusion.WinForms.Controls.SfButton();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(components);
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).BeginInit();
             gradientPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -111,7 +92,7 @@
             gradientPanel1.Name = "gradientPanel1";
             gradientPanel1.Padding = new Padding(15, 0, 15, 5);
             gradientPanel1.Size = new Size(399, 492);
-            gradientPanel1.TabIndex = 0;
+            gradientPanel1.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
@@ -160,9 +141,6 @@
             // 
             // txtProductName
             // 
-            bannerTextInfo1.Text = "Enter product name...";
-            bannerTextInfo1.Visible = true;
-            bannerTextProvider1.SetBannerText(txtProductName, bannerTextInfo1);
             txtProductName.BeforeTouchSize = new Size(328, 16);
             txtProductName.BorderStyle = BorderStyle.None;
             txtProductName.Dock = DockStyle.Fill;
@@ -197,9 +175,6 @@
             // 
             // txtSKU
             // 
-            bannerTextInfo2.Text = "Optional";
-            bannerTextInfo2.Visible = true;
-            bannerTextProvider1.SetBannerText(txtSKU, bannerTextInfo2);
             txtSKU.BeforeTouchSize = new Size(328, 16);
             txtSKU.BorderStyle = BorderStyle.None;
             txtSKU.Dock = DockStyle.Fill;
@@ -254,7 +229,6 @@
             cmbCategory.TabIndex = 0;
             cmbCategory.TabStop = false;
             cmbCategory.Text = "Select Category";
-            cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
             // 
             // autoLabel6
             // 
@@ -301,7 +275,6 @@
             cmbSupplier.TabIndex = 1;
             cmbSupplier.TabStop = false;
             cmbSupplier.Text = "Select Supplier";
-            cmbSupplier.SelectedIndexChanged += cmbSupplier_SelectedIndexChanged;
             // 
             // autoLabel7
             // 
@@ -381,7 +354,7 @@
             // 
             gradientPanel2.BorderStyle = BorderStyle.None;
             gradientPanel2.Controls.Add(btnCancel);
-            gradientPanel2.Controls.Add(btnAddProduct);
+            gradientPanel2.Controls.Add(btnUpdateProduct);
             gradientPanel2.Dock = DockStyle.Bottom;
             gradientPanel2.Location = new Point(15, 439);
             gradientPanel2.Name = "gradientPanel2";
@@ -398,20 +371,19 @@
             btnCancel.TabIndex = 10;
             btnCancel.Text = "Cancel";
             // 
-            // btnAddProduct
+            // btnUpdateProduct
             // 
-            btnAddProduct.BackColor = Color.FromArgb(79, 143, 246);
-            btnAddProduct.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAddProduct.ForeColor = Color.White;
-            btnAddProduct.Location = new Point(245, 6);
-            btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(110, 38);
-            btnAddProduct.Style.BackColor = Color.FromArgb(79, 143, 246);
-            btnAddProduct.Style.ForeColor = Color.White;
-            btnAddProduct.TabIndex = 9;
-            btnAddProduct.Text = "Add Product";
-            btnAddProduct.UseVisualStyleBackColor = false;
-            btnAddProduct.Click += btnAddProduct_Click;
+            btnUpdateProduct.BackColor = Color.FromArgb(79, 143, 246);
+            btnUpdateProduct.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpdateProduct.ForeColor = Color.White;
+            btnUpdateProduct.Location = new Point(245, 6);
+            btnUpdateProduct.Name = "btnUpdateProduct";
+            btnUpdateProduct.Size = new Size(110, 38);
+            btnUpdateProduct.Style.BackColor = Color.FromArgb(79, 143, 246);
+            btnUpdateProduct.Style.ForeColor = Color.White;
+            btnUpdateProduct.TabIndex = 9;
+            btnUpdateProduct.Text = "Update Product";
+            btnUpdateProduct.UseVisualStyleBackColor = false;
             // 
             // gradientPanel3
             // 
@@ -434,7 +406,7 @@
             autoLabel2.Name = "autoLabel2";
             autoLabel2.Size = new Size(369, 30);
             autoLabel2.TabIndex = 99;
-            autoLabel2.Text = "Add New Product";
+            autoLabel2.Text = "Update Product";
             autoLabel2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // autoLabel1
@@ -448,20 +420,19 @@
             autoLabel1.Padding = new Padding(1, 0, 0, 0);
             autoLabel1.Size = new Size(369, 27);
             autoLabel1.TabIndex = 99;
-            autoLabel1.Text = "Enter the details of the new product to add to your inventory.";
+            autoLabel1.Text = "Update the details of the product to update your inventory.";
             // 
-            // frmAddProduct
+            // frmUpdateProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(399, 492);
             Controls.Add(gradientPanel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "frmAddProduct";
+            Name = "frmUpdateProduct";
             ShowIcon = false;
             ShowMaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Load += frmAddProduct_Load;
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).EndInit();
             gradientPanel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
@@ -499,10 +470,6 @@
 
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel1;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel2;
-        private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel3;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel2;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel3;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel4;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtProductName;
@@ -511,18 +478,21 @@
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtSKU;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel5;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel6;
+        private Syncfusion.WinForms.ListView.SfComboBox cmbCategory;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel6;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel7;
+        private Syncfusion.WinForms.ListView.SfComboBox cmbSupplier;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel7;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel8;
+        private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtQuantity;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel8;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel9;
-        private Syncfusion.WinForms.Controls.SfButton btnCancel;
-        private Syncfusion.WinForms.Controls.SfButton btnAddProduct;
-        private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtQuantity;
         private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtReorderLevel;
-        private Syncfusion.WinForms.ListView.SfComboBox cmbCategory;
-        private Syncfusion.WinForms.ListView.SfComboBox cmbSupplier;
-        private Syncfusion.Windows.Forms.BannerTextProvider bannerTextProvider1;
+        private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel2;
+        private Syncfusion.WinForms.Controls.SfButton btnCancel;
+        private Syncfusion.WinForms.Controls.SfButton btnUpdateProduct;
+        private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel3;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel2;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;
     }
 }
