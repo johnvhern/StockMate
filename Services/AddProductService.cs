@@ -77,27 +77,21 @@ namespace StockMate.Services
             }
         }
 
-        public async Task LoadProducts(DataGridView dataGrid)
+        public async Task LoadProductsPaged(DataGridView dataGrid, int pageIndex, int pageSize)
         {
-            using (Microsoft.Data.SqlClient.SqlConnection conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
+            using (var conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string loadProducts = "SELECT " +
-                    "p.ProductId, " +
-                    "p.SKU, " +
-                    "p.ProductName, " +
-                    "c.CategoryName, " +
-                    "s.SupplierName, " +
-                    "p.Quantity, " +
-                    "p.ReorderLevel, " +
-                    "p.CreatedAt FROM " +
-                    "Products p " +
-                    "INNER JOIN " +
-                    "Supplier s ON p.SupplierId = s.SupplierId " +
-                    "INNER JOIN " +
-                    "Category c ON p.CategoryId = c.CategoryId";
+                string query = "SELECT p.ProductId, p.SKU, p.ProductName, c.CategoryName, s.SupplierName, p.Quantity, p.ReorderLevel, p.CreatedAt " +
+                    "FROM Products p " +
+                    "INNER JOIN Supplier s ON p.SupplierId = s.SupplierId " +
+                    "INNER JOIN Category c ON p.CategoryId = c.CategoryId " +
+                    "ORDER BY p.ProductId " +
+                    "OFFSET @Offset ROWS FETCH NEXT @PageSize ROWS ONLY";
 
-                using (Microsoft.Data.SqlClient.SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand(loadProducts, conn))
+                using (var cmd = new Microsoft.Data.SqlClient.SqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@Offset", (pageIndex - 1) * pageSize);
+                    cmd.Parameters.AddWithValue("@PageSize", pageSize);
                     await conn.OpenAsync();
                     using (var reader = await cmd.ExecuteReaderAsync())
                     {
@@ -108,6 +102,17 @@ namespace StockMate.Services
                 }
             }
         }
+
+        public async Task<int> GetTotalRowCountAsync()
+        {
+            using var conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString);
+            string sql = "SELECT COUNT(*) FROM Products";  // Adjust joins/filters as needed
+            using var cmd = new Microsoft.Data.SqlClient.SqlCommand(sql, conn);
+            await conn.OpenAsync();
+            return (int)await cmd.ExecuteScalarAsync();
+        }
+
+
 
         public void LoadSupplier(SfComboBox comboBox)
         {

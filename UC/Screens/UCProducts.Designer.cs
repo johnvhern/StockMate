@@ -32,6 +32,9 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo1 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            gradientPanel6 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             dgvProducts = new DataGridView();
             ProductId = new DataGridViewTextBoxColumn();
             SKU = new DataGridViewTextBoxColumn();
@@ -41,24 +44,32 @@
             Quantity = new DataGridViewTextBoxColumn();
             ReorderLevel = new DataGridViewTextBoxColumn();
             CreatedAt = new DataGridViewTextBoxColumn();
-            gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel5 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            lblPage = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            txtPageSize = new Syncfusion.Windows.Forms.Tools.IntegerTextBox();
+            lblRecordFound = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            btnLast = new Syncfusion.WinForms.Controls.SfButton();
+            btnNext = new Syncfusion.WinForms.Controls.SfButton();
+            btnPrev = new Syncfusion.WinForms.Controls.SfButton();
+            btnFirst = new Syncfusion.WinForms.Controls.SfButton();
             gradientPanel2 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             btnRefresh = new Syncfusion.WinForms.Controls.SfButton();
             btnAddProduct = new Syncfusion.WinForms.Controls.SfButton();
             gradientPanel4 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             textBoxExt1 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             pictureBox1 = new PictureBox();
-            autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            lblTitle = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(components);
-            ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).BeginInit();
             gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).BeginInit();
             gradientPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gradientPanel6).BeginInit();
+            gradientPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel5).BeginInit();
             gradientPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)txtPageSize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel2).BeginInit();
             gradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel4).BeginInit();
@@ -66,6 +77,42 @@
             ((System.ComponentModel.ISupportInitialize)textBoxExt1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            // 
+            // gradientPanel1
+            // 
+            gradientPanel1.BorderStyle = BorderStyle.None;
+            gradientPanel1.Controls.Add(gradientPanel3);
+            gradientPanel1.Dock = DockStyle.Fill;
+            gradientPanel1.Location = new Point(0, 0);
+            gradientPanel1.Name = "gradientPanel1";
+            gradientPanel1.Size = new Size(1207, 722);
+            gradientPanel1.TabIndex = 1;
+            // 
+            // gradientPanel3
+            // 
+            gradientPanel3.BorderColor = Color.Gainsboro;
+            gradientPanel3.BorderStyle = BorderStyle.FixedSingle;
+            gradientPanel3.Controls.Add(gradientPanel6);
+            gradientPanel3.Controls.Add(gradientPanel5);
+            gradientPanel3.Controls.Add(gradientPanel2);
+            gradientPanel3.Dock = DockStyle.Fill;
+            gradientPanel3.Location = new Point(0, 0);
+            gradientPanel3.Name = "gradientPanel3";
+            gradientPanel3.Padding = new Padding(20);
+            gradientPanel3.Size = new Size(1207, 722);
+            gradientPanel3.TabIndex = 1;
+            // 
+            // gradientPanel6
+            // 
+            gradientPanel6.BorderColor = Color.Gainsboro;
+            gradientPanel6.BorderStyle = BorderStyle.FixedSingle;
+            gradientPanel6.Controls.Add(dgvProducts);
+            gradientPanel6.Dock = DockStyle.Fill;
+            gradientPanel6.Location = new Point(20, 81);
+            gradientPanel6.Name = "gradientPanel6";
+            gradientPanel6.Padding = new Padding(15);
+            gradientPanel6.Size = new Size(1165, 578);
+            gradientPanel6.TabIndex = 2;
             // 
             // dgvProducts
             // 
@@ -106,9 +153,8 @@
             dgvProducts.ReadOnly = true;
             dgvProducts.RowHeadersVisible = false;
             dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProducts.Size = new Size(1133, 587);
+            dgvProducts.Size = new Size(1133, 546);
             dgvProducts.TabIndex = 0;
-            dgvProducts.CellFormatting += dgvProducts_CellFormatting;
             // 
             // ProductId
             // 
@@ -168,40 +214,108 @@
             CreatedAt.Name = "CreatedAt";
             CreatedAt.ReadOnly = true;
             // 
-            // gradientPanel1
-            // 
-            gradientPanel1.BorderStyle = BorderStyle.None;
-            gradientPanel1.Controls.Add(gradientPanel3);
-            gradientPanel1.Dock = DockStyle.Fill;
-            gradientPanel1.Location = new Point(0, 0);
-            gradientPanel1.Name = "gradientPanel1";
-            gradientPanel1.Size = new Size(1207, 722);
-            gradientPanel1.TabIndex = 1;
-            // 
-            // gradientPanel3
-            // 
-            gradientPanel3.BorderColor = Color.Gainsboro;
-            gradientPanel3.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel3.Controls.Add(gradientPanel5);
-            gradientPanel3.Controls.Add(gradientPanel2);
-            gradientPanel3.Dock = DockStyle.Fill;
-            gradientPanel3.Location = new Point(0, 0);
-            gradientPanel3.Name = "gradientPanel3";
-            gradientPanel3.Padding = new Padding(20);
-            gradientPanel3.Size = new Size(1207, 722);
-            gradientPanel3.TabIndex = 1;
-            // 
             // gradientPanel5
             // 
-            gradientPanel5.BorderColor = Color.Gainsboro;
-            gradientPanel5.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel5.Controls.Add(dgvProducts);
-            gradientPanel5.Dock = DockStyle.Fill;
-            gradientPanel5.Location = new Point(20, 81);
+            gradientPanel5.BorderStyle = BorderStyle.None;
+            gradientPanel5.Controls.Add(lblPage);
+            gradientPanel5.Controls.Add(txtPageSize);
+            gradientPanel5.Controls.Add(lblRecordFound);
+            gradientPanel5.Controls.Add(btnLast);
+            gradientPanel5.Controls.Add(btnNext);
+            gradientPanel5.Controls.Add(btnPrev);
+            gradientPanel5.Controls.Add(btnFirst);
+            gradientPanel5.Dock = DockStyle.Bottom;
+            gradientPanel5.Location = new Point(20, 659);
             gradientPanel5.Name = "gradientPanel5";
-            gradientPanel5.Padding = new Padding(15);
-            gradientPanel5.Size = new Size(1165, 619);
+            gradientPanel5.Size = new Size(1165, 41);
             gradientPanel5.TabIndex = 1;
+            // 
+            // lblPage
+            // 
+            lblPage.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblPage.AutoSize = false;
+            lblPage.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPage.Location = new Point(477, 24);
+            lblPage.Name = "lblPage";
+            lblPage.Size = new Size(147, 17);
+            lblPage.TabIndex = 6;
+            lblPage.Text = "Page 1 of 1";
+            lblPage.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // txtPageSize
+            // 
+            txtPageSize.AccessibilityEnabled = true;
+            txtPageSize.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            txtPageSize.BeforeTouchSize = new Size(238, 16);
+            txtPageSize.BorderColor = Color.DimGray;
+            txtPageSize.BorderStyle = BorderStyle.FixedSingle;
+            txtPageSize.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPageSize.IntegerValue = 50L;
+            txtPageSize.Location = new Point(1024, 19);
+            txtPageSize.Name = "txtPageSize";
+            txtPageSize.Size = new Size(51, 22);
+            txtPageSize.TabIndex = 5;
+            txtPageSize.Text = "50";
+            txtPageSize.TextAlign = HorizontalAlignment.Center;
+            txtPageSize.KeyDown += txtPageSize_KeyDown;
+            // 
+            // lblRecordFound
+            // 
+            lblRecordFound.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblRecordFound.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRecordFound.Location = new Point(0, 24);
+            lblRecordFound.Name = "lblRecordFound";
+            lblRecordFound.Size = new Size(98, 17);
+            lblRecordFound.TabIndex = 4;
+            lblRecordFound.Text = "Record Found: 1";
+            // 
+            // btnLast
+            // 
+            btnLast.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnLast.Font = new Font("Segoe UI Semibold", 9F);
+            btnLast.ImageSize = new Size(16, 16);
+            btnLast.Location = new Point(1126, 19);
+            btnLast.Name = "btnLast";
+            btnLast.Size = new Size(39, 22);
+            btnLast.Style.Image = Properties.Resources.chevron_last;
+            btnLast.TabIndex = 3;
+            btnLast.Click += btnLast_Click;
+            // 
+            // btnNext
+            // 
+            btnNext.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnNext.Font = new Font("Segoe UI Semibold", 9F);
+            btnNext.ImageSize = new Size(16, 16);
+            btnNext.Location = new Point(1081, 19);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(39, 22);
+            btnNext.Style.Image = Properties.Resources.chevron_right;
+            btnNext.TabIndex = 2;
+            btnNext.Click += btnNext_Click;
+            // 
+            // btnPrev
+            // 
+            btnPrev.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnPrev.Font = new Font("Segoe UI Semibold", 9F);
+            btnPrev.ImageSize = new Size(16, 16);
+            btnPrev.Location = new Point(979, 19);
+            btnPrev.Name = "btnPrev";
+            btnPrev.Size = new Size(39, 22);
+            btnPrev.Style.Image = Properties.Resources.chevron_left;
+            btnPrev.TabIndex = 1;
+            btnPrev.Click += btnPrev_Click;
+            // 
+            // btnFirst
+            // 
+            btnFirst.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnFirst.Font = new Font("Segoe UI Semibold", 9F);
+            btnFirst.ImageSize = new Size(16, 16);
+            btnFirst.Location = new Point(934, 19);
+            btnFirst.Name = "btnFirst";
+            btnFirst.Size = new Size(39, 22);
+            btnFirst.Style.Image = Properties.Resources.chevron_first;
+            btnFirst.TabIndex = 0;
+            btnFirst.Click += btnFirst_Click;
             // 
             // gradientPanel2
             // 
@@ -209,7 +323,7 @@
             gradientPanel2.Controls.Add(btnRefresh);
             gradientPanel2.Controls.Add(btnAddProduct);
             gradientPanel2.Controls.Add(gradientPanel4);
-            gradientPanel2.Controls.Add(autoLabel1);
+            gradientPanel2.Controls.Add(lblTitle);
             gradientPanel2.Dock = DockStyle.Top;
             gradientPanel2.Location = new Point(20, 20);
             gradientPanel2.Name = "gradientPanel2";
@@ -279,16 +393,16 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // autoLabel1
+            // lblTitle
             // 
-            autoLabel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            autoLabel1.Font = new Font("Inter", 15.75F, FontStyle.Bold);
-            autoLabel1.ForeColor = Color.FromArgb(43, 48, 59);
-            autoLabel1.Location = new Point(0, 8);
-            autoLabel1.Name = "autoLabel1";
-            autoLabel1.Size = new Size(213, 30);
-            autoLabel1.TabIndex = 0;
-            autoLabel1.Text = "Products Inventory";
+            lblTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lblTitle.Font = new Font("Inter", 15.75F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.FromArgb(43, 48, 59);
+            lblTitle.Location = new Point(0, 8);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(213, 30);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Products Inventory";
             // 
             // UCProducts
             // 
@@ -300,13 +414,17 @@
             Name = "UCProducts";
             Size = new Size(1207, 722);
             Load += UCProducts_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).EndInit();
             gradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).EndInit();
             gradientPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gradientPanel6).EndInit();
+            gradientPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel5).EndInit();
             gradientPanel5.ResumeLayout(false);
+            gradientPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)txtPageSize).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel2).EndInit();
             gradientPanel2.ResumeLayout(false);
             gradientPanel2.PerformLayout();
@@ -322,13 +440,14 @@
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel1;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel3;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel2;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel lblTitle;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel4;
         private Syncfusion.WinForms.Controls.SfButton btnAddProduct;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt1;
         private PictureBox pictureBox1;
         private Syncfusion.Windows.Forms.BannerTextProvider bannerTextProvider1;
-        private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel5;
+        private Syncfusion.WinForms.Controls.SfButton btnRefresh;
+        private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel6;
         private DataGridView dgvProducts;
         private DataGridViewTextBoxColumn ProductId;
         private DataGridViewTextBoxColumn SKU;
@@ -338,6 +457,13 @@
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn ReorderLevel;
         private DataGridViewTextBoxColumn CreatedAt;
-        private Syncfusion.WinForms.Controls.SfButton btnRefresh;
+        private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel5;
+        private Syncfusion.WinForms.Controls.SfButton btnLast;
+        private Syncfusion.WinForms.Controls.SfButton btnNext;
+        private Syncfusion.WinForms.Controls.SfButton btnPrev;
+        private Syncfusion.WinForms.Controls.SfButton btnFirst;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel lblRecordFound;
+        private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtPageSize;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel lblPage;
     }
 }
