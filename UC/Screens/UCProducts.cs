@@ -86,6 +86,25 @@ namespace StockMate.UC.Screens
         private void dgvProducts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             dgvProducts.Columns["CreatedAt"].DefaultCellStyle.Format = "d";  // Short date pattern, e.g. 10/12/2025
+
+            if (dgvProducts.Columns[e.ColumnIndex].Name == "Status")
+            {
+                var quantity = Convert.ToInt32(dgvProducts.Rows[e.RowIndex].Cells["Quantity"].Value);
+                var reorderLevel = Convert.ToInt32(dgvProducts.Rows[e.RowIndex].Cells["ReorderLevel"].Value);
+
+                if (quantity > reorderLevel)
+                {
+                    e.Value = "In Stock";
+                    //e.CellStyle.BackColor = Color.Green;
+                    e.CellStyle.ForeColor = Color.Green;
+                }
+                else if (quantity <= reorderLevel)
+                {
+                    e.Value = "Low Stock";
+                    //e.CellStyle.BackColor = Color.Red;
+                    e.CellStyle.ForeColor = Color.Red;
+                }
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -158,7 +177,7 @@ namespace StockMate.UC.Screens
         {
             if (productId == 0)
             {
-                MessageBoxAdv.Show("Please select an item to edit.","No Item Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxAdv.Show("Please select an item to edit.","No Item Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

@@ -30,19 +30,22 @@
         {
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo1 = new Syncfusion.Windows.Forms.BannerTextInfo();
             gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel6 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             dgvProducts = new DataGridView();
-            ProductId = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
             SKU = new DataGridViewTextBoxColumn();
             ProductName = new DataGridViewTextBoxColumn();
             CategoryName = new DataGridViewTextBoxColumn();
             SupplierName = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
             ReorderLevel = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
             CreatedAt = new DataGridViewTextBoxColumn();
             gradientPanel5 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             lblPage = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -120,9 +123,7 @@
             // 
             dgvProducts.AllowUserToAddRows = false;
             dgvProducts.AllowUserToDeleteRows = false;
-            dgvProducts.AllowUserToResizeColumns = false;
-            dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvProducts.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dgvProducts.AllowUserToResizeRows = false;
             dgvProducts.BackgroundColor = Color.White;
             dgvProducts.BorderStyle = BorderStyle.None;
             dgvProducts.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -131,22 +132,21 @@
             dataGridViewCellStyle1.BackColor = Color.Gainsboro;
             dataGridViewCellStyle1.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.FromArgb(43, 48, 59);
-            dataGridViewCellStyle1.Padding = new Padding(10);
+            dataGridViewCellStyle1.Padding = new Padding(0, 7, 0, 7);
             dataGridViewCellStyle1.SelectionBackColor = Color.Gainsboro;
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(43, 48, 59);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProducts.Columns.AddRange(new DataGridViewColumn[] { ProductId, SKU, ProductName, CategoryName, SupplierName, Quantity, ReorderLevel, CreatedAt });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(43, 48, 59);
-            dataGridViewCellStyle2.Padding = new Padding(15);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(79, 143, 246);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvProducts.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvProducts.Columns.AddRange(new DataGridViewColumn[] { Column1, SKU, ProductName, CategoryName, SupplierName, Quantity, ReorderLevel, Status, CreatedAt });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(43, 48, 59);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(79, 143, 246);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvProducts.DefaultCellStyle = dataGridViewCellStyle3;
             dgvProducts.Dock = DockStyle.Fill;
             dgvProducts.EnableHeadersVisualStyles = false;
             dgvProducts.GridColor = Color.LightGray;
@@ -155,24 +155,28 @@
             dgvProducts.Name = "dgvProducts";
             dgvProducts.ReadOnly = true;
             dgvProducts.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Padding = new Padding(1);
+            dgvProducts.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProducts.Size = new Size(1133, 518);
             dgvProducts.TabIndex = 0;
             dgvProducts.CellClick += dgvProducts_CellClick;
+            dgvProducts.CellFormatting += dgvProducts_CellFormatting;
             // 
-            // ProductId
+            // Column1
             // 
-            ProductId.DataPropertyName = "ProductId";
-            ProductId.HeaderText = "Product Id";
-            ProductId.Name = "ProductId";
-            ProductId.ReadOnly = true;
-            ProductId.Visible = false;
+            Column1.DataPropertyName = "ProductId";
+            Column1.HeaderText = "ProductId";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Visible = false;
             // 
             // SKU
             // 
             SKU.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             SKU.DataPropertyName = "SKU";
-            SKU.FillWeight = 26.0995674F;
+            dataGridViewCellStyle2.Padding = new Padding(0, 7, 0, 7);
+            SKU.DefaultCellStyle = dataGridViewCellStyle2;
             SKU.HeaderText = "SKU";
             SKU.Name = "SKU";
             SKU.ReadOnly = true;
@@ -181,7 +185,6 @@
             // 
             ProductName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ProductName.DataPropertyName = "ProductName";
-            ProductName.FillWeight = 26.0995674F;
             ProductName.HeaderText = "Name";
             ProductName.Name = "ProductName";
             ProductName.ReadOnly = true;
@@ -190,7 +193,6 @@
             // 
             CategoryName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             CategoryName.DataPropertyName = "CategoryName";
-            CategoryName.FillWeight = 26.0995674F;
             CategoryName.HeaderText = "Category";
             CategoryName.Name = "CategoryName";
             CategoryName.ReadOnly = true;
@@ -199,7 +201,6 @@
             // 
             SupplierName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             SupplierName.DataPropertyName = "SupplierName";
-            SupplierName.FillWeight = 26.0995674F;
             SupplierName.HeaderText = "Supplier";
             SupplierName.Name = "SupplierName";
             SupplierName.ReadOnly = true;
@@ -208,25 +209,30 @@
             // 
             Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Quantity.DataPropertyName = "Quantity";
-            Quantity.FillWeight = 26.0995674F;
             Quantity.HeaderText = "Quantity";
             Quantity.Name = "Quantity";
             Quantity.ReadOnly = true;
             // 
             // ReorderLevel
             // 
-            ReorderLevel.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ReorderLevel.DataPropertyName = "ReorderLevel";
-            ReorderLevel.FillWeight = 26.0995674F;
-            ReorderLevel.HeaderText = "Reorder Level";
+            ReorderLevel.HeaderText = "ReorderLevel";
             ReorderLevel.Name = "ReorderLevel";
             ReorderLevel.ReadOnly = true;
+            ReorderLevel.Visible = false;
+            // 
+            // Status
+            // 
+            Status.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Status.DataPropertyName = "Status";
+            Status.HeaderText = "Status";
+            Status.Name = "Status";
+            Status.ReadOnly = true;
             // 
             // CreatedAt
             // 
             CreatedAt.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             CreatedAt.DataPropertyName = "CreatedAt";
-            CreatedAt.FillWeight = 26.0995674F;
             CreatedAt.HeaderText = "Created At";
             CreatedAt.Name = "CreatedAt";
             CreatedAt.ReadOnly = true;
@@ -498,15 +504,16 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblRecordFound;
         private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtPageSize;
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblPage;
-        private DataGridViewTextBoxColumn ProductId;
+        private Syncfusion.WinForms.Controls.SfButton btnEdit;
+        private Syncfusion.WinForms.Controls.SfButton btnSearch;
+        private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn SKU;
         private DataGridViewTextBoxColumn ProductName;
         private DataGridViewTextBoxColumn CategoryName;
         private DataGridViewTextBoxColumn SupplierName;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn ReorderLevel;
+        private DataGridViewTextBoxColumn Status;
         private DataGridViewTextBoxColumn CreatedAt;
-        private Syncfusion.WinForms.Controls.SfButton btnEdit;
-        private Syncfusion.WinForms.Controls.SfButton btnSearch;
     }
 }
