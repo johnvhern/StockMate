@@ -34,18 +34,10 @@
             gradientPanel6 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel11 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            panelViewReports = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            autoLabel7 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            pictureBox4 = new PictureBox();
-            panelAddBorrower = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            autoLabel6 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            pictureBox3 = new PictureBox();
-            panelAddSuppliers = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            autoLabel5 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            pictureBox2 = new PictureBox();
-            panelAddProducts = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            pictureBox1 = new PictureBox();
-            autoLabel4 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            btnViewReports = new Syncfusion.WinForms.Controls.SfButton();
+            btnAddBorrower = new Syncfusion.WinForms.Controls.SfButton();
+            btnAddSupplier = new Syncfusion.WinForms.Controls.SfButton();
+            btnAddProduct = new Syncfusion.WinForms.Controls.SfButton();
             autoLabel3 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel5 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel4 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
@@ -78,18 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)gradientPanel11).BeginInit();
             gradientPanel11.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)panelViewReports).BeginInit();
-            panelViewReports.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)panelAddBorrower).BeginInit();
-            panelAddBorrower.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)panelAddSuppliers).BeginInit();
-            panelAddSuppliers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)panelAddProducts).BeginInit();
-            panelAddProducts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel4).BeginInit();
             gradientPanel4.SuspendLayout();
@@ -165,10 +145,10 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.Controls.Add(panelViewReports, 3, 0);
-            tableLayoutPanel2.Controls.Add(panelAddBorrower, 2, 0);
-            tableLayoutPanel2.Controls.Add(panelAddSuppliers, 1, 0);
-            tableLayoutPanel2.Controls.Add(panelAddProducts, 0, 0);
+            tableLayoutPanel2.Controls.Add(btnViewReports, 3, 0);
+            tableLayoutPanel2.Controls.Add(btnAddBorrower, 2, 0);
+            tableLayoutPanel2.Controls.Add(btnAddSupplier, 1, 0);
+            tableLayoutPanel2.Controls.Add(btnAddProduct, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(10, 44);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -179,146 +159,65 @@
             tableLayoutPanel2.Size = new Size(1165, 155);
             tableLayoutPanel2.TabIndex = 1;
             // 
-            // panelViewReports
+            // btnViewReports
             // 
-            panelViewReports.BorderColor = Color.Gainsboro;
-            panelViewReports.BorderSingle = ButtonBorderStyle.Dashed;
-            panelViewReports.BorderStyle = BorderStyle.FixedSingle;
-            panelViewReports.Controls.Add(autoLabel7);
-            panelViewReports.Controls.Add(pictureBox4);
-            panelViewReports.Dock = DockStyle.Fill;
-            panelViewReports.Location = new Point(871, 13);
-            panelViewReports.Name = "panelViewReports";
-            panelViewReports.Size = new Size(281, 129);
-            panelViewReports.TabIndex = 3;
+            btnViewReports.Dock = DockStyle.Fill;
+            btnViewReports.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold);
+            btnViewReports.ImageSize = new Size(40, 40);
+            btnViewReports.Location = new Point(871, 13);
+            btnViewReports.Name = "btnViewReports";
+            btnViewReports.Size = new Size(281, 129);
+            btnViewReports.Style.Image = (Image)resources.GetObject("resource.Image");
+            btnViewReports.TabIndex = 3;
+            btnViewReports.Text = "View Reports";
+            btnViewReports.TextAlign = ContentAlignment.BottomCenter;
+            btnViewReports.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnViewReports.Click += btnViewReports_Click;
             // 
-            // autoLabel7
+            // btnAddBorrower
             // 
-            autoLabel7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            autoLabel7.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            autoLabel7.ForeColor = Color.FromArgb(43, 48, 59);
-            autoLabel7.Location = new Point(85, 76);
-            autoLabel7.Name = "autoLabel7";
-            autoLabel7.Size = new Size(107, 22);
-            autoLabel7.TabIndex = 3;
-            autoLabel7.Text = "View Reports";
+            btnAddBorrower.Dock = DockStyle.Fill;
+            btnAddBorrower.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold);
+            btnAddBorrower.ImageSize = new Size(40, 40);
+            btnAddBorrower.Location = new Point(585, 13);
+            btnAddBorrower.Name = "btnAddBorrower";
+            btnAddBorrower.Size = new Size(280, 129);
+            btnAddBorrower.Style.Image = (Image)resources.GetObject("resource.Image1");
+            btnAddBorrower.TabIndex = 2;
+            btnAddBorrower.Text = "Add Borrower";
+            btnAddBorrower.TextAlign = ContentAlignment.BottomCenter;
+            btnAddBorrower.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnAddBorrower.Click += btnAddBorrower_Click;
             // 
-            // pictureBox4
+            // btnAddSupplier
             // 
-            pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(116, 28);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(40, 40);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 2;
-            pictureBox4.TabStop = false;
+            btnAddSupplier.Dock = DockStyle.Fill;
+            btnAddSupplier.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold);
+            btnAddSupplier.ImageSize = new Size(40, 40);
+            btnAddSupplier.Location = new Point(299, 13);
+            btnAddSupplier.Name = "btnAddSupplier";
+            btnAddSupplier.Size = new Size(280, 129);
+            btnAddSupplier.Style.Image = (Image)resources.GetObject("resource.Image2");
+            btnAddSupplier.TabIndex = 1;
+            btnAddSupplier.Text = "Add Supplier";
+            btnAddSupplier.TextAlign = ContentAlignment.BottomCenter;
+            btnAddSupplier.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnAddSupplier.Click += btnAddSupplier_Click;
             // 
-            // panelAddBorrower
+            // btnAddProduct
             // 
-            panelAddBorrower.BorderColor = Color.Gainsboro;
-            panelAddBorrower.BorderSingle = ButtonBorderStyle.Dashed;
-            panelAddBorrower.BorderStyle = BorderStyle.FixedSingle;
-            panelAddBorrower.Controls.Add(autoLabel6);
-            panelAddBorrower.Controls.Add(pictureBox3);
-            panelAddBorrower.Dock = DockStyle.Fill;
-            panelAddBorrower.Location = new Point(585, 13);
-            panelAddBorrower.Name = "panelAddBorrower";
-            panelAddBorrower.Size = new Size(280, 129);
-            panelAddBorrower.TabIndex = 2;
-            // 
-            // autoLabel6
-            // 
-            autoLabel6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            autoLabel6.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            autoLabel6.ForeColor = Color.FromArgb(43, 48, 59);
-            autoLabel6.Location = new Point(81, 76);
-            autoLabel6.Name = "autoLabel6";
-            autoLabel6.Size = new Size(111, 22);
-            autoLabel6.TabIndex = 3;
-            autoLabel6.Text = "Add Borrower";
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(116, 28);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(40, 40);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
-            // 
-            // panelAddSuppliers
-            // 
-            panelAddSuppliers.BorderColor = Color.Gainsboro;
-            panelAddSuppliers.BorderSingle = ButtonBorderStyle.Dashed;
-            panelAddSuppliers.BorderStyle = BorderStyle.FixedSingle;
-            panelAddSuppliers.Controls.Add(autoLabel5);
-            panelAddSuppliers.Controls.Add(pictureBox2);
-            panelAddSuppliers.Dock = DockStyle.Fill;
-            panelAddSuppliers.Location = new Point(299, 13);
-            panelAddSuppliers.Name = "panelAddSuppliers";
-            panelAddSuppliers.Size = new Size(280, 129);
-            panelAddSuppliers.TabIndex = 1;
-            // 
-            // autoLabel5
-            // 
-            autoLabel5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            autoLabel5.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            autoLabel5.ForeColor = Color.FromArgb(43, 48, 59);
-            autoLabel5.Location = new Point(85, 76);
-            autoLabel5.Name = "autoLabel5";
-            autoLabel5.Size = new Size(103, 22);
-            autoLabel5.TabIndex = 3;
-            autoLabel5.Text = "Add Supplier";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(116, 28);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(40, 40);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
-            // panelAddProducts
-            // 
-            panelAddProducts.BorderColor = Color.Gainsboro;
-            panelAddProducts.BorderSingle = ButtonBorderStyle.Dashed;
-            panelAddProducts.BorderStyle = BorderStyle.FixedSingle;
-            panelAddProducts.Controls.Add(pictureBox1);
-            panelAddProducts.Controls.Add(autoLabel4);
-            panelAddProducts.Dock = DockStyle.Fill;
-            panelAddProducts.Location = new Point(13, 13);
-            panelAddProducts.Name = "panelAddProducts";
-            panelAddProducts.Size = new Size(280, 129);
-            panelAddProducts.TabIndex = 0;
-            panelAddProducts.Click += panelAddProducts_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(113, 28);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(40, 40);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // autoLabel4
-            // 
-            autoLabel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            autoLabel4.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            autoLabel4.ForeColor = Color.FromArgb(43, 48, 59);
-            autoLabel4.Location = new Point(82, 76);
-            autoLabel4.Name = "autoLabel4";
-            autoLabel4.Size = new Size(100, 22);
-            autoLabel4.TabIndex = 1;
-            autoLabel4.Text = "Add Product";
+            btnAddProduct.Dock = DockStyle.Fill;
+            btnAddProduct.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold);
+            btnAddProduct.ImageSize = new Size(40, 40);
+            btnAddProduct.Location = new Point(13, 13);
+            btnAddProduct.Name = "btnAddProduct";
+            btnAddProduct.Size = new Size(280, 129);
+            btnAddProduct.Style.Image = (Image)resources.GetObject("resource.Image3");
+            btnAddProduct.TabIndex = 0;
+            btnAddProduct.Text = "Add Product";
+            btnAddProduct.TextAlign = ContentAlignment.BottomCenter;
+            btnAddProduct.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnAddProduct.Click += btnAddProduct_Click;
             // 
             // autoLabel3
             // 
@@ -600,22 +499,6 @@
             ((System.ComponentModel.ISupportInitialize)gradientPanel11).EndInit();
             gradientPanel11.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)panelViewReports).EndInit();
-            panelViewReports.ResumeLayout(false);
-            panelViewReports.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)panelAddBorrower).EndInit();
-            panelAddBorrower.ResumeLayout(false);
-            panelAddBorrower.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)panelAddSuppliers).EndInit();
-            panelAddSuppliers.ResumeLayout(false);
-            panelAddSuppliers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)panelAddProducts).EndInit();
-            panelAddProducts.ResumeLayout(false);
-            panelAddProducts.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel5).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel4).EndInit();
             gradientPanel4.ResumeLayout(false);
@@ -658,18 +541,6 @@
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel11;
         private TableLayoutPanel tableLayoutPanel2;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel3;
-        private Syncfusion.Windows.Forms.Tools.GradientPanel panelAddProducts;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel4;
-        private PictureBox pictureBox1;
-        private Syncfusion.Windows.Forms.Tools.GradientPanel panelViewReports;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel7;
-        private PictureBox pictureBox4;
-        private Syncfusion.Windows.Forms.Tools.GradientPanel panelAddBorrower;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel6;
-        private PictureBox pictureBox3;
-        private Syncfusion.Windows.Forms.Tools.GradientPanel panelAddSuppliers;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel5;
-        private PictureBox pictureBox2;
         private PictureBox pictureBox8;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel11;
         private PictureBox pictureBox7;
@@ -682,5 +553,9 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel15;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel14;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel13;
+        private Syncfusion.WinForms.Controls.SfButton btnViewReports;
+        private Syncfusion.WinForms.Controls.SfButton btnAddBorrower;
+        private Syncfusion.WinForms.Controls.SfButton btnAddSupplier;
+        private Syncfusion.WinForms.Controls.SfButton btnAddProduct;
     }
 }

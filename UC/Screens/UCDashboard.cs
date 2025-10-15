@@ -18,66 +18,30 @@ namespace StockMate.UC.Screens
         public UCDashboard()
         {
             InitializeComponent();
-            PanelsAndChild();
+            ButtonStyle.DashboardQuickActionBtn(btnAddBorrower);
+            ButtonStyle.DashboardQuickActionBtn(btnAddProduct);
+            ButtonStyle.DashboardQuickActionBtn(btnAddSupplier);
+            ButtonStyle.DashboardQuickActionBtn(btnViewReports);
         }
 
-        private void PanelsAndChild()
+        private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            GradientPanel[] panels = { panelAddProducts, panelAddSuppliers, panelAddBorrower, panelViewReports };
-            foreach (var pnl in panels)
-            {
-                pnl.BorderStyle = BorderStyle.FixedSingle;
-                pnl.BorderSingle = ButtonBorderStyle.Dashed;
-                pnl.BorderColor = Color.Gainsboro;
-                pnl.MouseMove += QuickActionStyle;
-                pnl.MouseLeave += QuickActionMouseLeave;
-
-                foreach (Control child in pnl.Controls)
-                {
-                    pnl.MouseMove += QuickActionStyle;
-                    pnl.MouseLeave += QuickActionMouseLeave;
-                }
-            }
+            new frmAddProduct().ShowDialog();
         }
 
-        private void QuickActionMouseLeave(object? sender, EventArgs e)
+        private void btnAddSupplier_Click(object sender, EventArgs e)
         {
-            GradientPanel pnl = GetParentPanel(sender);
-            if (pnl != null)
-            {
-                var mousePos = pnl.PointToClient(Control.MousePosition);
-                if (!pnl.ClientRectangle.Contains(mousePos))
-                {
-                    pnl.BorderColor = Color.Gainsboro;
-                }
-            }
+
         }
 
-        private void QuickActionStyle(object sender, EventArgs e)
+        private void btnAddBorrower_Click(object sender, EventArgs e)
         {
-            GradientPanel pnl = GetParentPanel(sender);
-            if (pnl != null)
-            {
-                pnl.BorderColor = Color.FromArgb(59, 130, 245);
-            }
+
         }
 
-        private GradientPanel GetParentPanel(object sender)
+        private void btnViewReports_Click(object sender, EventArgs e)
         {
-            if (sender is GradientPanel)
-                return (GradientPanel)sender;
-            else if (sender is Control ctrl && ctrl.Parent is GradientPanel pnl)
-                return pnl;
-            else
-                return null;
-        }
 
-        private void panelAddProducts_Click(object sender, EventArgs e)
-        {
-            if (new frmAddProduct().ShowDialog() == DialogResult.OK)
-            {
-
-            }
         }
     }
 }

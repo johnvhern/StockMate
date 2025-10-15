@@ -1,4 +1,5 @@
 ﻿using StockMate.Helpers;
+using StockMate.Services;
 using Syncfusion.Windows.Forms;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,20 @@ namespace StockMate.Forms.Products
 {
     public partial class frmUpdateProduct : MetroForm
     {
+        private readonly ProductService productService;
         public frmUpdateProduct()
         {
             InitializeComponent();
             ButtonStyle.BlueButton(btnUpdateProduct);
-            ButtonStyle.BlueButton(btnCancel);
+            ButtonStyle.WhiteButton(btnCancel);
+
+            productService = new ProductService();
+        }
+
+        private void frmUpdateProduct_Load(object sender, EventArgs e)
+        {
+            productService.LoadSupplier(cmbSupplier);
+            productService.LoadCategory(cmbCategory);
         }
     }
 }

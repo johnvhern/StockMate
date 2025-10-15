@@ -94,6 +94,7 @@ namespace StockMate.Helpers
             button.Style.FocusedBorder = null;
             button.Style.HoverBorder = null;
             button.Style.PressedBorder = null;
+            button.Style.DisabledBorder = new Pen(Color.Gainsboro);
 
             // Button BackColor
 
@@ -101,6 +102,7 @@ namespace StockMate.Helpers
             button.Style.PressedBackColor = Color.FromArgb(79, 143, 246);
             button.Style.HoverBackColor = Color.FromArgb(96, 154, 247);
             button.Style.FocusedBackColor = Color.FromArgb(79, 143, 246);
+            button.Style.DisabledBackColor = Color.White;
 
             // Button ForeColor
 
@@ -131,6 +133,30 @@ namespace StockMate.Helpers
             button.Style.BackColor = Color.White;
             button.Style.PressedBackColor = Color.White;
             button.Style.HoverBackColor = Color.FromArgb(237, 237, 237);
+            button.Style.FocusedBackColor = Color.White;
+
+            // Button ForeColor
+
+            button.Style.ForeColor = Color.FromArgb(43, 48, 59);
+            button.Style.FocusedForeColor = Color.FromArgb(43, 48, 59);
+            button.Style.HoverForeColor = Color.FromArgb(43, 48, 59);
+            button.Style.PressedForeColor = Color.FromArgb(43, 48, 59);
+        }
+
+        public static void DashboardQuickActionBtn(SfButton button)
+        {
+            // Button Border
+
+            button.Style.Border = new Pen(Color.Gainsboro);
+            button.Style.PressedBorder = new Pen(Color.FromArgb(79, 143, 246));
+            button.Style.HoverBorder = new Pen(Color.FromArgb(79, 143, 246));
+            button.Style.FocusedBorder = new Pen(Color.Gainsboro);
+
+            // Button BackColor
+
+            button.Style.BackColor = Color.White;
+            button.Style.PressedBackColor = Color.White;
+            button.Style.HoverBackColor = Color.White;
             button.Style.FocusedBackColor = Color.White;
 
             // Button ForeColor

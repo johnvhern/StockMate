@@ -53,6 +53,7 @@
             btnPrev = new Syncfusion.WinForms.Controls.SfButton();
             btnFirst = new Syncfusion.WinForms.Controls.SfButton();
             gradientPanel2 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            btnEdit = new Syncfusion.WinForms.Controls.SfButton();
             btnRefresh = new Syncfusion.WinForms.Controls.SfButton();
             btnAddProduct = new Syncfusion.WinForms.Controls.SfButton();
             gradientPanel4 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
@@ -118,6 +119,7 @@
             // 
             dgvProducts.AllowUserToAddRows = false;
             dgvProducts.AllowUserToDeleteRows = false;
+            dgvProducts.AllowUserToResizeColumns = false;
             dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProducts.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             dgvProducts.BackgroundColor = Color.White;
@@ -155,6 +157,7 @@
             dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProducts.Size = new Size(1133, 546);
             dgvProducts.TabIndex = 0;
+            dgvProducts.CellClick += dgvProducts_CellClick;
             // 
             // ProductId
             // 
@@ -166,42 +169,54 @@
             // 
             // SKU
             // 
+            SKU.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             SKU.DataPropertyName = "SKU";
+            SKU.FillWeight = 26.0995674F;
             SKU.HeaderText = "SKU";
             SKU.Name = "SKU";
             SKU.ReadOnly = true;
             // 
             // ProductName
             // 
+            ProductName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ProductName.DataPropertyName = "ProductName";
+            ProductName.FillWeight = 26.0995674F;
             ProductName.HeaderText = "Name";
             ProductName.Name = "ProductName";
             ProductName.ReadOnly = true;
             // 
             // CategoryName
             // 
+            CategoryName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             CategoryName.DataPropertyName = "CategoryName";
+            CategoryName.FillWeight = 26.0995674F;
             CategoryName.HeaderText = "Category";
             CategoryName.Name = "CategoryName";
             CategoryName.ReadOnly = true;
             // 
             // SupplierName
             // 
+            SupplierName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             SupplierName.DataPropertyName = "SupplierName";
+            SupplierName.FillWeight = 26.0995674F;
             SupplierName.HeaderText = "Supplier";
             SupplierName.Name = "SupplierName";
             SupplierName.ReadOnly = true;
             // 
             // Quantity
             // 
+            Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Quantity.DataPropertyName = "Quantity";
+            Quantity.FillWeight = 26.0995674F;
             Quantity.HeaderText = "Quantity";
             Quantity.Name = "Quantity";
             Quantity.ReadOnly = true;
             // 
             // ReorderLevel
             // 
+            ReorderLevel.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ReorderLevel.DataPropertyName = "ReorderLevel";
+            ReorderLevel.FillWeight = 26.0995674F;
             ReorderLevel.HeaderText = "Reorder Level";
             ReorderLevel.Name = "ReorderLevel";
             ReorderLevel.ReadOnly = true;
@@ -210,6 +225,7 @@
             // 
             CreatedAt.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             CreatedAt.DataPropertyName = "CreatedAt";
+            CreatedAt.FillWeight = 26.0995674F;
             CreatedAt.HeaderText = "Created At";
             CreatedAt.Name = "CreatedAt";
             CreatedAt.ReadOnly = true;
@@ -320,6 +336,7 @@
             // gradientPanel2
             // 
             gradientPanel2.BorderStyle = BorderStyle.None;
+            gradientPanel2.Controls.Add(btnEdit);
             gradientPanel2.Controls.Add(btnRefresh);
             gradientPanel2.Controls.Add(btnAddProduct);
             gradientPanel2.Controls.Add(gradientPanel4);
@@ -330,14 +347,28 @@
             gradientPanel2.Size = new Size(1165, 61);
             gradientPanel2.TabIndex = 0;
             // 
+            // btnEdit
+            // 
+            btnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            btnEdit.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEdit.ImageSize = new Size(16, 16);
+            btnEdit.Location = new Point(995, 8);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(75, 36);
+            btnEdit.Style.Image = Properties.Resources.square_pen__3_;
+            btnEdit.TabIndex = 4;
+            btnEdit.Text = "Edit";
+            btnEdit.TextAlign = ContentAlignment.MiddleRight;
+            btnEdit.Click += btnEdit_Click;
+            // 
             // btnRefresh
             // 
             btnRefresh.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnRefresh.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRefresh.ImageSize = new Size(16, 16);
-            btnRefresh.Location = new Point(1015, 8);
+            btnRefresh.Location = new Point(1076, 8);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(134, 36);
+            btnRefresh.Size = new Size(89, 36);
             btnRefresh.Style.Image = Properties.Resources.refresh_ccw;
             btnRefresh.TabIndex = 3;
             btnRefresh.Text = "Refresh";
@@ -349,12 +380,12 @@
             btnAddProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnAddProduct.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddProduct.ImageSize = new Size(16, 16);
-            btnAddProduct.Location = new Point(868, 8);
+            btnAddProduct.Location = new Point(914, 8);
             btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(134, 36);
+            btnAddProduct.Size = new Size(75, 36);
             btnAddProduct.Style.Image = Properties.Resources.plus__3_;
             btnAddProduct.TabIndex = 2;
-            btnAddProduct.Text = "Add Product";
+            btnAddProduct.Text = "New";
             btnAddProduct.TextAlign = ContentAlignment.MiddleRight;
             btnAddProduct.Click += btnAddProduct_Click;
             // 
@@ -365,7 +396,7 @@
             gradientPanel4.BorderStyle = BorderStyle.FixedSingle;
             gradientPanel4.Controls.Add(textBoxExt1);
             gradientPanel4.Controls.Add(pictureBox1);
-            gradientPanel4.Location = new Point(590, 8);
+            gradientPanel4.Location = new Point(636, 8);
             gradientPanel4.Name = "gradientPanel4";
             gradientPanel4.Size = new Size(272, 36);
             gradientPanel4.TabIndex = 1;
@@ -449,14 +480,6 @@
         private Syncfusion.WinForms.Controls.SfButton btnRefresh;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel6;
         private DataGridView dgvProducts;
-        private DataGridViewTextBoxColumn ProductId;
-        private DataGridViewTextBoxColumn SKU;
-        private DataGridViewTextBoxColumn ProductName;
-        private DataGridViewTextBoxColumn CategoryName;
-        private DataGridViewTextBoxColumn SupplierName;
-        private DataGridViewTextBoxColumn Quantity;
-        private DataGridViewTextBoxColumn ReorderLevel;
-        private DataGridViewTextBoxColumn CreatedAt;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel5;
         private Syncfusion.WinForms.Controls.SfButton btnLast;
         private Syncfusion.WinForms.Controls.SfButton btnNext;
@@ -465,5 +488,14 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblRecordFound;
         private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtPageSize;
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblPage;
+        private DataGridViewTextBoxColumn ProductId;
+        private DataGridViewTextBoxColumn SKU;
+        private DataGridViewTextBoxColumn ProductName;
+        private DataGridViewTextBoxColumn CategoryName;
+        private DataGridViewTextBoxColumn SupplierName;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn ReorderLevel;
+        private DataGridViewTextBoxColumn CreatedAt;
+        private Syncfusion.WinForms.Controls.SfButton btnEdit;
     }
 }

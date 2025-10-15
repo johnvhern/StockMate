@@ -233,6 +233,26 @@ namespace StockMate.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap square_pen__2_ {
+            get {
+                object obj = ResourceManager.GetObject("square-pen (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap square_pen__3_ {
+            get {
+                object obj = ResourceManager.GetObject("square-pen (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap triangle_alert {
             get {
                 object obj = ResourceManager.GetObject("triangle-alert", resourceCulture);

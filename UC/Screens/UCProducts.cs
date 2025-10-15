@@ -1,6 +1,7 @@
 ﻿using StockMate.Forms.Products;
 using StockMate.Helpers;
 using StockMate.Services;
+using Syncfusion.Windows.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace StockMate.UC.Screens
 {
@@ -20,10 +22,12 @@ namespace StockMate.UC.Screens
         private int _pageIndex = 1;
         private int _pageSize = 50;
         private int _totalPageIndex = 0;
+        private int productId = 0;
         public UCProducts()
         {
             InitializeComponent();
             ButtonStyle.BlueButton(btnAddProduct);
+            ButtonStyle.BlueButton(btnEdit);
             ButtonStyle.BlueButton(btnFirst);
             ButtonStyle.BlueButton(btnPrev);
             ButtonStyle.BlueButton(btnNext);
@@ -135,6 +139,28 @@ namespace StockMate.UC.Screens
                     MessageBox.Show("Please enter a valid positive integer for the page size.");
                     txtPageSize.Text = _pageSize.ToString();  // revert to valid value
                 }
+            }
+        }
+
+        private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // ignore header clicks
+            {
+                // Assuming your data source has a column "ProductId"
+                var id = dgvProducts.Rows[e.RowIndex].Cells[0].Value; // Assuming product Id is in column 0
+                productId = Convert.ToInt32(id);
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (productId == 0)
+            {
+                MessageBoxAdv.Show("Please select an item to edit.","No Item Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                new frmUpdateProduct().ShowDialog();
             }
         }
     }

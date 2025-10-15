@@ -42,9 +42,6 @@
             autoLabel6 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel7 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             cmbSupplier = new Syncfusion.WinForms.ListView.SfComboBox();
-            autoLabel7 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            gradientPanel8 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            txtQuantity = new Syncfusion.Windows.Forms.Tools.IntegerTextBox();
             autoLabel8 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel9 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             txtReorderLevel = new Syncfusion.Windows.Forms.Tools.IntegerTextBox();
@@ -69,9 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)gradientPanel7).BeginInit();
             gradientPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cmbSupplier).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gradientPanel8).BeginInit();
-            gradientPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)txtQuantity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel9).BeginInit();
             gradientPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtReorderLevel).BeginInit();
@@ -91,7 +85,7 @@
             gradientPanel1.Location = new Point(0, 0);
             gradientPanel1.Name = "gradientPanel1";
             gradientPanel1.Padding = new Padding(15, 0, 15, 5);
-            gradientPanel1.Size = new Size(399, 492);
+            gradientPanel1.Size = new Size(399, 433);
             gradientPanel1.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -104,8 +98,6 @@
             flowLayoutPanel1.Controls.Add(gradientPanel6);
             flowLayoutPanel1.Controls.Add(autoLabel6);
             flowLayoutPanel1.Controls.Add(gradientPanel7);
-            flowLayoutPanel1.Controls.Add(autoLabel7);
-            flowLayoutPanel1.Controls.Add(gradientPanel8);
             flowLayoutPanel1.Controls.Add(autoLabel8);
             flowLayoutPanel1.Controls.Add(gradientPanel9);
             flowLayoutPanel1.Dock = DockStyle.Fill;
@@ -113,7 +105,7 @@
             flowLayoutPanel1.Location = new Point(15, 57);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(10);
-            flowLayoutPanel1.Size = new Size(369, 382);
+            flowLayoutPanel1.Size = new Size(369, 323);
             flowLayoutPanel1.TabIndex = 4;
             // 
             // autoLabel3
@@ -276,48 +268,11 @@
             cmbSupplier.TabStop = false;
             cmbSupplier.Text = "Select Supplier";
             // 
-            // autoLabel7
-            // 
-            autoLabel7.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            autoLabel7.ForeColor = Color.FromArgb(43, 48, 59);
-            autoLabel7.Location = new Point(13, 255);
-            autoLabel7.Margin = new Padding(3, 5, 3, 0);
-            autoLabel7.Name = "autoLabel7";
-            autoLabel7.Size = new Size(56, 17);
-            autoLabel7.TabIndex = 8;
-            autoLabel7.Text = "Quantity";
-            // 
-            // gradientPanel8
-            // 
-            gradientPanel8.BorderColor = Color.Silver;
-            gradientPanel8.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel8.Controls.Add(txtQuantity);
-            gradientPanel8.Location = new Point(13, 277);
-            gradientPanel8.Margin = new Padding(3, 5, 3, 3);
-            gradientPanel8.Name = "gradientPanel8";
-            gradientPanel8.Padding = new Padding(6, 6, 6, 3);
-            gradientPanel8.Size = new Size(342, 30);
-            gradientPanel8.TabIndex = 9;
-            // 
-            // txtQuantity
-            // 
-            txtQuantity.AccessibilityEnabled = true;
-            txtQuantity.BeforeTouchSize = new Size(328, 16);
-            txtQuantity.BorderStyle = BorderStyle.None;
-            txtQuantity.Dock = DockStyle.Fill;
-            txtQuantity.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtQuantity.IntegerValue = 1L;
-            txtQuantity.Location = new Point(6, 6);
-            txtQuantity.Name = "txtQuantity";
-            txtQuantity.Size = new Size(328, 16);
-            txtQuantity.TabIndex = 0;
-            txtQuantity.Text = "1";
-            // 
             // autoLabel8
             // 
             autoLabel8.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             autoLabel8.ForeColor = Color.FromArgb(43, 48, 59);
-            autoLabel8.Location = new Point(13, 315);
+            autoLabel8.Location = new Point(13, 255);
             autoLabel8.Margin = new Padding(3, 5, 3, 0);
             autoLabel8.Name = "autoLabel8";
             autoLabel8.Size = new Size(88, 17);
@@ -329,7 +284,7 @@
             gradientPanel9.BorderColor = Color.Silver;
             gradientPanel9.BorderStyle = BorderStyle.FixedSingle;
             gradientPanel9.Controls.Add(txtReorderLevel);
-            gradientPanel9.Location = new Point(13, 337);
+            gradientPanel9.Location = new Point(13, 277);
             gradientPanel9.Margin = new Padding(3, 5, 3, 3);
             gradientPanel9.Name = "gradientPanel9";
             gradientPanel9.Padding = new Padding(6, 6, 6, 3);
@@ -356,7 +311,7 @@
             gradientPanel2.Controls.Add(btnCancel);
             gradientPanel2.Controls.Add(btnUpdateProduct);
             gradientPanel2.Dock = DockStyle.Bottom;
-            gradientPanel2.Location = new Point(15, 439);
+            gradientPanel2.Location = new Point(15, 380);
             gradientPanel2.Name = "gradientPanel2";
             gradientPanel2.Size = new Size(369, 48);
             gradientPanel2.TabIndex = 5;
@@ -426,13 +381,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(399, 492);
+            ClientSize = new Size(399, 433);
             Controls.Add(gradientPanel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmUpdateProduct";
             ShowIcon = false;
             ShowMaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
+            Load += frmUpdateProduct_Load;
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).EndInit();
             gradientPanel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
@@ -451,10 +407,6 @@
             ((System.ComponentModel.ISupportInitialize)gradientPanel7).EndInit();
             gradientPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)cmbSupplier).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gradientPanel8).EndInit();
-            gradientPanel8.ResumeLayout(false);
-            gradientPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)txtQuantity).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel9).EndInit();
             gradientPanel9.ResumeLayout(false);
             gradientPanel9.PerformLayout();
@@ -482,9 +434,6 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel6;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel7;
         private Syncfusion.WinForms.ListView.SfComboBox cmbSupplier;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel7;
-        private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel8;
-        private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtQuantity;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel8;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel9;
         private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtReorderLevel;

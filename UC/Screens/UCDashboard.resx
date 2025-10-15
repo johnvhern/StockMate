@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAf5JREFUeF7t
         mzFOwzAYhTkHE6dgiSP1DsDO2FtQxZbYOUCZ6czeYzByBRY7U1T0mgZFL5FaTJXG5n3SL1XNcxx/SUoS
@@ -132,7 +132,7 @@
         8hRgIAJ/BboXqVIpbG/Uj6AQQvwHvgFnG5Ua8jPmQwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAA/5JREFUeF7t
         mLFvFEcUxu0WpUhHhRSlo6BCQOKdO11JRRoo6OAfcEWDUviyM8j/ABSpIkuRoAk1EgUylQso6SzRIRlF
@@ -155,7 +155,7 @@
         Q409AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image2" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAABJRJREFUeF7t
         mr+L3EYUx8+tSZEuVSCkc+HKOHFOs8uWrpImKdIl/8BVbkwKrzUT7h9wilTBEHCauDa4OM7VFXHp7sBd
@@ -180,7 +180,7 @@
         J9m+kjbvBBff+RYuwjZt2tY/k8lk/rO8BZAOp9O920YtAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image3" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAA1RJREFUeF7t
         Wjty2zAQ9VFyj5AzPkqOohFdpMoVkjpp0rhW6ROk9qTSARKSZTJrABK5WAD7AFKGOHwzr6GIh93H3eXH
