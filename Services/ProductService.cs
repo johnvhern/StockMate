@@ -182,9 +182,50 @@ namespace StockMate.Services
 
         #region -- Update Product --
 
-        public void UpdateProduct(string name, string sku, int category, int supplier, int quantity, int reorderlevel, Form form)
+        public void UpdateProduct(int productId, string name, string sku, int category, int supplier, int reorderlevel, Form form)
         {
+            try
+            {
+                if (!string.IsNullOrEmpty(name) && category > 0 && supplier > 0)
+                {
+                    using (var conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
+                    {
+                        string updateQuery = "UPDATE Products SET ProductName = @productName, SKU = @sku, CategoryId = @categoryId, SupplierId = @supplierId, ReorderLevel = @reorderLevel WHERE ProductId = @productId";
 
+                        using (Microsoft.Data.SqlClient.SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand(updateQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@productId", productId);
+                            cmd.Parameters.AddWithValue("@productName", name);
+                            cmd.Parameters.AddWithValue("@sku", sku);
+                            cmd.Parameters.AddWithValue("@categoryId", category);
+                            cmd.Parameters.AddWithValue("@supplierId", supplier);
+                            cmd.Parameters.AddWithValue("@reorderLevel", reorderlevel);
+
+                            conn.Open();
+                            int result = cmd.ExecuteNonQuery();
+
+                            if (result > 0)
+                            {
+                                MessageBoxAdv.Show("Product updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                form.DialogResult = DialogResult.OK;
+                                form.Close();
+                            }
+                            else
+                            {
+                                MessageBoxAdv.Show("Cannot update product. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBoxAdv.Show($"Please fill in the required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxAdv.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion

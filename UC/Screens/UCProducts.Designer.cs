@@ -252,9 +252,9 @@
             lblPage.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblPage.AutoSize = false;
             lblPage.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPage.Location = new Point(477, 24);
+            lblPage.Location = new Point(335, 24);
             lblPage.Name = "lblPage";
-            lblPage.Size = new Size(147, 17);
+            lblPage.Size = new Size(402, 17);
             lblPage.TabIndex = 6;
             lblPage.Text = "Page 1 of 1";
             lblPage.TextAlign = ContentAlignment.MiddleCenter;

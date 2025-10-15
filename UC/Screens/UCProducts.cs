@@ -26,7 +26,7 @@ namespace StockMate.UC.Screens
         public UCProducts()
         {
             InitializeComponent();
-            ButtonStyle.BlueButton(btnAddProduct);
+            ButtonStyle.GreenButton(btnAddProduct);
             ButtonStyle.BlueButton(btnEdit);
             ButtonStyle.BlueButton(btnFirst);
             ButtonStyle.BlueButton(btnPrev);
@@ -51,6 +51,7 @@ namespace StockMate.UC.Screens
         {
             await addProductService.LoadProductsPaged(dgvProducts, _pageIndex, _pageSize);
             dgvProducts.ClearSelection();
+            productId = 0;
             int totalRows = await addProductService.GetTotalRowCountAsync();
             _totalPageIndex = (int)Math.Ceiling((double)totalRows / _pageSize);
             lblRecordFound.Text = $"Record Found: {totalRows}";
@@ -153,7 +154,7 @@ namespace StockMate.UC.Screens
             }
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private async void btnEdit_Click(object sender, EventArgs e)
         {
             if (productId == 0)
             {
@@ -161,7 +162,11 @@ namespace StockMate.UC.Screens
             }
             else
             {
-                new frmUpdateProduct(productId).ShowDialog();
+                frmUpdateProduct frmUpdateProduct = new frmUpdateProduct(productId);
+                if (frmUpdateProduct.ShowDialog() == DialogResult.OK)
+                {
+                    await addProductService.LoadProductsPaged(dgvProducts, _pageIndex, _pageSize);
+                }
             }
         }
     }
