@@ -17,7 +17,7 @@ namespace StockMate.UC.Screens
         public UCSuppliers()
         {
             InitializeComponent();
-            ButtonStyle.BlueButton(btnAddSupplier);
+            //ButtonStyle.BlueButton(btnAddSupplier);
         }
 
         private void btnAddSupplier_Click(object sender, EventArgs e)
