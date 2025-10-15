@@ -1,10 +1,12 @@
 ﻿using Microsoft.Data.SqlClient;
+using StockMate.Models;
 using Syncfusion.Windows.Forms;
 using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -140,6 +142,39 @@ namespace StockMate.Services
                     }
                 }
             }
+        }
+
+        public ProductDetails GetProductDetails(int productId)
+        {
+            ProductDetails product = null;
+            using (var conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                string query = "SELECT ProductId, SKU, ProductName, CategoryId, SupplierId, ReorderLevel FROM Products p WHERE ProductId = @productId";
+
+                using (var cmd = new Microsoft.Data.SqlClient.SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@productId", productId);
+                    conn.Open();
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            product = new ProductDetails()
+                            {
+                                ProductId = reader.GetInt32(reader.GetOrdinal("ProductId")),
+                                SKU = reader.GetString(reader.GetOrdinal("SKU")),
+                                ProductName = reader.GetString(reader.GetOrdinal("ProductName")),
+                                CategoryId = reader.GetInt32(reader.GetOrdinal("CategoryId")),
+                                SupplierId = reader.GetInt32(reader.GetOrdinal("SupplierId")),
+                                ReorderLevel = reader.GetInt32(reader.GetOrdinal("ReorderLevel"))
+                            };
+                        }
+                    }
+                }
+            }
+
+            return product;
         }
 
         #endregion

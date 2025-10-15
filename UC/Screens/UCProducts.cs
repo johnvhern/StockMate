@@ -33,8 +33,8 @@ namespace StockMate.UC.Screens
             ButtonStyle.BlueButton(btnNext);
             ButtonStyle.BlueButton(btnLast);
             ButtonStyle.WhiteButton(btnRefresh);
+            ButtonStyle.BlueButton(btnSearch);
             dgvProducts.AutoGenerateColumns = false;
-
             addProductService = new ProductService();
 
         }
@@ -50,6 +50,7 @@ namespace StockMate.UC.Screens
         private async void LoadPageAsync()
         {
             await addProductService.LoadProductsPaged(dgvProducts, _pageIndex, _pageSize);
+            dgvProducts.ClearSelection();
             int totalRows = await addProductService.GetTotalRowCountAsync();
             _totalPageIndex = (int)Math.Ceiling((double)totalRows / _pageSize);
             lblRecordFound.Text = $"Record Found: {totalRows}";
@@ -160,7 +161,7 @@ namespace StockMate.UC.Screens
             }
             else
             {
-                new frmUpdateProduct().ShowDialog();
+                new frmUpdateProduct(productId).ShowDialog();
             }
         }
     }

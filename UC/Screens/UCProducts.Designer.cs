@@ -53,6 +53,7 @@
             btnPrev = new Syncfusion.WinForms.Controls.SfButton();
             btnFirst = new Syncfusion.WinForms.Controls.SfButton();
             gradientPanel2 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            btnSearch = new Syncfusion.WinForms.Controls.SfButton();
             btnEdit = new Syncfusion.WinForms.Controls.SfButton();
             btnRefresh = new Syncfusion.WinForms.Controls.SfButton();
             btnAddProduct = new Syncfusion.WinForms.Controls.SfButton();
@@ -109,10 +110,10 @@
             gradientPanel6.BorderStyle = BorderStyle.FixedSingle;
             gradientPanel6.Controls.Add(dgvProducts);
             gradientPanel6.Dock = DockStyle.Fill;
-            gradientPanel6.Location = new Point(20, 81);
+            gradientPanel6.Location = new Point(20, 109);
             gradientPanel6.Name = "gradientPanel6";
             gradientPanel6.Padding = new Padding(15);
-            gradientPanel6.Size = new Size(1165, 578);
+            gradientPanel6.Size = new Size(1165, 550);
             gradientPanel6.TabIndex = 2;
             // 
             // dgvProducts
@@ -127,23 +128,23 @@
             dgvProducts.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvProducts.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(79, 143, 246);
+            dataGridViewCellStyle1.BackColor = Color.Gainsboro;
             dataGridViewCellStyle1.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(43, 48, 59);
             dataGridViewCellStyle1.Padding = new Padding(10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(79, 143, 246);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Gainsboro;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(43, 48, 59);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProducts.Columns.AddRange(new DataGridViewColumn[] { ProductId, SKU, ProductName, CategoryName, SupplierName, Quantity, ReorderLevel, CreatedAt });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(43, 48, 59);
             dataGridViewCellStyle2.Padding = new Padding(15);
-            dataGridViewCellStyle2.SelectionBackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(79, 143, 246);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvProducts.DefaultCellStyle = dataGridViewCellStyle2;
             dgvProducts.Dock = DockStyle.Fill;
@@ -155,7 +156,7 @@
             dgvProducts.ReadOnly = true;
             dgvProducts.RowHeadersVisible = false;
             dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProducts.Size = new Size(1133, 546);
+            dgvProducts.Size = new Size(1133, 518);
             dgvProducts.TabIndex = 0;
             dgvProducts.CellClick += dgvProducts_CellClick;
             // 
@@ -336,6 +337,7 @@
             // gradientPanel2
             // 
             gradientPanel2.BorderStyle = BorderStyle.None;
+            gradientPanel2.Controls.Add(btnSearch);
             gradientPanel2.Controls.Add(btnEdit);
             gradientPanel2.Controls.Add(btnRefresh);
             gradientPanel2.Controls.Add(btnAddProduct);
@@ -344,15 +346,25 @@
             gradientPanel2.Dock = DockStyle.Top;
             gradientPanel2.Location = new Point(20, 20);
             gradientPanel2.Name = "gradientPanel2";
-            gradientPanel2.Size = new Size(1165, 61);
+            gradientPanel2.Size = new Size(1165, 89);
             gradientPanel2.TabIndex = 0;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnSearch.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ImageSize = new Size(16, 16);
+            btnSearch.Location = new Point(1092, 37);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(73, 36);
+            btnSearch.TabIndex = 5;
+            btnSearch.Text = "Search";
             // 
             // btnEdit
             // 
-            btnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnEdit.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEdit.ImageSize = new Size(16, 16);
-            btnEdit.Location = new Point(995, 8);
+            btnEdit.Location = new Point(81, 37);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(75, 36);
             btnEdit.Style.Image = Properties.Resources.square_pen__3_;
@@ -363,10 +375,9 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnRefresh.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRefresh.ImageSize = new Size(16, 16);
-            btnRefresh.Location = new Point(1076, 8);
+            btnRefresh.Location = new Point(162, 37);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(89, 36);
             btnRefresh.Style.Image = Properties.Resources.refresh_ccw;
@@ -377,10 +388,9 @@
             // 
             // btnAddProduct
             // 
-            btnAddProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnAddProduct.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddProduct.ImageSize = new Size(16, 16);
-            btnAddProduct.Location = new Point(914, 8);
+            btnAddProduct.Location = new Point(0, 37);
             btnAddProduct.Name = "btnAddProduct";
             btnAddProduct.Size = new Size(75, 36);
             btnAddProduct.Style.Image = Properties.Resources.plus__3_;
@@ -391,12 +401,12 @@
             // 
             // gradientPanel4
             // 
-            gradientPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            gradientPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             gradientPanel4.BorderColor = Color.Gainsboro;
             gradientPanel4.BorderStyle = BorderStyle.FixedSingle;
             gradientPanel4.Controls.Add(textBoxExt1);
             gradientPanel4.Controls.Add(pictureBox1);
-            gradientPanel4.Location = new Point(636, 8);
+            gradientPanel4.Location = new Point(814, 37);
             gradientPanel4.Name = "gradientPanel4";
             gradientPanel4.Size = new Size(272, 36);
             gradientPanel4.TabIndex = 1;
@@ -429,7 +439,7 @@
             lblTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             lblTitle.Font = new Font("Inter", 15.75F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(43, 48, 59);
-            lblTitle.Location = new Point(0, 8);
+            lblTitle.Location = new Point(-6, 0);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(213, 30);
             lblTitle.TabIndex = 0;
@@ -497,5 +507,6 @@
         private DataGridViewTextBoxColumn ReorderLevel;
         private DataGridViewTextBoxColumn CreatedAt;
         private Syncfusion.WinForms.Controls.SfButton btnEdit;
+        private Syncfusion.WinForms.Controls.SfButton btnSearch;
     }
 }
