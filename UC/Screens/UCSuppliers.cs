@@ -38,7 +38,10 @@ namespace StockMate.UC.Screens
 
         private void btnAddSupplier_Click(object sender, EventArgs e)
         {
-            new frmAddSupplier().ShowDialog();
+            if (new frmAddSupplier().ShowDialog() == DialogResult.OK)
+            {
+                LoadPageAsync();
+            }
         }
 
         private void UpdateButtons(int pageIndex, int totalPages)
@@ -54,7 +57,7 @@ namespace StockMate.UC.Screens
             await supplierService.LoadSupplier(dgvSuppliers, _pageIndex, _pageSize);
             dgvSuppliers.ClearSelection();
             productId = 0;
-            int totalRows = await supplierService.GetTotalRowCountAsync();
+            int totalRows = supplierService.GetTotalRowCountAsync();
             _totalPageIndex = (int)Math.Ceiling((double)totalRows / _pageSize);
             lblRecordFound.Text = $"Record Found: {totalRows}";
             lblPage.Text = $"Page {_pageIndex} of {_totalPageIndex}";
@@ -62,9 +65,9 @@ namespace StockMate.UC.Screens
             UpdateButtons(_pageIndex, _totalPageIndex);
         }
 
-        private async Task LoadLastPageAsync()
+        private void LoadLastPageAsync()
         {
-            int totalRows = await supplierService.GetTotalRowCountAsync();
+            int totalRows = supplierService.GetTotalRowCountAsync();
             _totalPageIndex = (int)Math.Ceiling((double)totalRows / _pageSize);
             _pageIndex = _totalPageIndex;
             LoadPageAsync();
@@ -104,9 +107,9 @@ namespace StockMate.UC.Screens
             }
         }
 
-        private async void btnLast_Click(object sender, EventArgs e)
+        private void btnLast_Click(object sender, EventArgs e)
         {
-            await LoadLastPageAsync();
+            LoadLastPageAsync();
         }
 
         private void txtPageSize_KeyDown(object sender, KeyEventArgs e)
@@ -129,6 +132,11 @@ namespace StockMate.UC.Screens
                     txtPageSize.Text = _pageSize.ToString();  // revert to valid value
                 }
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadPageAsync();
         }
     }
 }

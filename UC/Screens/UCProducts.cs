@@ -52,7 +52,7 @@ namespace StockMate.UC.Screens
             await addProductService.LoadProductsPaged(dgvProducts, _pageIndex, _pageSize);
             dgvProducts.ClearSelection();
             productId = 0;
-            int totalRows = await addProductService.GetTotalRowCountAsync();
+            int totalRows = addProductService.GetTotalRowCountAsync();
             _totalPageIndex = (int)Math.Ceiling((double)totalRows / _pageSize);
             lblRecordFound.Text = $"Record Found: {totalRows}";
             lblPage.Text = $"Page {_pageIndex} of {_totalPageIndex}";
@@ -60,21 +60,21 @@ namespace StockMate.UC.Screens
             UpdateButtons(_pageIndex, _totalPageIndex);
         }
 
-        private async Task LoadLastPageAsync()
+        private void LoadLastPageAsync()
         {
-            int totalRows = await addProductService.GetTotalRowCountAsync();
+            int totalRows = addProductService.GetTotalRowCountAsync();
             _totalPageIndex = (int)Math.Ceiling((double)totalRows / _pageSize);
             _pageIndex = _totalPageIndex;
             LoadPageAsync();
         }
 
-        private async void btnAddProduct_Click(object sender, EventArgs e)
+        private void btnAddProduct_Click(object sender, EventArgs e)
         {
             frmAddProduct frmAddProduct = new frmAddProduct();
 
             if (frmAddProduct.ShowDialog() == DialogResult.OK)
             {
-                await addProductService.LoadProductsPaged(dgvProducts, _pageIndex, _pageSize);
+                LoadPageAsync();
             }
         }
 
@@ -136,9 +136,9 @@ namespace StockMate.UC.Screens
             }
         }
 
-        private async void btnLast_Click(object sender, EventArgs e)
+        private void btnLast_Click(object sender, EventArgs e)
         {
-            await LoadLastPageAsync();
+            LoadLastPageAsync();
         }
 
         private void txtPageSize_KeyDown(object sender, KeyEventArgs e)

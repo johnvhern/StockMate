@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             dgvSuppliers = new DataGridView();
@@ -109,25 +109,25 @@
             dgvSuppliers.BorderStyle = BorderStyle.None;
             dgvSuppliers.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvSuppliers.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = Color.Gainsboro;
-            dataGridViewCellStyle13.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle13.ForeColor = Color.FromArgb(43, 48, 59);
-            dataGridViewCellStyle13.Padding = new Padding(0, 7, 0, 7);
-            dataGridViewCellStyle13.SelectionBackColor = Color.Gainsboro;
-            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(43, 48, 59);
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
-            dgvSuppliers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(43, 48, 59);
+            dataGridViewCellStyle1.Padding = new Padding(0, 7, 0, 7);
+            dataGridViewCellStyle1.SelectionBackColor = Color.Gainsboro;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(43, 48, 59);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvSuppliers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvSuppliers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSuppliers.Columns.AddRange(new DataGridViewColumn[] { SupplierId, SupplierName, ContactPerson, Email, MobileNumber, Address, CreatedAt });
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = Color.White;
-            dataGridViewCellStyle14.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle14.ForeColor = Color.FromArgb(43, 48, 59);
-            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(79, 143, 246);
-            dataGridViewCellStyle14.SelectionForeColor = Color.White;
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
-            dgvSuppliers.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(43, 48, 59);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(79, 143, 246);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvSuppliers.DefaultCellStyle = dataGridViewCellStyle2;
             dgvSuppliers.Dock = DockStyle.Fill;
             dgvSuppliers.EnableHeadersVisualStyles = false;
             dgvSuppliers.GridColor = Color.LightGray;
@@ -136,8 +136,8 @@
             dgvSuppliers.Name = "dgvSuppliers";
             dgvSuppliers.ReadOnly = true;
             dgvSuppliers.RowHeadersVisible = false;
-            dataGridViewCellStyle15.Padding = new Padding(1);
-            dgvSuppliers.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Padding = new Padding(1);
+            dgvSuppliers.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvSuppliers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSuppliers.Size = new Size(1133, 511);
             dgvSuppliers.TabIndex = 1;
@@ -248,6 +248,7 @@
             btnRefresh.TabIndex = 9;
             btnRefresh.Text = "Refresh";
             btnRefresh.TextAlign = ContentAlignment.MiddleRight;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // btnAddSupplier
             // 
@@ -276,7 +277,7 @@
             // 
             // textBoxExt1
             // 
-            textBoxExt1.BeforeTouchSize = new Size(51, 22);
+            textBoxExt1.BeforeTouchSize = new Size(238, 16);
             textBoxExt1.BorderStyle = BorderStyle.None;
             textBoxExt1.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxExt1.Location = new Point(29, 9);
@@ -337,7 +338,7 @@
             // 
             txtPageSize.AccessibilityEnabled = true;
             txtPageSize.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            txtPageSize.BeforeTouchSize = new Size(51, 22);
+            txtPageSize.BeforeTouchSize = new Size(238, 16);
             txtPageSize.BorderColor = Color.DimGray;
             txtPageSize.BorderStyle = BorderStyle.FixedSingle;
             txtPageSize.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);

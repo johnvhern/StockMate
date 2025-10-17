@@ -17,8 +17,8 @@ namespace StockMate.UC.Screens
 {
     public partial class UCDashboard : UserControl
     {
-        private readonly ProductService productService;
-        private readonly SupplierService supplierService;
+        private readonly ProductService productService= new ProductService();
+        private readonly SupplierService supplierService = new SupplierService();
         public UCDashboard()
         {
             InitializeComponent();
@@ -26,19 +26,22 @@ namespace StockMate.UC.Screens
             ButtonStyle.DashboardQuickActionBtn(btnAddProduct);
             ButtonStyle.DashboardQuickActionBtn(btnAddSupplier);
             ButtonStyle.DashboardQuickActionBtn(btnViewReports);
-
-            productService = new ProductService();
-            supplierService = new SupplierService();
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            new frmAddProduct().ShowDialog();
+            if (new frmAddProduct().ShowDialog() == DialogResult.OK)
+            {
+                loadCounts();
+            }
         }
 
         private void btnAddSupplier_Click(object sender, EventArgs e)
         {
-            new frmAddSupplier().ShowDialog();
+            if (new frmAddSupplier().ShowDialog() == DialogResult.OK)
+            {
+                loadCounts();
+            }
         }
 
         private void btnAddBorrower_Click(object sender, EventArgs e)
@@ -51,10 +54,15 @@ namespace StockMate.UC.Screens
 
         }
 
-        private async void UCDashboard_Load(object sender, EventArgs e)
+        private void UCDashboard_Load(object sender, EventArgs e)
         {
-            int totalProducts = await productService.GetTotalRowCountAsync();
-            int totalSupplier = await supplierService.GetTotalRowCountAsync();
+            loadCounts();
+        }
+
+        private void loadCounts()
+        {
+            int totalProducts = productService.GetTotalRowCountAsync();
+            int totalSupplier = supplierService.GetTotalRowCountAsync();
 
             txtTotalProducts.Text = totalProducts.ToString();
             txtTotalSupplier.Text = totalSupplier.ToString();

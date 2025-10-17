@@ -54,13 +54,13 @@ namespace StockMate.Services
 
         #region -- Get Total Rows --
 
-        public async Task<int> GetTotalRowCountAsync()
+        public int GetTotalRowCountAsync()
         {
             using var conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString);
             string sql = "SELECT COUNT(*) FROM Products";  // Adjust joins/filters as needed
             using var cmd = new Microsoft.Data.SqlClient.SqlCommand(sql, conn);
-            await conn.OpenAsync();
-            return (int)await cmd.ExecuteScalarAsync();
+            conn.Open();
+            return (int)cmd.ExecuteScalar();
         }
 
         #endregion

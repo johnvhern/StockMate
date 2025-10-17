@@ -87,7 +87,7 @@
             bannerTextInfo1.Text = "Enter contact person's name";
             bannerTextInfo1.Visible = true;
             bannerTextProvider1.SetBannerText(txtContactPerson, bannerTextInfo1);
-            txtContactPerson.BeforeTouchSize = new Size(238, 16);
+            txtContactPerson.BeforeTouchSize = new Size(328, 16);
             txtContactPerson.BorderStyle = BorderStyle.None;
             txtContactPerson.Dock = DockStyle.Fill;
             txtContactPerson.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -101,7 +101,7 @@
             bannerTextInfo2.Text = "Enter product name";
             bannerTextInfo2.Visible = true;
             bannerTextProvider1.SetBannerText(txtSupplierName, bannerTextInfo2);
-            txtSupplierName.BeforeTouchSize = new Size(238, 16);
+            txtSupplierName.BeforeTouchSize = new Size(328, 16);
             txtSupplierName.BorderStyle = BorderStyle.None;
             txtSupplierName.Dock = DockStyle.Fill;
             txtSupplierName.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -115,7 +115,7 @@
             bannerTextInfo3.Text = "example@example.com";
             bannerTextInfo3.Visible = true;
             bannerTextProvider1.SetBannerText(txtEmailAddress, bannerTextInfo3);
-            txtEmailAddress.BeforeTouchSize = new Size(238, 16);
+            txtEmailAddress.BeforeTouchSize = new Size(328, 16);
             txtEmailAddress.BorderStyle = BorderStyle.None;
             txtEmailAddress.Dock = DockStyle.Fill;
             txtEmailAddress.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -129,7 +129,7 @@
             bannerTextInfo4.Text = "Optional";
             bannerTextInfo4.Visible = true;
             bannerTextProvider1.SetBannerText(txtAddress, bannerTextInfo4);
-            txtAddress.BeforeTouchSize = new Size(238, 16);
+            txtAddress.BeforeTouchSize = new Size(328, 16);
             txtAddress.BorderStyle = BorderStyle.None;
             txtAddress.Dock = DockStyle.Fill;
             txtAddress.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -143,7 +143,7 @@
             bannerTextInfo5.Text = "Enter a valid contact number";
             bannerTextInfo5.Visible = true;
             bannerTextProvider1.SetBannerText(txtMobileNumber, bannerTextInfo5);
-            txtMobileNumber.BeforeTouchSize = new Size(238, 16);
+            txtMobileNumber.BeforeTouchSize = new Size(328, 16);
             txtMobileNumber.BorderStyle = BorderStyle.None;
             txtMobileNumber.Dock = DockStyle.Fill;
             txtMobileNumber.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
