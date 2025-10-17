@@ -1,6 +1,7 @@
 ﻿using StockMate.Forms.Suppliers;
 using StockMate.Helpers;
 using StockMate.Services;
+using Syncfusion.Windows.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace StockMate.UC.Screens
         private int _pageSize = 50;
         private int _totalPageIndex = 0;
         private int productId = 0;
+
         public UCSuppliers()
         {
             InitializeComponent();
@@ -44,12 +46,66 @@ namespace StockMate.UC.Screens
             }
         }
 
-        private void UpdateButtons(int pageIndex, int totalPages)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            btnFirst.Enabled = pageIndex > 1;
-            btnPrev.Enabled = pageIndex > 1;
-            btnNext.Enabled = pageIndex < totalPages;
-            btnLast.Enabled = pageIndex < totalPages;
+
+        }
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            _pageIndex = 1;
+            LoadPageAsync();
+        }
+
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            LoadLastPageAsync();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (_pageIndex < _totalPageIndex)
+            {
+                _pageIndex++;
+                LoadPageAsync();
+            }
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (_pageIndex > 1)
+            {
+                _pageIndex--;
+                LoadPageAsync();
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadPageAsync();
+        }
+
+        private void dgvSuppliers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // ignore header clicks
+            {
+                // Assuming your data source has a column "ProductId"
+                var id = dgvSuppliers.Rows[e.RowIndex].Cells[0].Value; // Assuming product Id is in column 0
+                productId = Convert.ToInt32(id);
+            }
+        }
+
+        private void dgvSuppliers_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            dgvSuppliers.Columns["CreatedAt"].DefaultCellStyle.Format = "d";  // Short date pattern, e.g. 10/12/2025
+        }
+
+        private void LoadLastPageAsync()
+        {
+            int totalRows = supplierService.GetTotalRowCountAsync();
+            _totalPageIndex = (int)Math.Ceiling((double)totalRows / _pageSize);
+            _pageIndex = _totalPageIndex;
+            LoadPageAsync();
         }
 
         private async void LoadPageAsync()
@@ -63,53 +119,6 @@ namespace StockMate.UC.Screens
             lblPage.Text = $"Page {_pageIndex} of {_totalPageIndex}";
             lblTitle.Focus();
             UpdateButtons(_pageIndex, _totalPageIndex);
-        }
-
-        private void LoadLastPageAsync()
-        {
-            int totalRows = supplierService.GetTotalRowCountAsync();
-            _totalPageIndex = (int)Math.Ceiling((double)totalRows / _pageSize);
-            _pageIndex = _totalPageIndex;
-            LoadPageAsync();
-        }
-
-        private void UCSuppliers_Load(object sender, EventArgs e)
-        {
-            LoadPageAsync();
-        }
-
-        private void dgvSuppliers_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            dgvSuppliers.Columns["CreatedAt"].DefaultCellStyle.Format = "d";  // Short date pattern, e.g. 10/12/2025
-        }
-
-        private void btnFirst_Click(object sender, EventArgs e)
-        {
-            _pageIndex = 1;
-            LoadPageAsync();
-        }
-
-        private void btnPrev_Click(object sender, EventArgs e)
-        {
-            if (_pageIndex > 1)
-            {
-                _pageIndex--;
-                LoadPageAsync();
-            }
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            if (_pageIndex < _totalPageIndex)
-            {
-                _pageIndex++;
-                LoadPageAsync();
-            }
-        }
-
-        private void btnLast_Click(object sender, EventArgs e)
-        {
-            LoadLastPageAsync();
         }
 
         private void txtPageSize_KeyDown(object sender, KeyEventArgs e)
@@ -134,9 +143,17 @@ namespace StockMate.UC.Screens
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void UCSuppliers_Load(object sender, EventArgs e)
         {
             LoadPageAsync();
+        }
+
+        private void UpdateButtons(int pageIndex, int totalPages)
+        {
+            btnFirst.Enabled = pageIndex > 1;
+            btnPrev.Enabled = pageIndex > 1;
+            btnNext.Enabled = pageIndex < totalPages;
+            btnLast.Enabled = pageIndex < totalPages;
         }
     }
 }

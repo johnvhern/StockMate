@@ -141,6 +141,7 @@
             dgvSuppliers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSuppliers.Size = new Size(1133, 511);
             dgvSuppliers.TabIndex = 1;
+            dgvSuppliers.CellClick += dgvSuppliers_CellClick;
             dgvSuppliers.CellFormatting += dgvSuppliers_CellFormatting;
             // 
             // SupplierId
@@ -236,6 +237,7 @@
             btnEdit.TabIndex = 10;
             btnEdit.Text = "Edit";
             btnEdit.TextAlign = ContentAlignment.MiddleRight;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnRefresh
             // 
@@ -277,7 +279,7 @@
             // 
             // textBoxExt1
             // 
-            textBoxExt1.BeforeTouchSize = new Size(238, 16);
+            textBoxExt1.BeforeTouchSize = new Size(51, 22);
             textBoxExt1.BorderStyle = BorderStyle.None;
             textBoxExt1.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxExt1.Location = new Point(29, 9);
@@ -338,7 +340,7 @@
             // 
             txtPageSize.AccessibilityEnabled = true;
             txtPageSize.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            txtPageSize.BeforeTouchSize = new Size(238, 16);
+            txtPageSize.BeforeTouchSize = new Size(51, 22);
             txtPageSize.BorderColor = Color.DimGray;
             txtPageSize.BorderStyle = BorderStyle.FixedSingle;
             txtPageSize.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
