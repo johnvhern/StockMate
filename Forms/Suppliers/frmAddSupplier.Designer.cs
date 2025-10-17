@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo1 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo2 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo3 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo4 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo5 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo6 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo7 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo8 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo9 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo10 = new Syncfusion.Windows.Forms.BannerTextInfo();
             bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(components);
             txtContactPerson = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             txtSupplierName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
@@ -84,10 +84,10 @@
             // 
             // txtContactPerson
             // 
-            bannerTextInfo1.Text = "Enter contact person's name";
-            bannerTextInfo1.Visible = true;
-            bannerTextProvider1.SetBannerText(txtContactPerson, bannerTextInfo1);
-            txtContactPerson.BeforeTouchSize = new Size(51, 22);
+            bannerTextInfo6.Text = "Enter contact person's name";
+            bannerTextInfo6.Visible = true;
+            bannerTextProvider1.SetBannerText(txtContactPerson, bannerTextInfo6);
+            txtContactPerson.BeforeTouchSize = new Size(328, 16);
             txtContactPerson.BorderStyle = BorderStyle.None;
             txtContactPerson.Dock = DockStyle.Fill;
             txtContactPerson.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -98,10 +98,10 @@
             // 
             // txtSupplierName
             // 
-            bannerTextInfo2.Text = "Enter product name";
-            bannerTextInfo2.Visible = true;
-            bannerTextProvider1.SetBannerText(txtSupplierName, bannerTextInfo2);
-            txtSupplierName.BeforeTouchSize = new Size(51, 22);
+            bannerTextInfo7.Text = "Enter product name";
+            bannerTextInfo7.Visible = true;
+            bannerTextProvider1.SetBannerText(txtSupplierName, bannerTextInfo7);
+            txtSupplierName.BeforeTouchSize = new Size(328, 16);
             txtSupplierName.BorderStyle = BorderStyle.None;
             txtSupplierName.Dock = DockStyle.Fill;
             txtSupplierName.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -112,10 +112,10 @@
             // 
             // txtEmailAddress
             // 
-            bannerTextInfo3.Text = "example@example.com";
-            bannerTextInfo3.Visible = true;
-            bannerTextProvider1.SetBannerText(txtEmailAddress, bannerTextInfo3);
-            txtEmailAddress.BeforeTouchSize = new Size(51, 22);
+            bannerTextInfo8.Text = "example@example.com";
+            bannerTextInfo8.Visible = true;
+            bannerTextProvider1.SetBannerText(txtEmailAddress, bannerTextInfo8);
+            txtEmailAddress.BeforeTouchSize = new Size(328, 16);
             txtEmailAddress.BorderStyle = BorderStyle.None;
             txtEmailAddress.Dock = DockStyle.Fill;
             txtEmailAddress.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -126,10 +126,10 @@
             // 
             // txtAddress
             // 
-            bannerTextInfo4.Text = "Optional";
-            bannerTextInfo4.Visible = true;
-            bannerTextProvider1.SetBannerText(txtAddress, bannerTextInfo4);
-            txtAddress.BeforeTouchSize = new Size(51, 22);
+            bannerTextInfo9.Text = "Optional";
+            bannerTextInfo9.Visible = true;
+            bannerTextProvider1.SetBannerText(txtAddress, bannerTextInfo9);
+            txtAddress.BeforeTouchSize = new Size(328, 16);
             txtAddress.BorderStyle = BorderStyle.None;
             txtAddress.Dock = DockStyle.Fill;
             txtAddress.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -140,10 +140,10 @@
             // 
             // txtMobileNumber
             // 
-            bannerTextInfo5.Text = "Enter a valid contact number";
-            bannerTextInfo5.Visible = true;
-            bannerTextProvider1.SetBannerText(txtMobileNumber, bannerTextInfo5);
-            txtMobileNumber.BeforeTouchSize = new Size(51, 22);
+            bannerTextInfo10.Text = "Enter a valid contact number";
+            bannerTextInfo10.Visible = true;
+            bannerTextProvider1.SetBannerText(txtMobileNumber, bannerTextInfo10);
+            txtMobileNumber.BeforeTouchSize = new Size(328, 16);
             txtMobileNumber.BorderStyle = BorderStyle.None;
             txtMobileNumber.Dock = DockStyle.Fill;
             txtMobileNumber.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -210,7 +210,7 @@
             btnAddSupplier.Style.BackColor = Color.FromArgb(79, 143, 246);
             btnAddSupplier.Style.ForeColor = Color.White;
             btnAddSupplier.TabIndex = 9;
-            btnAddSupplier.Text = "Add Supplier";
+            btnAddSupplier.Text = "Add";
             btnAddSupplier.UseVisualStyleBackColor = false;
             btnAddSupplier.Click += btnAddSupplier_Click;
             // 

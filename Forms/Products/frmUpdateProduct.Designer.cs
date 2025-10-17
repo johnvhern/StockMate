@@ -133,7 +133,7 @@
             // 
             // txtProductName
             // 
-            txtProductName.BeforeTouchSize = new Size(51, 22);
+            txtProductName.BeforeTouchSize = new Size(328, 16);
             txtProductName.BorderStyle = BorderStyle.None;
             txtProductName.Dock = DockStyle.Fill;
             txtProductName.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -167,7 +167,7 @@
             // 
             // txtSKU
             // 
-            txtSKU.BeforeTouchSize = new Size(51, 22);
+            txtSKU.BeforeTouchSize = new Size(328, 16);
             txtSKU.BorderStyle = BorderStyle.None;
             txtSKU.Dock = DockStyle.Fill;
             txtSKU.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -296,7 +296,7 @@
             // txtReorderLevel
             // 
             txtReorderLevel.AccessibilityEnabled = true;
-            txtReorderLevel.BeforeTouchSize = new Size(51, 22);
+            txtReorderLevel.BeforeTouchSize = new Size(328, 16);
             txtReorderLevel.BorderStyle = BorderStyle.None;
             txtReorderLevel.Dock = DockStyle.Fill;
             txtReorderLevel.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -339,7 +339,7 @@
             btnUpdateProduct.Style.BackColor = Color.FromArgb(79, 143, 246);
             btnUpdateProduct.Style.ForeColor = Color.White;
             btnUpdateProduct.TabIndex = 9;
-            btnUpdateProduct.Text = "Update Product";
+            btnUpdateProduct.Text = "Update";
             btnUpdateProduct.UseVisualStyleBackColor = false;
             btnUpdateProduct.Click += btnUpdateProduct_Click;
             // 

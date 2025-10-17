@@ -1,4 +1,6 @@
-﻿using Syncfusion.Windows.Forms;
+﻿using Microsoft.Identity.Client.Kerberos;
+using StockMate.Models;
+using Syncfusion.Windows.Forms;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -147,6 +149,38 @@ namespace StockMate.Services
                     }
                 }
             }
+        }
+
+        public SupplierDetails GetProductDetails(int supplierId)
+        {
+            SupplierDetails supplier = null;
+            using (var conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                string query = "SELECT SupplierId, SupplierName, ContactPerson, Email, MobileNumber, Address FROM Supplier WHERE SupplierId = @supplierId";
+
+                using (var cmd = new Microsoft.Data.SqlClient.SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@supplierId", supplierId);
+                    conn.Open();
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            supplier = new SupplierDetails()
+                            {
+                                SupplierId = reader.GetInt32(reader.GetOrdinal("SupplierId")),
+                                SupplierName = reader.GetString(reader.GetOrdinal("SupplierName")),
+                                ContactPerson = reader.GetString(reader.GetOrdinal("ContactPerson")),
+                                Email = reader.GetString(reader.GetOrdinal("Email")),
+                                MobileNumber = reader.GetString(reader.GetOrdinal("MobileNumber")),
+                                Address = reader.GetString(reader.GetOrdinal("Address")),
+                            };
+                        }
+                    }
+                }
+            }
+            return supplier;
         }
 
         #endregion

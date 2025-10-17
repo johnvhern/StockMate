@@ -46,9 +46,20 @@ namespace StockMate.UC.Screens
             }
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private async void btnEdit_Click(object sender, EventArgs e)
         {
-
+            if (productId == 0)
+            {
+                MessageBoxAdv.Show("Please select an item to edit.", "No Item Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                frmUpdateSupplier frmUpdateSupplier = new frmUpdateSupplier(productId);
+                if (frmUpdateSupplier.ShowDialog() == DialogResult.OK)
+                {
+                    await supplierService.LoadSupplier(dgvSuppliers, _pageIndex, _pageSize);
+                }
+            }
         }
 
         private void btnFirst_Click(object sender, EventArgs e)
@@ -132,7 +143,7 @@ namespace StockMate.UC.Screens
                 {
                     _pageSize = newPageSize;
                     _pageIndex = 1;  // reset to first page after changing page size
-                    LoadPageAsync();  // call your async load method
+                    LoadPageAsync();  // async load method
                     lblTitle.Focus();
                 }
                 else

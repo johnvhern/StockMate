@@ -29,6 +29,8 @@ namespace StockMate.Forms
             ButtonStyle.ChildButton(this);
             ColorActiveButton(btnDashboard);
 
+            this.WindowState = FormWindowState.Maximized;
+
             dashboard = new UCDashboard();
             products = new UCProducts();
             settings = new UCSettings();
