@@ -35,10 +35,10 @@
             Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo4 = new Syncfusion.Windows.Forms.BannerTextInfo();
             Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo5 = new Syncfusion.Windows.Forms.BannerTextInfo();
             bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(components);
-            txtSKU = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            txtProductName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            textBoxExt1 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            textBoxExt3 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            txtContactPerson = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            txtSupplierName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            txtEmailAddress = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            txtAddress = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             txtMobileNumber = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
@@ -58,10 +58,10 @@
             autoLabel7 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel8 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            ((System.ComponentModel.ISupportInitialize)txtSKU).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtProductName).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textBoxExt1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textBoxExt3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtContactPerson).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtSupplierName).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtEmailAddress).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtAddress).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtMobileNumber).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).BeginInit();
             gradientPanel3.SuspendLayout();
@@ -82,68 +82,68 @@
             gradientPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // txtSKU
+            // txtContactPerson
             // 
             bannerTextInfo1.Text = "Enter contact person's name";
             bannerTextInfo1.Visible = true;
-            bannerTextProvider1.SetBannerText(txtSKU, bannerTextInfo1);
-            txtSKU.BeforeTouchSize = new Size(328, 16);
-            txtSKU.BorderStyle = BorderStyle.None;
-            txtSKU.Dock = DockStyle.Fill;
-            txtSKU.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSKU.Location = new Point(6, 6);
-            txtSKU.Name = "txtSKU";
-            txtSKU.Size = new Size(328, 16);
-            txtSKU.TabIndex = 0;
+            bannerTextProvider1.SetBannerText(txtContactPerson, bannerTextInfo1);
+            txtContactPerson.BeforeTouchSize = new Size(238, 16);
+            txtContactPerson.BorderStyle = BorderStyle.None;
+            txtContactPerson.Dock = DockStyle.Fill;
+            txtContactPerson.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtContactPerson.Location = new Point(6, 6);
+            txtContactPerson.Name = "txtContactPerson";
+            txtContactPerson.Size = new Size(328, 16);
+            txtContactPerson.TabIndex = 0;
             // 
-            // txtProductName
+            // txtSupplierName
             // 
             bannerTextInfo2.Text = "Enter product name";
             bannerTextInfo2.Visible = true;
-            bannerTextProvider1.SetBannerText(txtProductName, bannerTextInfo2);
-            txtProductName.BeforeTouchSize = new Size(328, 16);
-            txtProductName.BorderStyle = BorderStyle.None;
-            txtProductName.Dock = DockStyle.Fill;
-            txtProductName.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtProductName.Location = new Point(6, 6);
-            txtProductName.Name = "txtProductName";
-            txtProductName.Size = new Size(328, 16);
-            txtProductName.TabIndex = 0;
+            bannerTextProvider1.SetBannerText(txtSupplierName, bannerTextInfo2);
+            txtSupplierName.BeforeTouchSize = new Size(238, 16);
+            txtSupplierName.BorderStyle = BorderStyle.None;
+            txtSupplierName.Dock = DockStyle.Fill;
+            txtSupplierName.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSupplierName.Location = new Point(6, 6);
+            txtSupplierName.Name = "txtSupplierName";
+            txtSupplierName.Size = new Size(328, 16);
+            txtSupplierName.TabIndex = 0;
             // 
-            // textBoxExt1
+            // txtEmailAddress
             // 
             bannerTextInfo3.Text = "example@example.com";
             bannerTextInfo3.Visible = true;
-            bannerTextProvider1.SetBannerText(textBoxExt1, bannerTextInfo3);
-            textBoxExt1.BeforeTouchSize = new Size(328, 16);
-            textBoxExt1.BorderStyle = BorderStyle.None;
-            textBoxExt1.Dock = DockStyle.Fill;
-            textBoxExt1.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxExt1.Location = new Point(6, 6);
-            textBoxExt1.Name = "textBoxExt1";
-            textBoxExt1.Size = new Size(328, 16);
-            textBoxExt1.TabIndex = 0;
+            bannerTextProvider1.SetBannerText(txtEmailAddress, bannerTextInfo3);
+            txtEmailAddress.BeforeTouchSize = new Size(238, 16);
+            txtEmailAddress.BorderStyle = BorderStyle.None;
+            txtEmailAddress.Dock = DockStyle.Fill;
+            txtEmailAddress.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtEmailAddress.Location = new Point(6, 6);
+            txtEmailAddress.Name = "txtEmailAddress";
+            txtEmailAddress.Size = new Size(328, 16);
+            txtEmailAddress.TabIndex = 0;
             // 
-            // textBoxExt3
+            // txtAddress
             // 
             bannerTextInfo4.Text = "Optional";
             bannerTextInfo4.Visible = true;
-            bannerTextProvider1.SetBannerText(textBoxExt3, bannerTextInfo4);
-            textBoxExt3.BeforeTouchSize = new Size(328, 16);
-            textBoxExt3.BorderStyle = BorderStyle.None;
-            textBoxExt3.Dock = DockStyle.Fill;
-            textBoxExt3.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxExt3.Location = new Point(6, 6);
-            textBoxExt3.Name = "textBoxExt3";
-            textBoxExt3.Size = new Size(328, 16);
-            textBoxExt3.TabIndex = 0;
+            bannerTextProvider1.SetBannerText(txtAddress, bannerTextInfo4);
+            txtAddress.BeforeTouchSize = new Size(238, 16);
+            txtAddress.BorderStyle = BorderStyle.None;
+            txtAddress.Dock = DockStyle.Fill;
+            txtAddress.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtAddress.Location = new Point(6, 6);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(328, 16);
+            txtAddress.TabIndex = 0;
             // 
             // txtMobileNumber
             // 
             bannerTextInfo5.Text = "Enter a valid contact number";
             bannerTextInfo5.Visible = true;
             bannerTextProvider1.SetBannerText(txtMobileNumber, bannerTextInfo5);
-            txtMobileNumber.BeforeTouchSize = new Size(328, 16);
+            txtMobileNumber.BeforeTouchSize = new Size(238, 16);
             txtMobileNumber.BorderStyle = BorderStyle.None;
             txtMobileNumber.Dock = DockStyle.Fill;
             txtMobileNumber.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -240,7 +240,7 @@
             // 
             gradientPanel5.BorderColor = Color.Silver;
             gradientPanel5.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel5.Controls.Add(txtSKU);
+            gradientPanel5.Controls.Add(txtContactPerson);
             gradientPanel5.Location = new Point(13, 97);
             gradientPanel5.Margin = new Padding(3, 5, 3, 3);
             gradientPanel5.Name = "gradientPanel5";
@@ -263,7 +263,7 @@
             // 
             gradientPanel4.BorderColor = Color.Silver;
             gradientPanel4.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel4.Controls.Add(txtProductName);
+            gradientPanel4.Controls.Add(txtSupplierName);
             gradientPanel4.Location = new Point(13, 37);
             gradientPanel4.Margin = new Padding(3, 5, 3, 3);
             gradientPanel4.Name = "gradientPanel4";
@@ -306,7 +306,7 @@
             // 
             gradientPanel6.BorderColor = Color.Silver;
             gradientPanel6.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel6.Controls.Add(textBoxExt1);
+            gradientPanel6.Controls.Add(txtEmailAddress);
             gradientPanel6.Location = new Point(13, 157);
             gradientPanel6.Margin = new Padding(3, 5, 3, 3);
             gradientPanel6.Name = "gradientPanel6";
@@ -352,7 +352,7 @@
             // 
             gradientPanel8.BorderColor = Color.Silver;
             gradientPanel8.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel8.Controls.Add(textBoxExt3);
+            gradientPanel8.Controls.Add(txtAddress);
             gradientPanel8.Location = new Point(13, 277);
             gradientPanel8.Margin = new Padding(3, 5, 3, 3);
             gradientPanel8.Name = "gradientPanel8";
@@ -384,10 +384,10 @@
             ShowIcon = false;
             ShowMaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)txtSKU).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtProductName).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textBoxExt1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textBoxExt3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtContactPerson).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtSupplierName).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtEmailAddress).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtAddress).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtMobileNumber).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).EndInit();
             gradientPanel3.ResumeLayout(false);
@@ -418,8 +418,8 @@
         #endregion
 
         private Syncfusion.Windows.Forms.BannerTextProvider bannerTextProvider1;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtSKU;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtProductName;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtContactPerson;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtSupplierName;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel2;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel3;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;
@@ -434,12 +434,12 @@
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel1;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel5;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel6;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt1;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtEmailAddress;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel6;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel7;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtMobileNumber;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel7;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel8;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt3;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtAddress;
     }
 }

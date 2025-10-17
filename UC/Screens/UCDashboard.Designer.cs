@@ -51,11 +51,11 @@
             pictureBox7 = new PictureBox();
             autoLabel10 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel8 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            autoLabel13 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            txtTotalSupplier = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             pictureBox6 = new PictureBox();
             autoLabel9 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel7 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            autoLabel12 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            txtTotalProducts = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             pictureBox5 = new PictureBox();
             autoLabel8 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel2 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
@@ -364,7 +364,7 @@
             // 
             gradientPanel8.BorderColor = Color.Gainsboro;
             gradientPanel8.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel8.Controls.Add(autoLabel13);
+            gradientPanel8.Controls.Add(txtTotalSupplier);
             gradientPanel8.Controls.Add(pictureBox6);
             gradientPanel8.Controls.Add(autoLabel9);
             gradientPanel8.Dock = DockStyle.Fill;
@@ -374,14 +374,14 @@
             gradientPanel8.Size = new Size(290, 111);
             gradientPanel8.TabIndex = 1;
             // 
-            // autoLabel13
+            // txtTotalSupplier
             // 
-            autoLabel13.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            autoLabel13.Location = new Point(23, 46);
-            autoLabel13.Name = "autoLabel13";
-            autoLabel13.Size = new Size(37, 27);
-            autoLabel13.TabIndex = 4;
-            autoLabel13.Text = "24";
+            txtTotalSupplier.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtTotalSupplier.Location = new Point(23, 46);
+            txtTotalSupplier.Name = "txtTotalSupplier";
+            txtTotalSupplier.Size = new Size(37, 27);
+            txtTotalSupplier.TabIndex = 4;
+            txtTotalSupplier.Text = "24";
             // 
             // pictureBox6
             // 
@@ -408,7 +408,7 @@
             // 
             gradientPanel7.BorderColor = Color.Gainsboro;
             gradientPanel7.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel7.Controls.Add(autoLabel12);
+            gradientPanel7.Controls.Add(txtTotalProducts);
             gradientPanel7.Controls.Add(pictureBox5);
             gradientPanel7.Controls.Add(autoLabel8);
             gradientPanel7.Dock = DockStyle.Fill;
@@ -418,14 +418,14 @@
             gradientPanel7.Size = new Size(290, 111);
             gradientPanel7.TabIndex = 0;
             // 
-            // autoLabel12
+            // txtTotalProducts
             // 
-            autoLabel12.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            autoLabel12.Location = new Point(23, 46);
-            autoLabel12.Name = "autoLabel12";
-            autoLabel12.Size = new Size(44, 27);
-            autoLabel12.TabIndex = 2;
-            autoLabel12.Text = "125";
+            txtTotalProducts.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtTotalProducts.Location = new Point(23, 46);
+            txtTotalProducts.Name = "txtTotalProducts";
+            txtTotalProducts.Size = new Size(44, 27);
+            txtTotalProducts.TabIndex = 2;
+            txtTotalProducts.Text = "125";
             // 
             // pictureBox5
             // 
@@ -490,6 +490,7 @@
             Controls.Add(gradientPanel1);
             Name = "UCDashboard";
             Size = new Size(1207, 722);
+            Load += UCDashboard_Load;
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).EndInit();
             gradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).EndInit();
@@ -549,10 +550,10 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel9;
         private PictureBox pictureBox5;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel8;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel12;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel txtTotalProducts;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel15;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel14;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel13;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel txtTotalSupplier;
         private Syncfusion.WinForms.Controls.SfButton btnViewReports;
         private Syncfusion.WinForms.Controls.SfButton btnAddBorrower;
         private Syncfusion.WinForms.Controls.SfButton btnAddSupplier;

@@ -28,8 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
             gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            dgvSuppliers = new DataGridView();
+            SupplierId = new DataGridViewTextBoxColumn();
+            SupplierName = new DataGridViewTextBoxColumn();
+            ContactPerson = new DataGridViewTextBoxColumn();
+            Email = new DataGridViewTextBoxColumn();
+            MobileNumber = new DataGridViewTextBoxColumn();
+            Address = new DataGridViewTextBoxColumn();
+            CreatedAt = new DataGridViewTextBoxColumn();
             gradientPanel2 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             btnSearch = new Syncfusion.WinForms.Controls.SfButton();
             btnEdit = new Syncfusion.WinForms.Controls.SfButton();
@@ -50,6 +61,8 @@
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).BeginInit();
             gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).BeginInit();
+            gradientPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSuppliers).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel2).BeginInit();
             gradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel5).BeginInit();
@@ -79,12 +92,112 @@
             // 
             gradientPanel3.BorderColor = Color.Gainsboro;
             gradientPanel3.BorderStyle = BorderStyle.FixedSingle;
+            gradientPanel3.Controls.Add(dgvSuppliers);
             gradientPanel3.Dock = DockStyle.Fill;
             gradientPanel3.Location = new Point(20, 109);
             gradientPanel3.Name = "gradientPanel3";
             gradientPanel3.Padding = new Padding(15);
             gradientPanel3.Size = new Size(1165, 543);
             gradientPanel3.TabIndex = 5;
+            // 
+            // dgvSuppliers
+            // 
+            dgvSuppliers.AllowUserToAddRows = false;
+            dgvSuppliers.AllowUserToDeleteRows = false;
+            dgvSuppliers.AllowUserToResizeRows = false;
+            dgvSuppliers.BackgroundColor = Color.White;
+            dgvSuppliers.BorderStyle = BorderStyle.None;
+            dgvSuppliers.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvSuppliers.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = Color.Gainsboro;
+            dataGridViewCellStyle13.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle13.ForeColor = Color.FromArgb(43, 48, 59);
+            dataGridViewCellStyle13.Padding = new Padding(0, 7, 0, 7);
+            dataGridViewCellStyle13.SelectionBackColor = Color.Gainsboro;
+            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(43, 48, 59);
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            dgvSuppliers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dgvSuppliers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSuppliers.Columns.AddRange(new DataGridViewColumn[] { SupplierId, SupplierName, ContactPerson, Email, MobileNumber, Address, CreatedAt });
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = Color.White;
+            dataGridViewCellStyle14.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle14.ForeColor = Color.FromArgb(43, 48, 59);
+            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(79, 143, 246);
+            dataGridViewCellStyle14.SelectionForeColor = Color.White;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
+            dgvSuppliers.DefaultCellStyle = dataGridViewCellStyle14;
+            dgvSuppliers.Dock = DockStyle.Fill;
+            dgvSuppliers.EnableHeadersVisualStyles = false;
+            dgvSuppliers.GridColor = Color.LightGray;
+            dgvSuppliers.Location = new Point(15, 15);
+            dgvSuppliers.MultiSelect = false;
+            dgvSuppliers.Name = "dgvSuppliers";
+            dgvSuppliers.ReadOnly = true;
+            dgvSuppliers.RowHeadersVisible = false;
+            dataGridViewCellStyle15.Padding = new Padding(1);
+            dgvSuppliers.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dgvSuppliers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvSuppliers.Size = new Size(1133, 511);
+            dgvSuppliers.TabIndex = 1;
+            dgvSuppliers.CellFormatting += dgvSuppliers_CellFormatting;
+            // 
+            // SupplierId
+            // 
+            SupplierId.DataPropertyName = "SupplierId";
+            SupplierId.HeaderText = "SupplierId";
+            SupplierId.Name = "SupplierId";
+            SupplierId.ReadOnly = true;
+            SupplierId.Visible = false;
+            // 
+            // SupplierName
+            // 
+            SupplierName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            SupplierName.DataPropertyName = "SupplierName";
+            SupplierName.HeaderText = "Name";
+            SupplierName.Name = "SupplierName";
+            SupplierName.ReadOnly = true;
+            // 
+            // ContactPerson
+            // 
+            ContactPerson.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ContactPerson.DataPropertyName = "ContactPerson";
+            ContactPerson.HeaderText = "Contact Person";
+            ContactPerson.Name = "ContactPerson";
+            ContactPerson.ReadOnly = true;
+            // 
+            // Email
+            // 
+            Email.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Email.DataPropertyName = "Email";
+            Email.HeaderText = "Email";
+            Email.Name = "Email";
+            Email.ReadOnly = true;
+            // 
+            // MobileNumber
+            // 
+            MobileNumber.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            MobileNumber.DataPropertyName = "MobileNumber";
+            MobileNumber.HeaderText = "Contact Number";
+            MobileNumber.Name = "MobileNumber";
+            MobileNumber.ReadOnly = true;
+            // 
+            // Address
+            // 
+            Address.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Address.DataPropertyName = "Address";
+            Address.HeaderText = "Address";
+            Address.Name = "Address";
+            Address.ReadOnly = true;
+            // 
+            // CreatedAt
+            // 
+            CreatedAt.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            CreatedAt.DataPropertyName = "CreatedAt";
+            CreatedAt.HeaderText = "Created At";
+            CreatedAt.Name = "CreatedAt";
+            CreatedAt.ReadOnly = true;
             // 
             // gradientPanel2
             // 
@@ -235,6 +348,7 @@
             txtPageSize.TabIndex = 12;
             txtPageSize.Text = "50";
             txtPageSize.TextAlign = HorizontalAlignment.Center;
+            txtPageSize.KeyDown += txtPageSize_KeyDown;
             // 
             // lblRecordFound
             // 
@@ -256,6 +370,7 @@
             btnLast.Size = new Size(39, 22);
             btnLast.Style.Image = Properties.Resources.chevron_last;
             btnLast.TabIndex = 10;
+            btnLast.Click += btnLast_Click;
             // 
             // btnNext
             // 
@@ -267,6 +382,7 @@
             btnNext.Size = new Size(39, 22);
             btnNext.Style.Image = Properties.Resources.chevron_right;
             btnNext.TabIndex = 9;
+            btnNext.Click += btnNext_Click;
             // 
             // btnPrev
             // 
@@ -278,6 +394,7 @@
             btnPrev.Size = new Size(39, 22);
             btnPrev.Style.Image = Properties.Resources.chevron_left;
             btnPrev.TabIndex = 8;
+            btnPrev.Click += btnPrev_Click;
             // 
             // btnFirst
             // 
@@ -289,6 +406,7 @@
             btnFirst.Size = new Size(39, 22);
             btnFirst.Style.Image = Properties.Resources.chevron_first;
             btnFirst.TabIndex = 7;
+            btnFirst.Click += btnFirst_Click;
             // 
             // UCSuppliers
             // 
@@ -298,9 +416,12 @@
             Controls.Add(gradientPanel1);
             Name = "UCSuppliers";
             Size = new Size(1207, 722);
+            Load += UCSuppliers_Load;
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).EndInit();
             gradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).EndInit();
+            gradientPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvSuppliers).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel2).EndInit();
             gradientPanel2.ResumeLayout(false);
             gradientPanel2.PerformLayout();
@@ -337,5 +458,13 @@
         private Syncfusion.WinForms.Controls.SfButton btnNext;
         private Syncfusion.WinForms.Controls.SfButton btnPrev;
         private Syncfusion.WinForms.Controls.SfButton btnFirst;
+        private DataGridView dgvSuppliers;
+        private DataGridViewTextBoxColumn SupplierId;
+        private DataGridViewTextBoxColumn SupplierName;
+        private DataGridViewTextBoxColumn ContactPerson;
+        private DataGridViewTextBoxColumn Email;
+        private DataGridViewTextBoxColumn MobileNumber;
+        private DataGridViewTextBoxColumn Address;
+        private DataGridViewTextBoxColumn CreatedAt;
     }
 }

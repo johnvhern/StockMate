@@ -1,5 +1,7 @@
 ﻿using StockMate.Forms.Products;
+using StockMate.Forms.Suppliers;
 using StockMate.Helpers;
+using StockMate.Services;
 using Syncfusion.Windows.Forms.Tools;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,8 @@ namespace StockMate.UC.Screens
 {
     public partial class UCDashboard : UserControl
     {
+        private readonly ProductService productService;
+        private readonly SupplierService supplierService;
         public UCDashboard()
         {
             InitializeComponent();
@@ -22,6 +26,9 @@ namespace StockMate.UC.Screens
             ButtonStyle.DashboardQuickActionBtn(btnAddProduct);
             ButtonStyle.DashboardQuickActionBtn(btnAddSupplier);
             ButtonStyle.DashboardQuickActionBtn(btnViewReports);
+
+            productService = new ProductService();
+            supplierService = new SupplierService();
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -31,7 +38,7 @@ namespace StockMate.UC.Screens
 
         private void btnAddSupplier_Click(object sender, EventArgs e)
         {
-
+            new frmAddSupplier().ShowDialog();
         }
 
         private void btnAddBorrower_Click(object sender, EventArgs e)
@@ -42,6 +49,15 @@ namespace StockMate.UC.Screens
         private void btnViewReports_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private async void UCDashboard_Load(object sender, EventArgs e)
+        {
+            int totalProducts = await productService.GetTotalRowCountAsync();
+            int totalSupplier = await supplierService.GetTotalRowCountAsync();
+
+            txtTotalProducts.Text = totalProducts.ToString();
+            txtTotalSupplier.Text = totalSupplier.ToString();
         }
     }
 }
