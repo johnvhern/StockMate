@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StockMate.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace StockMate.UC.Screens
         public UCBorrower()
         {
             InitializeComponent();
+            ButtonStyle.GreenButton(btnAddBorrower);
+            ButtonStyle.BlueButton(btnEdit);
+            ButtonStyle.WhiteButton(btnRefresh);
+
+            ButtonStyle.BlueButton(btnSearch);
+
+            ButtonStyle.BlueButton(btnFirst);
+            ButtonStyle.BlueButton(btnPrev);
+            ButtonStyle.BlueButton(btnNext);
+            ButtonStyle.BlueButton(btnLast);
         }
     }
 }
