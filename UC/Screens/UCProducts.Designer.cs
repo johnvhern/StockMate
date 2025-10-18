@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo2 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo1 = new Syncfusion.Windows.Forms.BannerTextInfo();
             gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel6 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
@@ -128,25 +128,25 @@
             dgvProducts.BorderStyle = BorderStyle.None;
             dgvProducts.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvProducts.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.Gainsboro;
-            dataGridViewCellStyle5.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(43, 48, 59);
-            dataGridViewCellStyle5.Padding = new Padding(0, 7, 0, 7);
-            dataGridViewCellStyle5.SelectionBackColor = Color.Gainsboro;
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(43, 48, 59);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(43, 48, 59);
+            dataGridViewCellStyle1.Padding = new Padding(0, 7, 0, 7);
+            dataGridViewCellStyle1.SelectionBackColor = Color.Gainsboro;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(43, 48, 59);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProducts.Columns.AddRange(new DataGridViewColumn[] { Column1, SKU, ProductName, CategoryName, SupplierName, Quantity, ReorderLevel, Status, CreatedAt });
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(43, 48, 59);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(79, 143, 246);
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dgvProducts.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(43, 48, 59);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(79, 143, 246);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvProducts.DefaultCellStyle = dataGridViewCellStyle3;
             dgvProducts.Dock = DockStyle.Fill;
             dgvProducts.EnableHeadersVisualStyles = false;
             dgvProducts.GridColor = Color.LightGray;
@@ -155,8 +155,8 @@
             dgvProducts.Name = "dgvProducts";
             dgvProducts.ReadOnly = true;
             dgvProducts.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Padding = new Padding(1);
-            dgvProducts.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Padding = new Padding(1);
+            dgvProducts.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProducts.Size = new Size(1133, 518);
             dgvProducts.TabIndex = 0;
@@ -175,8 +175,8 @@
             // 
             SKU.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             SKU.DataPropertyName = "SKU";
-            dataGridViewCellStyle6.Padding = new Padding(0, 7, 0, 7);
-            SKU.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Padding = new Padding(0, 7, 0, 7);
+            SKU.DefaultCellStyle = dataGridViewCellStyle2;
             SKU.HeaderText = "SKU";
             SKU.Name = "SKU";
             SKU.ReadOnly = true;
@@ -419,10 +419,10 @@
             // 
             // textBoxExt1
             // 
-            bannerTextInfo2.Text = "Search products...";
-            bannerTextInfo2.Visible = true;
-            bannerTextProvider1.SetBannerText(textBoxExt1, bannerTextInfo2);
-            textBoxExt1.BeforeTouchSize = new Size(51, 22);
+            bannerTextInfo1.Text = "Search products...";
+            bannerTextInfo1.Visible = true;
+            bannerTextProvider1.SetBannerText(textBoxExt1, bannerTextInfo1);
+            textBoxExt1.BeforeTouchSize = new Size(238, 16);
             textBoxExt1.BorderStyle = BorderStyle.None;
             textBoxExt1.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxExt1.Location = new Point(29, 9);
@@ -447,9 +447,9 @@
             lblTitle.ForeColor = Color.FromArgb(43, 48, 59);
             lblTitle.Location = new Point(-6, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(213, 30);
+            lblTitle.Size = new Size(107, 30);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "Products Inventory";
+            lblTitle.Text = "Products";
             // 
             // UCProducts
             // 

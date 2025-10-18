@@ -488,6 +488,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(gradientPanel1);
+            DoubleBuffered = true;
             Name = "UCDashboard";
             Size = new Size(1207, 722);
             Load += UCDashboard_Load;
