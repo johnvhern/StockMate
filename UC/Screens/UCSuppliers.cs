@@ -46,7 +46,7 @@ namespace StockMate.UC.Screens
             }
         }
 
-        private async void btnEdit_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             if (productId == 0)
             {
@@ -54,10 +54,9 @@ namespace StockMate.UC.Screens
             }
             else
             {
-                frmUpdateSupplier frmUpdateSupplier = new frmUpdateSupplier(productId);
-                if (frmUpdateSupplier.ShowDialog() == DialogResult.OK)
+                if (new frmUpdateSupplier(productId).ShowDialog() == DialogResult.OK)
                 {
-                    await supplierService.LoadSupplier(dgvSuppliers, _pageIndex, _pageSize);
+                    LoadPageAsync();
                 }
             }
         }

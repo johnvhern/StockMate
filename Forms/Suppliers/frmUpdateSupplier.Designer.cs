@@ -334,6 +334,7 @@
             btnAddSupplier.TabIndex = 9;
             btnAddSupplier.Text = "Update";
             btnAddSupplier.UseVisualStyleBackColor = false;
+            btnAddSupplier.Click += btnAddSupplier_Click;
             // 
             // gradientPanel3
             // 

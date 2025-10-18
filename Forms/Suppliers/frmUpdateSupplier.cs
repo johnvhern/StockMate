@@ -32,7 +32,7 @@ namespace StockMate.Forms.Suppliers
 
         private void LoadProductDetails()
         {
-            SupplierDetails supplier = supplierService.GetProductDetails(supplierId);
+            SupplierDetails supplier = supplierService.GetSupplierDetails(supplierId);
             if (supplier != null)
             {
                 txtSupplierName.Text = supplier.SupplierName;
@@ -45,6 +45,11 @@ namespace StockMate.Forms.Suppliers
             {
                 MessageBox.Show("Product not found.");
             }
+        }
+
+        private void btnAddSupplier_Click(object sender, EventArgs e)
+        {
+            supplierService.UpdateSupplier(supplierId, txtSupplierName.Text, txtContactPerson.Text, txtEmailAddress.Text, txtMobileNumber.Text, txtAddress.Text, this);
         }
     }
 }

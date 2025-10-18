@@ -67,7 +67,7 @@ namespace StockMate.Services
 
                 if (!IsValidEmail(email))
                 {
-                    MessageBoxAdv.Show("Please enter a email address.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxAdv.Show("Please enter a valid email address.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -151,7 +151,7 @@ namespace StockMate.Services
             }
         }
 
-        public SupplierDetails GetProductDetails(int supplierId)
+        public SupplierDetails GetSupplierDetails(int supplierId)
         {
             SupplierDetails supplier = null;
             using (var conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
@@ -181,6 +181,69 @@ namespace StockMate.Services
                 }
             }
             return supplier;
+        }
+
+        #endregion
+
+        #region -- Update Supplier -- 
+
+        public void UpdateSupplier(int supplierId, string name, string contactPerson, string email, string mobileNumber, string address, Form form)
+        {
+            try
+            {
+                if (!PhoneNumberValidator.IsValidPhilippinePhoneNumber(mobileNumber))
+                {
+                    MessageBoxAdv.Show("Please enter a valid Philippine mobile or landline number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (!IsValidEmail(email))
+                {
+                    MessageBoxAdv.Show("Please enter a valid email address.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (!string.IsNullOrEmpty(name))
+                {
+                    using (Microsoft.Data.SqlClient.SqlConnection conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
+                    {
+                        string addProductQuery = "UPDATE Supplier SET SupplierName = @name, ContactPerson = @contactPerson, Email = @email, MobileNumber = @mobileNumber, Address = @address WHERE SupplierId = @supplierId;";
+
+                        using (Microsoft.Data.SqlClient.SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand(addProductQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue(@"supplierId", supplierId);
+                            cmd.Parameters.AddWithValue("@name", name);
+                            cmd.Parameters.AddWithValue("@contactPerson", contactPerson);
+                            cmd.Parameters.AddWithValue("@email", email);
+                            cmd.Parameters.AddWithValue("@mobileNumber", mobileNumber);
+                            cmd.Parameters.AddWithValue("@address", address);
+                            cmd.Parameters.AddWithValue("@createdat", DateTime.Now);
+
+                            conn.Open();
+                            int newProductId = cmd.ExecuteNonQuery();
+
+                            if (newProductId > 0)
+                            {
+                                MessageBoxAdv.Show("Supplier updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                form.DialogResult = DialogResult.OK;
+                                form.Close();
+                            }
+                            else
+                            {
+                                MessageBoxAdv.Show("Cannot update supplier. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBoxAdv.Show($"Please fill in the required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxAdv.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion
