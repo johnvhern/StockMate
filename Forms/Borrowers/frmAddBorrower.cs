@@ -31,5 +31,12 @@ namespace StockMate.Forms.Borrowers
             borrowerService.LoadDepartment(cmbDepartment);
             borrowerService.LoadProducts(cmbProduct);
         }
+
+        private void btnAddBorrower_Click(object sender, EventArgs e)
+        {
+            int selectedDepartment = (int)cmbDepartment.SelectedValue;
+            int selectedProduct = (int)cmbProduct.SelectedValue;
+            borrowerService.AddBorrower(selectedDepartment, txtBorrowerName.Text, selectedProduct, Convert.ToInt32(txtQuantity.Text), this);
+        }
     }
 }

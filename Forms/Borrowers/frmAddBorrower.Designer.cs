@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo2 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo1 = new Syncfusion.Windows.Forms.BannerTextInfo();
             bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(components);
-            txtSKU = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            txtBorrowerName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -51,7 +51,7 @@
             gradientPanel4 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             cmbDepartment = new Syncfusion.WinForms.ListView.SfComboBox();
             gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            ((System.ComponentModel.ISupportInitialize)txtSKU).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtBorrowerName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).BeginInit();
             gradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel5).BeginInit();
@@ -72,19 +72,19 @@
             gradientPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // txtSKU
+            // txtBorrowerName
             // 
-            bannerTextInfo2.Text = "Enter borrower's name";
-            bannerTextInfo2.Visible = true;
-            bannerTextProvider1.SetBannerText(txtSKU, bannerTextInfo2);
-            txtSKU.BeforeTouchSize = new Size(328, 16);
-            txtSKU.BorderStyle = BorderStyle.None;
-            txtSKU.Dock = DockStyle.Fill;
-            txtSKU.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSKU.Location = new Point(6, 6);
-            txtSKU.Name = "txtSKU";
-            txtSKU.Size = new Size(328, 16);
-            txtSKU.TabIndex = 0;
+            bannerTextInfo1.Text = "Enter borrower's name";
+            bannerTextInfo1.Visible = true;
+            bannerTextProvider1.SetBannerText(txtBorrowerName, bannerTextInfo1);
+            txtBorrowerName.BeforeTouchSize = new Size(51, 22);
+            txtBorrowerName.BorderStyle = BorderStyle.None;
+            txtBorrowerName.Dock = DockStyle.Fill;
+            txtBorrowerName.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBorrowerName.Location = new Point(6, 6);
+            txtBorrowerName.Name = "txtBorrowerName";
+            txtBorrowerName.Size = new Size(328, 16);
+            txtBorrowerName.TabIndex = 0;
             // 
             // gradientPanel3
             // 
@@ -136,6 +136,7 @@
             btnAddBorrower.TabIndex = 6;
             btnAddBorrower.Text = "Add";
             btnAddBorrower.UseVisualStyleBackColor = false;
+            btnAddBorrower.Click += btnAddBorrower_Click;
             // 
             // autoLabel3
             // 
@@ -173,7 +174,7 @@
             // 
             gradientPanel5.BorderColor = Color.Silver;
             gradientPanel5.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel5.Controls.Add(txtSKU);
+            gradientPanel5.Controls.Add(txtBorrowerName);
             gradientPanel5.Location = new Point(13, 97);
             gradientPanel5.Margin = new Padding(3, 5, 3, 3);
             gradientPanel5.Name = "gradientPanel5";
@@ -241,7 +242,7 @@
             // txtQuantity
             // 
             txtQuantity.AccessibilityEnabled = true;
-            txtQuantity.BeforeTouchSize = new Size(328, 16);
+            txtQuantity.BeforeTouchSize = new Size(51, 22);
             txtQuantity.BorderStyle = BorderStyle.None;
             txtQuantity.Dock = DockStyle.Fill;
             txtQuantity.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -353,7 +354,7 @@
             ShowMaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
             Load += frmAddBorrower_Load;
-            ((System.ComponentModel.ISupportInitialize)txtSKU).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtBorrowerName).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).EndInit();
             gradientPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gradientPanel5).EndInit();
@@ -381,7 +382,7 @@
         #endregion
 
         private Syncfusion.Windows.Forms.BannerTextProvider bannerTextProvider1;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtSKU;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtBorrowerName;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel3;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel2;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;

@@ -33,7 +33,7 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel4 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            dgvSuppliers = new DataGridView();
+            dgvBorrowers = new DataGridView();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             btnSearch = new Syncfusion.WinForms.Controls.SfButton();
             gradientPanel5 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
@@ -51,11 +51,17 @@
             btnNext = new Syncfusion.WinForms.Controls.SfButton();
             btnPrev = new Syncfusion.WinForms.Controls.SfButton();
             btnFirst = new Syncfusion.WinForms.Controls.SfButton();
+            BorrowerId = new DataGridViewTextBoxColumn();
+            DepartmentName = new DataGridViewTextBoxColumn();
+            BorrowerName = new DataGridViewTextBoxColumn();
+            ProductName = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            CreatedAt = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).BeginInit();
             gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel4).BeginInit();
             gradientPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvSuppliers).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBorrowers).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).BeginInit();
             gradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel5).BeginInit();
@@ -85,7 +91,7 @@
             // 
             gradientPanel4.BorderColor = Color.Gainsboro;
             gradientPanel4.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel4.Controls.Add(dgvSuppliers);
+            gradientPanel4.Controls.Add(dgvBorrowers);
             gradientPanel4.Dock = DockStyle.Fill;
             gradientPanel4.Location = new Point(20, 109);
             gradientPanel4.Name = "gradientPanel4";
@@ -93,15 +99,15 @@
             gradientPanel4.Size = new Size(1165, 543);
             gradientPanel4.TabIndex = 2;
             // 
-            // dgvSuppliers
+            // dgvBorrowers
             // 
-            dgvSuppliers.AllowUserToAddRows = false;
-            dgvSuppliers.AllowUserToDeleteRows = false;
-            dgvSuppliers.AllowUserToResizeRows = false;
-            dgvSuppliers.BackgroundColor = Color.White;
-            dgvSuppliers.BorderStyle = BorderStyle.None;
-            dgvSuppliers.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvSuppliers.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvBorrowers.AllowUserToAddRows = false;
+            dgvBorrowers.AllowUserToDeleteRows = false;
+            dgvBorrowers.AllowUserToResizeRows = false;
+            dgvBorrowers.BackgroundColor = Color.White;
+            dgvBorrowers.BorderStyle = BorderStyle.None;
+            dgvBorrowers.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvBorrowers.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.Gainsboro;
             dataGridViewCellStyle1.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -110,8 +116,9 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.Gainsboro;
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(43, 48, 59);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvSuppliers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvSuppliers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBorrowers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvBorrowers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBorrowers.Columns.AddRange(new DataGridViewColumn[] { BorrowerId, DepartmentName, BorrowerName, ProductName, Quantity, CreatedAt });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -119,20 +126,22 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(79, 143, 246);
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvSuppliers.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvSuppliers.Dock = DockStyle.Fill;
-            dgvSuppliers.EnableHeadersVisualStyles = false;
-            dgvSuppliers.GridColor = Color.LightGray;
-            dgvSuppliers.Location = new Point(15, 15);
-            dgvSuppliers.MultiSelect = false;
-            dgvSuppliers.Name = "dgvSuppliers";
-            dgvSuppliers.ReadOnly = true;
-            dgvSuppliers.RowHeadersVisible = false;
+            dgvBorrowers.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvBorrowers.Dock = DockStyle.Fill;
+            dgvBorrowers.EnableHeadersVisualStyles = false;
+            dgvBorrowers.GridColor = Color.LightGray;
+            dgvBorrowers.Location = new Point(15, 15);
+            dgvBorrowers.MultiSelect = false;
+            dgvBorrowers.Name = "dgvBorrowers";
+            dgvBorrowers.ReadOnly = true;
+            dgvBorrowers.RowHeadersVisible = false;
             dataGridViewCellStyle3.Padding = new Padding(1);
-            dgvSuppliers.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            dgvSuppliers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvSuppliers.Size = new Size(1133, 511);
-            dgvSuppliers.TabIndex = 2;
+            dgvBorrowers.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dgvBorrowers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvBorrowers.Size = new Size(1133, 511);
+            dgvBorrowers.TabIndex = 2;
+            dgvBorrowers.CellClick += dgvBorrowers_CellClick;
+            dgvBorrowers.CellFormatting += dgvBorrowers_CellFormatting;
             // 
             // gradientPanel3
             // 
@@ -215,6 +224,7 @@
             btnRefresh.TabIndex = 13;
             btnRefresh.Text = "Refresh";
             btnRefresh.TextAlign = ContentAlignment.MiddleRight;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // btnAddBorrower
             // 
@@ -283,6 +293,7 @@
             txtPageSize.TabIndex = 19;
             txtPageSize.Text = "50";
             txtPageSize.TextAlign = HorizontalAlignment.Center;
+            txtPageSize.KeyDown += txtPageSize_KeyDown;
             // 
             // lblRecordFound
             // 
@@ -304,6 +315,7 @@
             btnLast.Size = new Size(39, 22);
             btnLast.Style.Image = Properties.Resources.chevron_last;
             btnLast.TabIndex = 17;
+            btnLast.Click += btnLast_Click;
             // 
             // btnNext
             // 
@@ -315,6 +327,7 @@
             btnNext.Size = new Size(39, 22);
             btnNext.Style.Image = Properties.Resources.chevron_right;
             btnNext.TabIndex = 16;
+            btnNext.Click += btnNext_Click;
             // 
             // btnPrev
             // 
@@ -326,6 +339,7 @@
             btnPrev.Size = new Size(39, 22);
             btnPrev.Style.Image = Properties.Resources.chevron_left;
             btnPrev.TabIndex = 15;
+            btnPrev.Click += btnPrev_Click;
             // 
             // btnFirst
             // 
@@ -337,6 +351,55 @@
             btnFirst.Size = new Size(39, 22);
             btnFirst.Style.Image = Properties.Resources.chevron_first;
             btnFirst.TabIndex = 14;
+            btnFirst.Click += btnFirst_Click;
+            // 
+            // BorrowerId
+            // 
+            BorrowerId.DataPropertyName = "BorrowerId";
+            BorrowerId.HeaderText = "BorrowerId";
+            BorrowerId.Name = "BorrowerId";
+            BorrowerId.ReadOnly = true;
+            BorrowerId.Visible = false;
+            // 
+            // DepartmentName
+            // 
+            DepartmentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DepartmentName.DataPropertyName = "DepartmentName";
+            DepartmentName.HeaderText = "Department";
+            DepartmentName.Name = "DepartmentName";
+            DepartmentName.ReadOnly = true;
+            // 
+            // BorrowerName
+            // 
+            BorrowerName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            BorrowerName.DataPropertyName = "BorrowerName";
+            BorrowerName.HeaderText = "Name";
+            BorrowerName.Name = "BorrowerName";
+            BorrowerName.ReadOnly = true;
+            // 
+            // ProductName
+            // 
+            ProductName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ProductName.DataPropertyName = "ProductName";
+            ProductName.HeaderText = "Item";
+            ProductName.Name = "ProductName";
+            ProductName.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Quantity.DataPropertyName = "Quantity";
+            Quantity.HeaderText = "Quantity";
+            Quantity.Name = "Quantity";
+            Quantity.ReadOnly = true;
+            // 
+            // CreatedAt
+            // 
+            CreatedAt.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            CreatedAt.DataPropertyName = "CreatedAt";
+            CreatedAt.HeaderText = "Created At";
+            CreatedAt.Name = "CreatedAt";
+            CreatedAt.ReadOnly = true;
             // 
             // UCBorrower
             // 
@@ -346,11 +409,12 @@
             Controls.Add(gradientPanel1);
             Name = "UCBorrower";
             Size = new Size(1207, 722);
+            Load += UCBorrower_Load;
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).EndInit();
             gradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gradientPanel4).EndInit();
             gradientPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvSuppliers).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBorrowers).EndInit();
             ((System.ComponentModel.ISupportInitialize)gradientPanel3).EndInit();
             gradientPanel3.ResumeLayout(false);
             gradientPanel3.PerformLayout();
@@ -380,7 +444,6 @@
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel5;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt1;
         private PictureBox pictureBox1;
-        private DataGridView dgvSuppliers;
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblPage;
         private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtPageSize;
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblRecordFound;
@@ -388,5 +451,12 @@
         private Syncfusion.WinForms.Controls.SfButton btnNext;
         private Syncfusion.WinForms.Controls.SfButton btnPrev;
         private Syncfusion.WinForms.Controls.SfButton btnFirst;
+        private DataGridView dgvBorrowers;
+        private DataGridViewTextBoxColumn BorrowerId;
+        private DataGridViewTextBoxColumn DepartmentName;
+        private DataGridViewTextBoxColumn BorrowerName;
+        private DataGridViewTextBoxColumn ProductName;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn CreatedAt;
     }
 }

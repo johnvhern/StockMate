@@ -52,7 +52,7 @@ namespace StockMate.Services
 
         #region -- Create Borrower --
 
-        public void AddSupplier(int departmentId, string borrowerName, int productId, int quantity, Form form)
+        public void AddBorrower(int departmentId, string borrowerName, int productId, int quantity, Form form)
         {
             try
             {
@@ -104,7 +104,7 @@ namespace StockMate.Services
         public int GetTotalRowCountAsync()
         {
             using var conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString);
-            string sql = "SELECT COUNT(*) FROM Supplier";  // Adjust joins/filters as needed
+            string sql = "SELECT COUNT(*) FROM Borrower";  // Adjust joins/filters as needed
             using var cmd = new Microsoft.Data.SqlClient.SqlCommand(sql, conn);
             conn.Open();
             return (int)cmd.ExecuteScalar();
@@ -118,7 +118,7 @@ namespace StockMate.Services
         {
             using (var conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string query = "SELECT SupplierId, SupplierName, ContactPerson, Email, MobileNumber, Address, CreatedAt FROM Supplier ORDER BY SupplierId OFFSET @Offset ROWS FETCH NEXT @PageSize ROWS ONLY";
+                string query = "SELECT b.BorrowerId, d.DepartmentName, b.BorrowerName, p.ProductName, b.Quantity, b.CreatedAt FROM Borrower b INNER JOIN Department d ON b.DepartmentId = d.DepartmentId INNER JOIN Products p ON b.ProductId = p.ProductId ORDER BY BorrowerId OFFSET @Offset ROWS FETCH NEXT @PageSize ROWS ONLY";
 
                 using (var cmd = new Microsoft.Data.SqlClient.SqlCommand(query, conn))
                 {
