@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo6 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo7 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo8 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo9 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo10 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo1 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo2 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo3 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo4 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo5 = new Syncfusion.Windows.Forms.BannerTextInfo();
             bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(components);
             txtContactPerson = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             txtSupplierName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
@@ -84,9 +84,9 @@
             // 
             // txtContactPerson
             // 
-            bannerTextInfo6.Text = "Enter contact person's name";
-            bannerTextInfo6.Visible = true;
-            bannerTextProvider1.SetBannerText(txtContactPerson, bannerTextInfo6);
+            bannerTextInfo1.Text = "Enter contact person's name";
+            bannerTextInfo1.Visible = true;
+            bannerTextProvider1.SetBannerText(txtContactPerson, bannerTextInfo1);
             txtContactPerson.BeforeTouchSize = new Size(328, 16);
             txtContactPerson.BorderStyle = BorderStyle.None;
             txtContactPerson.Dock = DockStyle.Fill;
@@ -98,9 +98,9 @@
             // 
             // txtSupplierName
             // 
-            bannerTextInfo7.Text = "Enter product name";
-            bannerTextInfo7.Visible = true;
-            bannerTextProvider1.SetBannerText(txtSupplierName, bannerTextInfo7);
+            bannerTextInfo2.Text = "Enter product name";
+            bannerTextInfo2.Visible = true;
+            bannerTextProvider1.SetBannerText(txtSupplierName, bannerTextInfo2);
             txtSupplierName.BeforeTouchSize = new Size(328, 16);
             txtSupplierName.BorderStyle = BorderStyle.None;
             txtSupplierName.Dock = DockStyle.Fill;
@@ -112,9 +112,9 @@
             // 
             // txtEmailAddress
             // 
-            bannerTextInfo8.Text = "example@example.com";
-            bannerTextInfo8.Visible = true;
-            bannerTextProvider1.SetBannerText(txtEmailAddress, bannerTextInfo8);
+            bannerTextInfo3.Text = "example@example.com";
+            bannerTextInfo3.Visible = true;
+            bannerTextProvider1.SetBannerText(txtEmailAddress, bannerTextInfo3);
             txtEmailAddress.BeforeTouchSize = new Size(328, 16);
             txtEmailAddress.BorderStyle = BorderStyle.None;
             txtEmailAddress.Dock = DockStyle.Fill;
@@ -126,9 +126,9 @@
             // 
             // txtAddress
             // 
-            bannerTextInfo9.Text = "Optional";
-            bannerTextInfo9.Visible = true;
-            bannerTextProvider1.SetBannerText(txtAddress, bannerTextInfo9);
+            bannerTextInfo4.Text = "Optional";
+            bannerTextInfo4.Visible = true;
+            bannerTextProvider1.SetBannerText(txtAddress, bannerTextInfo4);
             txtAddress.BeforeTouchSize = new Size(328, 16);
             txtAddress.BorderStyle = BorderStyle.None;
             txtAddress.Dock = DockStyle.Fill;
@@ -140,9 +140,9 @@
             // 
             // txtMobileNumber
             // 
-            bannerTextInfo10.Text = "Enter a valid contact number";
-            bannerTextInfo10.Visible = true;
-            bannerTextProvider1.SetBannerText(txtMobileNumber, bannerTextInfo10);
+            bannerTextInfo5.Text = "Enter a valid contact number";
+            bannerTextInfo5.Visible = true;
+            bannerTextProvider1.SetBannerText(txtMobileNumber, bannerTextInfo5);
             txtMobileNumber.BeforeTouchSize = new Size(328, 16);
             txtMobileNumber.BorderStyle = BorderStyle.None;
             txtMobileNumber.Dock = DockStyle.Fill;
@@ -162,7 +162,7 @@
             autoLabel2.Name = "autoLabel2";
             autoLabel2.Size = new Size(369, 30);
             autoLabel2.TabIndex = 99;
-            autoLabel2.Text = "Add New Supplier";
+            autoLabel2.Text = "Add Supplier";
             autoLabel2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // gradientPanel3
@@ -187,7 +187,7 @@
             autoLabel1.Padding = new Padding(1, 0, 0, 0);
             autoLabel1.Size = new Size(369, 27);
             autoLabel1.TabIndex = 99;
-            autoLabel1.Text = "Enter the details of the new supplier to add to your directory.";
+            autoLabel1.Text = "Enter the details of the supplier to add to your directory.";
             // 
             // btnCancel
             // 
