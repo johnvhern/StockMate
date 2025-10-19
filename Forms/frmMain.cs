@@ -31,7 +31,6 @@ namespace StockMate.Forms
 
             this.WindowState = FormWindowState.Maximized;
 
-            dashboard = new UCDashboard();
             products = new UCProducts();
             settings = new UCSettings();
             suppliers = new UCSuppliers();
@@ -77,7 +76,7 @@ namespace StockMate.Forms
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            OpenScreen(dashboard);
+            OpenScreen(dashboard = new UCDashboard());
             ColorActiveButton(btnDashboard);
         }
 

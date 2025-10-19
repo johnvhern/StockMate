@@ -1,5 +1,6 @@
 ﻿using StockMate.Models;
 using Syncfusion.Windows.Forms;
+using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,90 +14,74 @@ namespace StockMate.Services
 {
     public class BorrowerService
     {
+        #region -- Load Category and Supplier to ComboBox --
+
+        public void LoadDepartment(SfComboBox comboBox)
+        {
+            using (Microsoft.Data.SqlClient.SqlConnection conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                string loadCategory = "SELECT DepartmentId, DepartmentName FROM Department";
+                Microsoft.Data.SqlClient.SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand(loadCategory, conn);
+                conn.Open();
+
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                comboBox.ValueMember = "DepartmentId";
+                comboBox.DisplayMember = "DepartmentName";
+                comboBox.DataSource = dt;
+            }
+        }
+
+        public void LoadProducts(SfComboBox comboBox)
+        {
+            using (Microsoft.Data.SqlClient.SqlConnection conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                string loadCategory = "SELECT ProductId, ProductName FROM Products";
+                Microsoft.Data.SqlClient.SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand(loadCategory, conn);
+                conn.Open();
+
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                comboBox.ValueMember = "ProductId";
+                comboBox.DisplayMember = "ProductName";
+                comboBox.DataSource = dt;
+            }
+        }
+
+        #endregion
+
         #region -- Create Borrower --
 
-        public class PhoneNumberValidator
-        {
-            // C# verbatim string for the regex pattern
-            private const string PhilippinePhoneRegex = @"^((\+63|0)9\d{9}|(\+63|0)?\d{2}[-.\s]?\d{7}|(\+63|0)?2[-.\s]?\d{8})$";
-
-            public static bool IsValidPhilippinePhoneNumber(string input)
-            {
-                if (string.IsNullOrWhiteSpace(input))
-                {
-                    return false;
-                }
-
-                // Remove all optional separators before validation to simplify the check
-                string normalizedInput = Regex.Replace(input, @"[-.\s]", "");
-
-                // Check against the regex pattern
-                return Regex.IsMatch(normalizedInput, PhilippinePhoneRegex);
-            }
-        }
-
-        public static bool IsValidEmail(string email)
+        public void AddSupplier(int departmentId, string borrowerName, int productId, int quantity, Form form)
         {
             try
             {
-                // This will throw an exception if the format is invalid
-                MailAddress m = new MailAddress(email);
-                return true;
-            }
-            catch (FormatException)
-            {
-                return false;
-            }
-            catch (ArgumentException)
-            {
-                // Catches cases where the email string is null or empty
-                return false;
-            }
-        }
-
-        public void AddSupplier(string name, string contactPerson, string email, string mobileNumber, string address, Form form)
-        {
-            try
-            {
-                if (!PhoneNumberValidator.IsValidPhilippinePhoneNumber(mobileNumber))
-                {
-                    MessageBoxAdv.Show("Please enter a valid Philippine mobile or landline number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (!IsValidEmail(email))
-                {
-                    MessageBoxAdv.Show("Please enter a valid email address.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (!string.IsNullOrEmpty(name))
+                if (!string.IsNullOrEmpty(borrowerName) && departmentId > 0 && productId > 0)
                 {
                     using (Microsoft.Data.SqlClient.SqlConnection conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
                     {
-                        string addProductQuery = "INSERT INTO Supplier (SupplierName, ContactPerson, Email, MobileNumber, Address, CreatedAt) VALUES (@name, @contactPerson, @email, @mobileNumber, @address, @createdat);";
+                        string addProductQuery = "INSERT INTO Borrower (DepartmentId, BorrowerName, ProductId, Quantity, CreatedAt) VALUES (@departmentId, @borrowerName, @productId, @quantity, @createdat);";
 
                         using (Microsoft.Data.SqlClient.SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand(addProductQuery, conn))
                         {
-                            cmd.Parameters.AddWithValue("@name", name);
-                            cmd.Parameters.AddWithValue("@contactPerson", contactPerson);
-                            cmd.Parameters.AddWithValue("@email", email);
-                            cmd.Parameters.AddWithValue("@mobileNumber", mobileNumber);
-                            cmd.Parameters.AddWithValue("@address", address);
+                            cmd.Parameters.AddWithValue("@departmentId", departmentId);
+                            cmd.Parameters.AddWithValue("@borrowerName", borrowerName);
+                            cmd.Parameters.AddWithValue("@productId", productId);
+                            cmd.Parameters.AddWithValue("@quantity", quantity);
                             cmd.Parameters.AddWithValue("@createdat", DateTime.Now);
 
                             conn.Open();
-                            int newProductId = cmd.ExecuteNonQuery();
+                            int newBorrowerId = cmd.ExecuteNonQuery();
 
-                            if (newProductId > 0)
+                            if (newBorrowerId > 0)
                             {
-                                MessageBoxAdv.Show("Supplier added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBoxAdv.Show("Borrower added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 form.DialogResult = DialogResult.OK;
                                 form.Close();
                             }
                             else
                             {
-                                MessageBoxAdv.Show("Cannot add supplier. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBoxAdv.Show("Cannot add borrower. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
@@ -112,7 +97,7 @@ namespace StockMate.Services
             }
         }
 
-        #endregion
+        #endregion -- Create Borrower --
 
         #region -- Get Total Rows --
 
@@ -125,11 +110,11 @@ namespace StockMate.Services
             return (int)cmd.ExecuteScalar();
         }
 
-        #endregion
+        #endregion -- Get Total Rows --
 
         #region -- Read Borrower --
 
-        public async Task LoadSupplier(DataGridView dataGrid, int pageIndex, int pageSize)
+        public async Task LoadBorrower(DataGridView dataGrid, int pageIndex, int pageSize)
         {
             using (var conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
             {
@@ -182,26 +167,14 @@ namespace StockMate.Services
             return supplier;
         }
 
-        #endregion
+        #endregion -- Read Borrower --
 
-        #region -- Update Borrower -- 
+        #region -- Update Borrower --
 
         public void UpdateSupplier(int supplierId, string name, string contactPerson, string email, string mobileNumber, string address, Form form)
         {
             try
             {
-                if (!PhoneNumberValidator.IsValidPhilippinePhoneNumber(mobileNumber))
-                {
-                    MessageBoxAdv.Show("Please enter a valid Philippine mobile or landline number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (!IsValidEmail(email))
-                {
-                    MessageBoxAdv.Show("Please enter a valid email address.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
                 if (!string.IsNullOrEmpty(name))
                 {
                     using (Microsoft.Data.SqlClient.SqlConnection conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
@@ -245,6 +218,6 @@ namespace StockMate.Services
             }
         }
 
-        #endregion
+        #endregion -- Update Borrower --
     }
 }

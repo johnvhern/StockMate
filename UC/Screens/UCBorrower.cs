@@ -1,4 +1,5 @@
-﻿using StockMate.Helpers;
+﻿using StockMate.Forms.Borrowers;
+using StockMate.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,11 @@ namespace StockMate.UC.Screens
             ButtonStyle.BlueButton(btnPrev);
             ButtonStyle.BlueButton(btnNext);
             ButtonStyle.BlueButton(btnLast);
+        }
+
+        private void btnAddBorrower_Click(object sender, EventArgs e)
+        {
+            new frmAddBorrower().ShowDialog();
         }
     }
 }

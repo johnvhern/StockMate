@@ -1,4 +1,6 @@
-﻿using Syncfusion.Windows.Forms;
+﻿using StockMate.Helpers;
+using StockMate.Services;
+using Syncfusion.Windows.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +15,21 @@ namespace StockMate.Forms.Borrowers
 {
     public partial class frmAddBorrower : MetroForm
     {
+        private readonly BorrowerService borrowerService;
         public frmAddBorrower()
         {
             InitializeComponent();
+
+            ButtonStyle.WhiteButton(btnCancel);
+            ButtonStyle.BlueButton(btnAddBorrower);
+
+            borrowerService = new BorrowerService();
+        }
+
+        private void frmAddBorrower_Load(object sender, EventArgs e)
+        {
+            borrowerService.LoadDepartment(cmbDepartment);
+            borrowerService.LoadProducts(cmbProduct);
         }
     }
 }

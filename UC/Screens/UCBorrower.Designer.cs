@@ -227,6 +227,7 @@
             btnAddBorrower.TabIndex = 12;
             btnAddBorrower.Text = "New";
             btnAddBorrower.TextAlign = ContentAlignment.MiddleRight;
+            btnAddBorrower.Click += btnAddBorrower_Click;
             // 
             // lblTitle
             // 
