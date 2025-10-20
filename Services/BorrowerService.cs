@@ -135,36 +135,35 @@ namespace StockMate.Services
             }
         }
 
-        public SupplierDetails GetSupplierDetails(int supplierId)
+        public BorrowerDetails GetBorrowerDetails(int borrowerId)
         {
-            SupplierDetails supplier = null;
+            BorrowerDetails borrower = null;
             using (var conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string query = "SELECT SupplierId, SupplierName, ContactPerson, Email, MobileNumber, Address FROM Supplier WHERE SupplierId = @supplierId";
+                string query = "SELECT BorrowerId, DepartmentId, BorrowerName, ProductId, Quantity FROM Borrower WHERE BorrowerId = @borrowerId";
 
                 using (var cmd = new Microsoft.Data.SqlClient.SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@supplierId", supplierId);
+                    cmd.Parameters.AddWithValue("@borrowerId", borrowerId);
                     conn.Open();
 
                     using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            supplier = new SupplierDetails()
+                            borrower = new BorrowerDetails()
                             {
-                                SupplierId = reader.GetInt32(reader.GetOrdinal("SupplierId")),
-                                SupplierName = reader.GetString(reader.GetOrdinal("SupplierName")),
-                                ContactPerson = reader.GetString(reader.GetOrdinal("ContactPerson")),
-                                Email = reader.GetString(reader.GetOrdinal("Email")),
-                                MobileNumber = reader.GetString(reader.GetOrdinal("MobileNumber")),
-                                Address = reader.GetString(reader.GetOrdinal("Address")),
+                                BorrowerId = reader.GetInt32(reader.GetOrdinal("BorrowerId")),
+                                DepartmentId = reader.GetInt32(reader.GetOrdinal("DepartmentId")),
+                                BorrowerName = reader.GetString(reader.GetOrdinal("BorrowerName")),
+                                ProductId = reader.GetInt32(reader.GetOrdinal("ProductId")),
+                                Quantity = reader.GetInt32(reader.GetOrdinal("Quantity")),
                             };
                         }
                     }
                 }
             }
-            return supplier;
+            return borrower;
         }
 
         #endregion -- Read Borrower --

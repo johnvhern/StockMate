@@ -354,6 +354,7 @@
             ShowIcon = false;
             ShowMaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
+            Load += frmUpdateBorrower_Load;
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).EndInit();
             gradientPanel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);

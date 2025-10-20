@@ -1,6 +1,8 @@
 ﻿using StockMate.Forms.Borrowers;
+using StockMate.Forms.Suppliers;
 using StockMate.Helpers;
 using StockMate.Services;
+using Syncfusion.Windows.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +21,7 @@ namespace StockMate.UC.Screens
         private int _pageIndex = 1;
         private int _pageSize = 50;
         private int _totalPageIndex = 0;
-        private int selectedProductId = 0;
+        private int selectedBorrowerId = 0;
         public UCBorrower()
         {
             InitializeComponent();
@@ -85,7 +87,7 @@ namespace StockMate.UC.Screens
             {
                 // Assuming your data source has a column "ProductId"
                 var id = dgvBorrowers.Rows[e.RowIndex].Cells[0].Value; // Assuming product Id is in column 0
-                selectedProductId = Convert.ToInt32(id);
+                selectedBorrowerId = Convert.ToInt32(id);
             }
         }
 
@@ -106,7 +108,7 @@ namespace StockMate.UC.Screens
         {
             await borrowerService.LoadBorrower(dgvBorrowers, _pageIndex, _pageSize);
             dgvBorrowers.ClearSelection();
-            selectedProductId = 0;
+            selectedBorrowerId = 0;
             int totalRows = borrowerService.GetTotalRowCountAsync();
             _totalPageIndex = (int)Math.Ceiling((double)totalRows / _pageSize);
             lblRecordFound.Text = $"Record Found: {totalRows}";
@@ -152,9 +154,16 @@ namespace StockMate.UC.Screens
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (new frmUpdateBorrower().ShowDialog() == DialogResult.OK)
+            if (selectedBorrowerId == 0)
             {
-
+                MessageBoxAdv.Show("Please select an item to edit.", "No Item Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (new frmUpdateBorrower(selectedBorrowerId).ShowDialog() == DialogResult.OK)
+                {
+                    LoadPageAsync();
+                }
             }
         }
     }
