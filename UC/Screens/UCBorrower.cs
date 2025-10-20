@@ -149,5 +149,13 @@ namespace StockMate.UC.Screens
             btnNext.Enabled = pageIndex < totalPages;
             btnLast.Enabled = pageIndex < totalPages;
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (new frmUpdateBorrower().ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

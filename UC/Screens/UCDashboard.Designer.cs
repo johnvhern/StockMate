@@ -47,15 +47,15 @@
             pictureBox8 = new PictureBox();
             autoLabel11 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel9 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            autoLabel14 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            lblTotalBorrowers = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             pictureBox7 = new PictureBox();
             autoLabel10 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel8 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            txtTotalSupplier = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            lblTotalSupplier = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             pictureBox6 = new PictureBox();
             autoLabel9 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel7 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            txtTotalProducts = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            lblTotalProducts = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             pictureBox5 = new PictureBox();
             autoLabel8 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             gradientPanel2 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
@@ -320,7 +320,7 @@
             // 
             gradientPanel9.BorderColor = Color.Gainsboro;
             gradientPanel9.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel9.Controls.Add(autoLabel14);
+            gradientPanel9.Controls.Add(lblTotalBorrowers);
             gradientPanel9.Controls.Add(pictureBox7);
             gradientPanel9.Controls.Add(autoLabel10);
             gradientPanel9.Dock = DockStyle.Fill;
@@ -330,14 +330,14 @@
             gradientPanel9.Size = new Size(290, 111);
             gradientPanel9.TabIndex = 2;
             // 
-            // autoLabel14
+            // lblTotalBorrowers
             // 
-            autoLabel14.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            autoLabel14.Location = new Point(23, 46);
-            autoLabel14.Name = "autoLabel14";
-            autoLabel14.Size = new Size(32, 27);
-            autoLabel14.TabIndex = 5;
-            autoLabel14.Text = "18";
+            lblTotalBorrowers.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalBorrowers.Location = new Point(23, 46);
+            lblTotalBorrowers.Name = "lblTotalBorrowers";
+            lblTotalBorrowers.Size = new Size(32, 27);
+            lblTotalBorrowers.TabIndex = 5;
+            lblTotalBorrowers.Text = "18";
             // 
             // pictureBox7
             // 
@@ -364,7 +364,7 @@
             // 
             gradientPanel8.BorderColor = Color.Gainsboro;
             gradientPanel8.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel8.Controls.Add(txtTotalSupplier);
+            gradientPanel8.Controls.Add(lblTotalSupplier);
             gradientPanel8.Controls.Add(pictureBox6);
             gradientPanel8.Controls.Add(autoLabel9);
             gradientPanel8.Dock = DockStyle.Fill;
@@ -374,14 +374,14 @@
             gradientPanel8.Size = new Size(290, 111);
             gradientPanel8.TabIndex = 1;
             // 
-            // txtTotalSupplier
+            // lblTotalSupplier
             // 
-            txtTotalSupplier.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtTotalSupplier.Location = new Point(23, 46);
-            txtTotalSupplier.Name = "txtTotalSupplier";
-            txtTotalSupplier.Size = new Size(37, 27);
-            txtTotalSupplier.TabIndex = 4;
-            txtTotalSupplier.Text = "24";
+            lblTotalSupplier.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalSupplier.Location = new Point(23, 46);
+            lblTotalSupplier.Name = "lblTotalSupplier";
+            lblTotalSupplier.Size = new Size(37, 27);
+            lblTotalSupplier.TabIndex = 4;
+            lblTotalSupplier.Text = "24";
             // 
             // pictureBox6
             // 
@@ -408,7 +408,7 @@
             // 
             gradientPanel7.BorderColor = Color.Gainsboro;
             gradientPanel7.BorderStyle = BorderStyle.FixedSingle;
-            gradientPanel7.Controls.Add(txtTotalProducts);
+            gradientPanel7.Controls.Add(lblTotalProducts);
             gradientPanel7.Controls.Add(pictureBox5);
             gradientPanel7.Controls.Add(autoLabel8);
             gradientPanel7.Dock = DockStyle.Fill;
@@ -418,14 +418,14 @@
             gradientPanel7.Size = new Size(290, 111);
             gradientPanel7.TabIndex = 0;
             // 
-            // txtTotalProducts
+            // lblTotalProducts
             // 
-            txtTotalProducts.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtTotalProducts.Location = new Point(23, 46);
-            txtTotalProducts.Name = "txtTotalProducts";
-            txtTotalProducts.Size = new Size(44, 27);
-            txtTotalProducts.TabIndex = 2;
-            txtTotalProducts.Text = "125";
+            lblTotalProducts.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalProducts.Location = new Point(23, 46);
+            lblTotalProducts.Name = "lblTotalProducts";
+            lblTotalProducts.Size = new Size(44, 27);
+            lblTotalProducts.TabIndex = 2;
+            lblTotalProducts.Text = "125";
             // 
             // pictureBox5
             // 
@@ -551,10 +551,10 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel9;
         private PictureBox pictureBox5;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel8;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel txtTotalProducts;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel lblTotalProducts;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel15;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel14;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel txtTotalSupplier;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel lblTotalBorrowers;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel lblTotalSupplier;
         private Syncfusion.WinForms.Controls.SfButton btnViewReports;
         private Syncfusion.WinForms.Controls.SfButton btnAddBorrower;
         private Syncfusion.WinForms.Controls.SfButton btnAddSupplier;

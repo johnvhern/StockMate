@@ -34,6 +34,12 @@
             gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             gradientPanel4 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             dgvBorrowers = new DataGridView();
+            BorrowerId = new DataGridViewTextBoxColumn();
+            DepartmentName = new DataGridViewTextBoxColumn();
+            BorrowerName = new DataGridViewTextBoxColumn();
+            ProductName = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            CreatedAt = new DataGridViewTextBoxColumn();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             btnSearch = new Syncfusion.WinForms.Controls.SfButton();
             gradientPanel5 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
@@ -51,12 +57,6 @@
             btnNext = new Syncfusion.WinForms.Controls.SfButton();
             btnPrev = new Syncfusion.WinForms.Controls.SfButton();
             btnFirst = new Syncfusion.WinForms.Controls.SfButton();
-            BorrowerId = new DataGridViewTextBoxColumn();
-            DepartmentName = new DataGridViewTextBoxColumn();
-            BorrowerName = new DataGridViewTextBoxColumn();
-            ProductName = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
-            CreatedAt = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)gradientPanel1).BeginInit();
             gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradientPanel4).BeginInit();
@@ -143,6 +143,54 @@
             dgvBorrowers.CellClick += dgvBorrowers_CellClick;
             dgvBorrowers.CellFormatting += dgvBorrowers_CellFormatting;
             // 
+            // BorrowerId
+            // 
+            BorrowerId.DataPropertyName = "BorrowerId";
+            BorrowerId.HeaderText = "BorrowerId";
+            BorrowerId.Name = "BorrowerId";
+            BorrowerId.ReadOnly = true;
+            BorrowerId.Visible = false;
+            // 
+            // DepartmentName
+            // 
+            DepartmentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DepartmentName.DataPropertyName = "DepartmentName";
+            DepartmentName.HeaderText = "Department";
+            DepartmentName.Name = "DepartmentName";
+            DepartmentName.ReadOnly = true;
+            // 
+            // BorrowerName
+            // 
+            BorrowerName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            BorrowerName.DataPropertyName = "BorrowerName";
+            BorrowerName.HeaderText = "Name";
+            BorrowerName.Name = "BorrowerName";
+            BorrowerName.ReadOnly = true;
+            // 
+            // ProductName
+            // 
+            ProductName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ProductName.DataPropertyName = "ProductName";
+            ProductName.HeaderText = "Item";
+            ProductName.Name = "ProductName";
+            ProductName.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Quantity.DataPropertyName = "Quantity";
+            Quantity.HeaderText = "Quantity";
+            Quantity.Name = "Quantity";
+            Quantity.ReadOnly = true;
+            // 
+            // CreatedAt
+            // 
+            CreatedAt.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            CreatedAt.DataPropertyName = "CreatedAt";
+            CreatedAt.HeaderText = "Created At";
+            CreatedAt.Name = "CreatedAt";
+            CreatedAt.ReadOnly = true;
+            // 
             // gradientPanel3
             // 
             gradientPanel3.BorderStyle = BorderStyle.None;
@@ -212,6 +260,7 @@
             btnEdit.TabIndex = 14;
             btnEdit.Text = "Edit";
             btnEdit.TextAlign = ContentAlignment.MiddleRight;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnRefresh
             // 
@@ -352,54 +401,6 @@
             btnFirst.Style.Image = Properties.Resources.chevron_first;
             btnFirst.TabIndex = 14;
             btnFirst.Click += btnFirst_Click;
-            // 
-            // BorrowerId
-            // 
-            BorrowerId.DataPropertyName = "BorrowerId";
-            BorrowerId.HeaderText = "BorrowerId";
-            BorrowerId.Name = "BorrowerId";
-            BorrowerId.ReadOnly = true;
-            BorrowerId.Visible = false;
-            // 
-            // DepartmentName
-            // 
-            DepartmentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            DepartmentName.DataPropertyName = "DepartmentName";
-            DepartmentName.HeaderText = "Department";
-            DepartmentName.Name = "DepartmentName";
-            DepartmentName.ReadOnly = true;
-            // 
-            // BorrowerName
-            // 
-            BorrowerName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            BorrowerName.DataPropertyName = "BorrowerName";
-            BorrowerName.HeaderText = "Name";
-            BorrowerName.Name = "BorrowerName";
-            BorrowerName.ReadOnly = true;
-            // 
-            // ProductName
-            // 
-            ProductName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ProductName.DataPropertyName = "ProductName";
-            ProductName.HeaderText = "Item";
-            ProductName.Name = "ProductName";
-            ProductName.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Quantity.DataPropertyName = "Quantity";
-            Quantity.HeaderText = "Quantity";
-            Quantity.Name = "Quantity";
-            Quantity.ReadOnly = true;
-            // 
-            // CreatedAt
-            // 
-            CreatedAt.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            CreatedAt.DataPropertyName = "CreatedAt";
-            CreatedAt.HeaderText = "Created At";
-            CreatedAt.Name = "CreatedAt";
-            CreatedAt.ReadOnly = true;
             // 
             // UCBorrower
             // 

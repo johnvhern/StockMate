@@ -19,6 +19,7 @@ namespace StockMate.UC.Screens
     {
         private readonly ProductService productService= new ProductService();
         private readonly SupplierService supplierService = new SupplierService();
+        private readonly BorrowerService borrowerService = new BorrowerService();
         public UCDashboard()
         {
             InitializeComponent();
@@ -63,9 +64,11 @@ namespace StockMate.UC.Screens
         {
             int totalProducts = productService.GetTotalRowCountAsync();
             int totalSupplier = supplierService.GetTotalRowCountAsync();
+            int totalBorrowers = borrowerService.GetTotalRowCountAsync();
 
-            txtTotalProducts.Text = totalProducts.ToString();
-            txtTotalSupplier.Text = totalSupplier.ToString();
+            lblTotalProducts.Text = totalProducts.ToString();
+            lblTotalSupplier.Text = totalSupplier.ToString();
+            lblTotalBorrowers.Text = totalBorrowers.ToString();
         }
     }
 }
