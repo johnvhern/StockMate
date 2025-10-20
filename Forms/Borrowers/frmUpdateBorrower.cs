@@ -46,5 +46,10 @@ namespace StockMate.Forms.Borrowers
                 MessageBox.Show("Borrower not found.");
             }
         }
+
+        private void btnUpdateBorrower_Click(object sender, EventArgs e)
+        {
+            borrowerService.UpdateBorrower(borrowerId, Convert.ToInt32(txtQuantity.Text), this);
+        }
     }
 }

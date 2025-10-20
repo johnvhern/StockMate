@@ -46,7 +46,7 @@
             txtQuantity = new Syncfusion.Windows.Forms.Tools.IntegerTextBox();
             gradientPanel2 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             btnCancel = new Syncfusion.WinForms.Controls.SfButton();
-            btnAddBorrower = new Syncfusion.WinForms.Controls.SfButton();
+            btnUpdateBorrower = new Syncfusion.WinForms.Controls.SfButton();
             gradientPanel3 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -178,7 +178,7 @@
             bannerTextInfo1.Text = "Enter borrower's name";
             bannerTextInfo1.Visible = true;
             bannerTextProvider1.SetBannerText(txtBorrowerName, bannerTextInfo1);
-            txtBorrowerName.BeforeTouchSize = new Size(51, 22);
+            txtBorrowerName.BeforeTouchSize = new Size(328, 16);
             txtBorrowerName.BorderStyle = BorderStyle.None;
             txtBorrowerName.Dock = DockStyle.Fill;
             txtBorrowerName.Enabled = false;
@@ -261,7 +261,7 @@
             // txtQuantity
             // 
             txtQuantity.AccessibilityEnabled = true;
-            txtQuantity.BeforeTouchSize = new Size(51, 22);
+            txtQuantity.BeforeTouchSize = new Size(328, 16);
             txtQuantity.BorderStyle = BorderStyle.None;
             txtQuantity.Dock = DockStyle.Fill;
             txtQuantity.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -276,7 +276,7 @@
             // 
             gradientPanel2.BorderStyle = BorderStyle.None;
             gradientPanel2.Controls.Add(btnCancel);
-            gradientPanel2.Controls.Add(btnAddBorrower);
+            gradientPanel2.Controls.Add(btnUpdateBorrower);
             gradientPanel2.Dock = DockStyle.Bottom;
             gradientPanel2.Location = new Point(15, 322);
             gradientPanel2.Name = "gradientPanel2";
@@ -293,19 +293,20 @@
             btnCancel.TabIndex = 5;
             btnCancel.Text = "Cancel";
             // 
-            // btnAddBorrower
+            // btnUpdateBorrower
             // 
-            btnAddBorrower.BackColor = Color.FromArgb(79, 143, 246);
-            btnAddBorrower.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAddBorrower.ForeColor = Color.White;
-            btnAddBorrower.Location = new Point(245, 6);
-            btnAddBorrower.Name = "btnAddBorrower";
-            btnAddBorrower.Size = new Size(110, 38);
-            btnAddBorrower.Style.BackColor = Color.FromArgb(79, 143, 246);
-            btnAddBorrower.Style.ForeColor = Color.White;
-            btnAddBorrower.TabIndex = 6;
-            btnAddBorrower.Text = "Update";
-            btnAddBorrower.UseVisualStyleBackColor = false;
+            btnUpdateBorrower.BackColor = Color.FromArgb(79, 143, 246);
+            btnUpdateBorrower.Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpdateBorrower.ForeColor = Color.White;
+            btnUpdateBorrower.Location = new Point(245, 6);
+            btnUpdateBorrower.Name = "btnUpdateBorrower";
+            btnUpdateBorrower.Size = new Size(110, 38);
+            btnUpdateBorrower.Style.BackColor = Color.FromArgb(79, 143, 246);
+            btnUpdateBorrower.Style.ForeColor = Color.White;
+            btnUpdateBorrower.TabIndex = 6;
+            btnUpdateBorrower.Text = "Update";
+            btnUpdateBorrower.UseVisualStyleBackColor = false;
+            btnUpdateBorrower.Click += btnUpdateBorrower_Click;
             // 
             // gradientPanel3
             // 
@@ -399,7 +400,7 @@
         private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtQuantity;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel2;
         private Syncfusion.WinForms.Controls.SfButton btnCancel;
-        private Syncfusion.WinForms.Controls.SfButton btnAddBorrower;
+        private Syncfusion.WinForms.Controls.SfButton btnUpdateBorrower;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel3;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel2;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;

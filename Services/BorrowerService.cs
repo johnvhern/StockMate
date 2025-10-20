@@ -170,38 +170,33 @@ namespace StockMate.Services
 
         #region -- Update Borrower --
 
-        public void UpdateSupplier(int supplierId, string name, string contactPerson, string email, string mobileNumber, string address, Form form)
+        public void UpdateBorrower(int borrowerId, int quantity, Form form)
         {
             try
             {
-                if (!string.IsNullOrEmpty(name))
+                if (quantity > 0)
                 {
                     using (Microsoft.Data.SqlClient.SqlConnection conn = new Microsoft.Data.SqlClient.SqlConnection(Properties.Settings.Default.ConnectionString))
                     {
-                        string addProductQuery = "UPDATE Supplier SET SupplierName = @name, ContactPerson = @contactPerson, Email = @email, MobileNumber = @mobileNumber, Address = @address WHERE SupplierId = @supplierId;";
+                        string addProductQuery = "UPDATE Borrower SET Quantity = @quantity WHERE BorrowerId = @borrowerId;";
 
                         using (Microsoft.Data.SqlClient.SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand(addProductQuery, conn))
                         {
-                            cmd.Parameters.AddWithValue(@"supplierId", supplierId);
-                            cmd.Parameters.AddWithValue("@name", name);
-                            cmd.Parameters.AddWithValue("@contactPerson", contactPerson);
-                            cmd.Parameters.AddWithValue("@email", email);
-                            cmd.Parameters.AddWithValue("@mobileNumber", mobileNumber);
-                            cmd.Parameters.AddWithValue("@address", address);
-                            cmd.Parameters.AddWithValue("@createdat", DateTime.Now);
+                            cmd.Parameters.AddWithValue(@"borrowerId", borrowerId);
+                            cmd.Parameters.AddWithValue(@"quantity", quantity);
 
                             conn.Open();
-                            int newProductId = cmd.ExecuteNonQuery();
+                            int result = cmd.ExecuteNonQuery();
 
-                            if (newProductId > 0)
+                            if (result > 0)
                             {
-                                MessageBoxAdv.Show("Supplier updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBoxAdv.Show("Borrower updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 form.DialogResult = DialogResult.OK;
                                 form.Close();
                             }
                             else
                             {
-                                MessageBoxAdv.Show("Cannot update supplier. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBoxAdv.Show("Cannot update borrower. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
